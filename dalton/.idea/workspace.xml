@@ -2,19 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec88b3bf-92c3-4620-8168-8e2661ed69c3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/loadingnvd" afterPath="$PROJECT_DIR$/bin/loadingnvd" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pkg/linux_amd64/dalton/config.a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pkg/linux_amd64/dalton/db.a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pkg/linux_amd64/dalton/db/models.a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pkg/linux_amd64/dalton/log.a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pkg/linux_amd64/dalton/utils.a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pkg/linux_amd64/github.com/beevik/etree.a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pkg/linux_amd64/github.com/hashicorp/hcl/hcl/ast.a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pkg/linux_amd64/github.com/hashicorp/hcl/hcl/fmtcmd.a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pkg/linux_amd64/github.com/hashicorp/hcl/hcl/parser.a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pkg/linux_amd64/github.com/hashicorp/hcl/hcl/printer.a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pkg/linux_amd64/github.com/hashicorp/hcl/hcl/scanner.a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pkg/linux_amd64/github.com/hashicorp/hcl/hcl/strconv.a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pkg/linux_amd64/github.com/hashicorp/hcl/hcl/token.a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pkg/linux_amd64/github.com/lair-framework/go-nmap.a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pkg/linux_amd64/github.com/umisama/go-cpe.a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pkg/linux_amd64/github.com/umisama/go-cvss.a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pkg/linux_amd64/gopkg.in/ini.v1.a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pkg/linux_amd64/labix.org/v2/mgo.a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pkg/linux_amd64/labix.org/v2/mgo/bson.a" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/lair-framework/go-nmap" afterPath="$PROJECT_DIR$/src/github.com/lair-framework/go-nmap" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pkg/linux_amd64/dalton/db.a" afterPath="$PROJECT_DIR$/pkg/linux_amd64/dalton/db.a" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pkg/linux_amd64/dalton/db/models.a" afterPath="$PROJECT_DIR$/pkg/linux_amd64/dalton/db/models.a" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/db/assets.go" afterPath="$PROJECT_DIR$/src/dalton/db/assets.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/db/cves.go" afterPath="$PROJECT_DIR$/src/dalton/db/cves.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/db/db.go" afterPath="$PROJECT_DIR$/src/dalton/db/db.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/db/entries.go" afterPath="$PROJECT_DIR$/src/dalton/db/entries.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/db/models/cve.go" afterPath="$PROJECT_DIR$/src/dalton/db/models/cve.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/db/scans.go" afterPath="$PROJECT_DIR$/src/dalton/db/scans.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/db/users.go" afterPath="$PROJECT_DIR$/src/dalton/db/users.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/loadingnvd.go" afterPath="$PROJECT_DIR$/test/loadingnvd.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/testcve.go" afterPath="$PROJECT_DIR$/test/testcve.go" />
     </list>
     <ignored path="dalton.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,25 +45,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="loadingnvd.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/loadingnvd.go">
+      <file leaf-file-name="cves.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dalton/db/cves.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="56" column="17" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
+            <state relative-caret-position="493">
+              <caret line="48" column="44" selection-start-line="48" selection-start-column="44" selection-end-line="48" selection-end-column="44" />
               <folding>
-                <element signature="e#14#213#0" expanded="true" />
+                <element signature="e#12#112#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cves.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dalton/db/cves.go">
+      <file leaf-file-name="testcve.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/testcve.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="689">
-              <caret line="63" column="9" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
+            <state relative-caret-position="165">
+              <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
               <folding>
-                <element signature="e#12#112#0" expanded="true" />
+                <element signature="e#14#69#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -128,8 +137,9 @@
         <option value="$PROJECT_DIR$/src/dalton/db/entries.go" />
         <option value="$PROJECT_DIR$/src/dalton/db/scans.go" />
         <option value="$PROJECT_DIR$/src/dalton/db/users.go" />
-        <option value="$PROJECT_DIR$/src/dalton/db/cves.go" />
         <option value="$PROJECT_DIR$/test/loadingnvd.go" />
+        <option value="$PROJECT_DIR$/src/dalton/db/cves.go" />
+        <option value="$PROJECT_DIR$/test/testcve.go" />
       </list>
     </option>
   </component>
@@ -248,6 +258,42 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dalton" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dalton" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dalton" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dalton" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dalton" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pkg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope">
@@ -291,18 +337,12 @@
       <recent name="$PROJECT_DIR$/src/scannerd" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Single File.go run loadingnvd.go">
+  <component name="RunManager" selected="Go Single File.go run testcve.go">
     <configuration default="false" name="Build scannerd.go and run" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
       <module name="dalton" />
       <working_directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$/scannerd/scannerd.go" />
       <kind value="FILE" />
-      <method />
-    </configuration>
-    <configuration default="false" name="go run testinggorilla.go" type="GoRunFileConfiguration" factoryName="Go Single File" temporary="true">
-      <module name="dalton" />
-      <working_directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/test/testinggorilla.go" />
       <method />
     </configuration>
     <configuration default="false" name="go run testUUID.go" type="GoRunFileConfiguration" factoryName="Go Single File" temporary="true">
@@ -321,6 +361,12 @@
       <module name="dalton" />
       <working_directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/test/loadingnvd.go" />
+      <method />
+    </configuration>
+    <configuration default="false" name="go run testcve.go" type="GoRunFileConfiguration" factoryName="Go Single File" temporary="true">
+      <module name="dalton" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/test/testcve.go" />
       <method />
     </configuration>
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
@@ -553,18 +599,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Go Application.Build scannerd.go and run" />
-      <item index="1" class="java.lang.String" itemvalue="Go Single File.go run testinggorilla.go" />
-      <item index="2" class="java.lang.String" itemvalue="Go Single File.go run testUUID.go" />
-      <item index="3" class="java.lang.String" itemvalue="Go Single File.go run testOI.go" />
-      <item index="4" class="java.lang.String" itemvalue="Go Single File.go run loadingnvd.go" />
+      <item index="1" class="java.lang.String" itemvalue="Go Single File.go run testUUID.go" />
+      <item index="2" class="java.lang.String" itemvalue="Go Single File.go run testOI.go" />
+      <item index="3" class="java.lang.String" itemvalue="Go Single File.go run loadingnvd.go" />
+      <item index="4" class="java.lang.String" itemvalue="Go Single File.go run testcve.go" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Go Single File.go run loadingnvd.go" />
-        <item index="1" class="java.lang.String" itemvalue="Go Application.Build scannerd.go and run" />
-        <item index="2" class="java.lang.String" itemvalue="Go Single File.go run testOI.go" />
-        <item index="3" class="java.lang.String" itemvalue="Go Single File.go run testUUID.go" />
-        <item index="4" class="java.lang.String" itemvalue="Go Single File.go run testinggorilla.go" />
+        <item index="0" class="java.lang.String" itemvalue="Go Single File.go run testcve.go" />
+        <item index="1" class="java.lang.String" itemvalue="Go Single File.go run loadingnvd.go" />
+        <item index="2" class="java.lang.String" itemvalue="Go Application.Build scannerd.go and run" />
+        <item index="3" class="java.lang.String" itemvalue="Go Single File.go run testOI.go" />
+        <item index="4" class="java.lang.String" itemvalue="Go Single File.go run testUUID.go" />
       </list>
     </recent_temporary>
   </component>
@@ -867,13 +913,13 @@
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29983434" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32965213" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4483871" sideWeight="0.5019326" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40967742" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30107528" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24958587" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4483871" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4483871" sideWeight="0.49806738" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -966,7 +1012,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/testConfig.go" />
     <entry file="file://$PROJECT_DIR$/src/dalton/db/manager.go" />
     <entry file="file://$USER_HOME$/bigdata/go/src/log/log.go">
       <provider selected="true" editor-type-id="text-editor">
@@ -1304,22 +1349,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/loadingnvd.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+          <folding>
+            <element signature="e#14#213#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/dalton/db/cves.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="689">
-          <caret line="63" column="9" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
+        <state relative-caret-position="493">
+          <caret line="48" column="44" selection-start-line="48" selection-start-column="44" selection-end-line="48" selection-end-column="44" />
           <folding>
             <element signature="e#12#112#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/loadingnvd.go">
+    <entry file="file://$PROJECT_DIR$/test/testcve.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="56" column="17" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
+        <state relative-caret-position="165">
+          <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
           <folding>
-            <element signature="e#14#213#0" expanded="true" />
+            <element signature="e#14#69#0" expanded="true" />
           </folding>
         </state>
       </provider>
