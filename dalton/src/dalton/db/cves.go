@@ -32,9 +32,9 @@ func UpdateCVE(cve *models.CVE) error {
 	defer session.Close()
 	collection := GetCollection(CVE_COLLECTION_NAME)
 	id := cve.Id
-	update := bson.M{{"$set":bson.M{"cve_id":cve.CveId,"products":cve.Product,"discovered_datetime":cve.DiscoveredDate,"disclosure_datetime":cve.DisclosureDate,
+	update := bson.M{"$set":bson.M{"cve_id":cve.CveId,"products":cve.Product,"discovered_datetime":cve.DiscoveredDate,"disclosure_datetime":cve.DisclosureDate,
 	"exploit_publish_datetime":cve.ExploitPubDate,"last_modified_datetime":cve.LastModifiedDate,"cvss":cve.CVSS,
-	"security_protection":cve.SecurityProtection,"cwe_id":cve.CweId,"references":cve.References,"summary":cve.Summary}}}
+	"security_protection":cve.SecurityProtection,"cwe_id":cve.CweId,"references":cve.References,"summary":cve.Summary}}
 	return collection.UpdateId(id,update)
 }
 func DeleteCVE(cve *models.CVE) error {
@@ -56,6 +56,7 @@ func InsertCVE(cve *models.CVE) error {
 	if cve.Id == "" {
 		cve.Id = utils.NewObjectId()
 	}
+
 	return collection.Insert(cve)
 }
 func SearchCVEs(q interface{},skip,limit int) (searchResults []models.CVE , err error) {
@@ -81,7 +82,7 @@ func EnsureCVEsIndices (c *mgo.Collection) error {
 	index := mgo.Index{
 		Key: []string{"cve_id"},
 		Unique:     true,
-		DropDups:   true,
+		DropDups:   false,
 		Background: true,
 		Sparse:     true,
 	}

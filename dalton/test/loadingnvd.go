@@ -11,6 +11,9 @@ import (
 	"strings"
 	"github.com/beevik/etree"
 	"fmt"
+	"dalton/db"
+	"dalton/db/models"
+	"time"
 )
 
 var (
@@ -18,38 +21,6 @@ var (
 	fakeUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 Safari/537.36"
 )
 
-type CVE struct {
-	CveId              string            `json:"cve_id"`
-	Product            []string          `json:"product"`
-	DiscoveredDate     string            `json:"discovered_datetime"`
-	DisclosureDate     string            `json:"disclosure_datetime"`
-	ExploitPubDate     string            `json:"exploit_publish_datetime"`
-	PublishedDate      string            `json:"published_datetime"`
-	LastModifiedDate   string            `json:"last_modified_datetime"`
-	CVSS               CVSS_Base_Metrics `json:"cvss"`
-	SecurityProtection string            `json:"security_protection"`
-	CweId              string            `json:"cwe_id"`
-	References         []Reference       `json:"references"`
-	Summary            string            `json:"summary"`
-}
-
-type CVSS_Base_Metrics struct {
-	Score                float64 `json:"score"`
-	AccessVector         string  `json:"access_vector"`
-	AccessComplexity     string  `json:"access_complexity"`
-	Authentication       string  `json:"authentication"`
-	ConfidentiallyImpact string  `json:"confidentiality_impact"`
-	IntegrityImpact      string  `json:"integrity_impact"`
-	AvailabilityImpact   string  `json:"availability_impact"`
-	Source               string  `json:"source"`
-	GeneratedDate        string  `json:"generated_on_datetime"`
-}
-
-type Reference struct {
-	ReferenceType string `json:"reference_type"`
-	Source        string `json:"reference_source"`
-	URL           string `json:"reference_url"`
-}
 
 func main() {
 	xmlUrl := [17]string{"https://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-Recent.xml.gz",
@@ -165,7 +136,7 @@ func ungzip(source, target string) error {
 
 func xmlBulkImport(filePath string) (err error) {
 
-	var cves []CVE
+	var cves []models.CVE
 
 	//Check if file exists
 	if _, err := os.Stat(filePath); err != nil {
@@ -194,7 +165,7 @@ func xmlBulkImport(filePath string) (err error) {
 	root := doc.SelectElement("nvd")
 
 	for _, entry := range root.SelectElements("entry") {
-		c := CVE{}
+		c := models.CVE{}
 
 		//entryId := entry.SelectAttr("id").Value
 		//log.Println("entryId is:", entryId)
@@ -270,7 +241,7 @@ func xmlBulkImport(filePath string) (err error) {
 		//</cvss:base_metrics>
 		//</vuln:cvss>
 		cvss := entry.SelectElement("vuln:cvss")
-		cvssobj := CVSS_Base_Metrics{}
+		cvssobj := models.CVSS_Base_Metrics{}
 		if cvss != nil {
 			base_metrics := cvss.SelectElement("cvss:base_metrics")
 			score := base_metrics.SelectElement("cvss:score")
@@ -348,10 +319,10 @@ func xmlBulkImport(filePath string) (err error) {
 		//<vuln:source>MS</vuln:source>
 		//<vuln:reference href="http://technet.microsoft.com/security/bulletin/MS16-003" xml:lang="en">MS16-003</vuln:reference>
 		//</vuln:references>
-		var refs = []Reference{}
+		var refs = []models.Reference{}
 		references := entry.SelectElements("vuln:references")
 		if references != nil {
-			r := Reference{}
+			r := models.Reference{}
 			for _, ref := range references {
 				ref_type := ref.SelectAttr("reference_type").Value
 				//log.Println("ref_type:", ref_type)
@@ -388,11 +359,16 @@ func xmlBulkImport(filePath string) (err error) {
 
 
 	//try to print one single cve
-	single := cves[0]
+	for _, single := range cves {
 
-	fmt.Println("Printing one Single CVE")
-	fmt.Println(single)
-
+		//insert cves into the database
+		err := db.InsertCVE(&single)
+		time.Sleep(time.Duration(100))
+		if err != nil {
+			fmt.Println("There was a problem inserting A CVE : ",fmt.Sprintf("%v",err))
+		}
+	}
+	fmt.Println("Done inserting the current CVEs batch into the database")
 
 	return err
 }
