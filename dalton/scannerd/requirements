@@ -1,0 +1,5 @@
+
+
+For web application to send authenticated and signed requests to scannerd that will eventually accept and process it , the web application requires to provide the following
+
+1. One additional HTTP Header in the request called "Dalton-Signature" with a base64 encoded signature that is matching the IP Address of the initiator of that request

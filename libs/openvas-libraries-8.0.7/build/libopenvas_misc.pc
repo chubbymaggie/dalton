@@ -1,0 +1,12 @@
+prefix=/usr/local
+exec_prefix=/usr/local
+libdir=/usr/local/lib
+includedir=/usr/local/include
+
+Name: openvas-libraries-misc
+Description: OpenVAS misc libraries
+Version: 8.0.7
+Requires.private: glib-2.0 >= 2.16.0, gnutls >= 2.12
+Cflags: -I${includedir} -I${includedir}/openvas
+Libs: -L${libdir} -lopenvas_misc
+Libs.private: -lgcrypt
