@@ -44,15 +44,9 @@ func SearchUsers(q interface{},skip,limit int) (searchResults []models.UserDB , 
    This function will insert a completely new user into the database
  */
 func InsertUser(user *models.UserDB) error {
-
-	session , err := Connect()
-	if err != nil {
-		return err
-	}
-	defer session.Close()
-
 	//now insert into the database collection users the new user
-	collection := GetCollection(Users_Collection_Name)
+	collection,session := GetCollection(Users_Collection_Name)
+	defer session.Close()
 	//initialize the user with a new ObjectId
 	if user.Id == "" {
 		user.Id = utils.NewObjectId()
@@ -64,12 +58,8 @@ func InsertUser(user *models.UserDB) error {
  */
 func UpdateUserWith(user *models.UserDB , update *bson.M) error {
 
-	session , err := Connect()
-	if err != nil {
-		return err
-	}
+	collection,session := GetCollection(Users_Collection_Name)
 	defer session.Close()
-	collection := GetCollection(Users_Collection_Name)
 	id := user.Id
 	return collection.UpdateId(id,update)
 }
@@ -78,12 +68,8 @@ func UpdateUserWith(user *models.UserDB , update *bson.M) error {
  */
 func UpdateUser(user *models.UserDB) error {
 
-	session , err := Connect()
-	if err != nil {
-		return err
-	}
+	collection,session := GetCollection(Users_Collection_Name)
 	defer session.Close()
-	collection := GetCollection(Users_Collection_Name)
 	id := user.Id
 	update := bson.M{"$set":bson.M{"email":user.Email,"fullName":user.FullName,"joinedDate":user.JoinedDate,
 	"password":user.Password,"role":user.Role,"title":user.Title,"userName":user.UserName}}
@@ -94,12 +80,8 @@ func UpdateUser(user *models.UserDB) error {
   This function will completely delete the given user from the database.
  */
 func DeleteUser(user *models.UserDB) error {
-	session , err := Connect()
-	if err != nil {
-		return err
-	}
-	defer session.Clone()
-	collection := GetCollection(Users_Collection_Name)
+	collection,session := GetCollection(Users_Collection_Name)
+	defer session.Close()
 	return collection.Remove(bson.M{"_id":user.Id})
 }
 /*

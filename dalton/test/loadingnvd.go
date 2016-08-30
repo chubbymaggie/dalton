@@ -11,9 +11,11 @@ import (
 	"strings"
 	"github.com/beevik/etree"
 	"fmt"
-	"dalton/db"
 	"dalton/db/models"
+	"runtime"
+	"dalton/db"
 	"time"
+	"labix.org/v2/mgo"
 )
 
 var (
@@ -23,9 +25,15 @@ var (
 
 
 func main() {
-	xmlUrl := [17]string{"https://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-Recent.xml.gz",
-		"https://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-Modified.xml.gz",
-		"https://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2016.xml.gz",
+
+	runtime.GOMAXPROCS(1)
+
+	xmlUrl := [17]string{
+		"https://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2006.xml.gz",
+		"https://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2005.xml.gz",
+		"https://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2004.xml.gz",
+		"https://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2003.xml.gz",
+		"https://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2002.xml.gz",
 		"https://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2015.xml.gz",
 		"https://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2014.xml.gz",
 		"https://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2013.xml.gz",
@@ -33,28 +41,32 @@ func main() {
 		"https://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2011.xml.gz",
 		"https://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2010.xml.gz",
 		"https://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2009.xml.gz",
+		"https://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-Recent.xml.gz",
+		"https://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-Modified.xml.gz",
+		"https://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2016.xml.gz",
 		"https://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2008.xml.gz",
 		"https://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2007.xml.gz",
-		"https://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2006.xml.gz",
-		"https://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2005.xml.gz",
-		"https://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2004.xml.gz",
-		"https://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2003.xml.gz",
-		"https://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2002.xml.gz"}
-
+	}
 	for _, url := range xmlUrl {
 		localPath := strings.Replace(url, "https://static.nvd.nist.gov/feeds/xml/cve", "/home/snouto/cves", -1)
 		//Get CVE xml files
+		fmt.Println(fmt.Sprintf("Downloading : %s",localPath))
 		err := getCveXmlFiles(url, localPath)
 		if err != nil {
 			log.Println("Get CVE xml file failed.", err)
 		}
-
+		fmt.Println("Done Downloading : ",localPath)
 		//Process xml and bulk import CVE xml files
+		fmt.Println("Beging parsing it")
 		filename := strings.TrimSuffix(localPath, ".gz")
-		err = xmlBulkImport(filename)
+		collection , session := db.GetCollection(db.CVE_COLLECTION_NAME)
+		defer session.Close()
+		err = xmlBulkImport(filename,collection)
+
 		if err != nil {
 			log.Println("CVE xml bulk import failed. error info:", err)
 		}
+		fmt.Println("Done parsing it")
 	}
 }
 
@@ -134,10 +146,9 @@ func ungzip(source, target string) error {
 	return err
 }
 
-func xmlBulkImport(filePath string) (err error) {
+func xmlBulkImport(filePath string , collection *mgo.Collection) (err error) {
 
 	var cves []models.CVE
-
 	//Check if file exists
 	if _, err := os.Stat(filePath); err != nil {
 		log.Println("***", filePath, "does not exists. ***")
@@ -151,7 +162,6 @@ func xmlBulkImport(filePath string) (err error) {
 	if err != nil {
 		return err
 	}
-
 	//
 	//Begin to process CVE xml file
 	//
@@ -350,23 +360,17 @@ func xmlBulkImport(filePath string) (err error) {
 			c.Summary = summary.Text()
 		}
 
-		cves = append(cves, c)
-
-		//log.Println("")
-		//log.Println("*******")
-		//log.Println("")
-	}
-
-
-	//try to print one single cve
-	for _, single := range cves {
-
-		//insert cves into the database
-		err := db.InsertCVE(&single)
-		time.Sleep(time.Duration(100))
+		err := db.InsertCVE(&c,collection)
 		if err != nil {
 			fmt.Println("There was a problem inserting A CVE : ",fmt.Sprintf("%v",err))
 		}
+
+		time.Sleep(time.Duration(100))
+
+		cves = append(cves, c)
+		//log.Println("")
+		//log.Println("*******")
+		//log.Println("")
 	}
 	fmt.Println("Done inserting the current CVEs batch into the database")
 

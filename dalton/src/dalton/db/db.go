@@ -135,28 +135,28 @@ func isEnabled() bool{
 /*
    this function returns a handler to the underlying database or nil
  */
-func GetDatabase() *mgo.Database {
+func GetDatabase() (*mgo.Database,*mgo.Session) {
 
 	session , error := Connect()
 	if error != nil {
 
 		log.Log(error)
-		return nil
+		return nil , nil
 	}
-	return session.DB(database)
+	return session.DB(database) , session
 }
 
-func GetCollection(collectionName string) *mgo.Collection {
+func GetCollection(collectionName string) (*mgo.Collection,*mgo.Session) {
 
-	Database := GetDatabase()
+	Database,session := GetDatabase()
 
 		if Database != nil {
 			collection := Database.C(collectionName)
 			ensureIndices(collectionName,collection)
-			return collection
+			return collection , session
 
 		}else {
-			return nil
+			return nil,nil
 		}
 }
 

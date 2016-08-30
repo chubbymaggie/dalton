@@ -50,12 +50,9 @@ func SearchEntries(q interface{},skip,limit int) (searchResults []models.ScanEnt
 	return
 }
 func InsertEntry(entry *models.ScanEntry) error {
-	session , err := Connect()
-	if err != nil {
-		return err
-	}
+
+	collection , session := GetCollection(ENTRIES_COLLECTION_NAME)
 	defer session.Close()
-	collection := GetCollection(ENTRIES_COLLECTION_NAME)
 	//create a new object Id for the passed scan entry
 	if entry.ScanId == "" {
 		entry.ScanId = utils.NewObjectId()
@@ -64,22 +61,13 @@ func InsertEntry(entry *models.ScanEntry) error {
 	return collection.Insert(entry)
 }
 func DeleteEntry(entry *models.ScanEntry) error {
-
-	session , err := Connect()
-	if err != nil {
-		return err
-	}
+	collection , session := GetCollection(ENTRIES_COLLECTION_NAME)
 	defer session.Close()
-	collection := GetCollection(ENTRIES_COLLECTION_NAME)
 	return collection.Remove(bson.M{"_id":entry.ScanId})
 }
 func UpdateEntry(entry *models.ScanEntry) error {
-	session , err := Connect()
-	if err != nil {
-		return err
-	}
+	collection , session := GetCollection(ENTRIES_COLLECTION_NAME)
 	defer session.Close()
-	collection := GetCollection(ENTRIES_COLLECTION_NAME)
 	id := entry.ScanId
 	update := bson.M{"$set":bson.M{"startTime":entry.StartTime,"endTime":entry.EndTime,
 		"initiatedBy":entry.InitiatedBy,"status":entry.Status,"commandArgs":entry.CommandArgs,
@@ -89,13 +77,8 @@ func UpdateEntry(entry *models.ScanEntry) error {
 	return collection.UpdateId(id,update)
 }
 func UpdateEntryWith(entry *models.ScanEntry , updateQuery *bson.M) error {
-
-	session , err := Connect()
-	if err != nil {
-		return err
-	}
+	collection,session := GetCollection(ENTRIES_COLLECTION_NAME)
 	defer session.Close()
-	collection := GetCollection(ENTRIES_COLLECTION_NAME)
 	id := entry.ScanId
 	return collection.UpdateId(id,updateQuery)
 }

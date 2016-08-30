@@ -14,12 +14,8 @@ const (
    This function will update the assets with specific update Query Selector based on the passed UserId
 */
 func UpdateAssetWith(asset *models.AssetDB , updateQuery *bson.M) error {
-	session , err := Connect()
-	if err != nil {
-		return err
-	}
+	collection , session := GetCollection(ASSETS_COLLECTION_NAME)
 	defer session.Close()
-	collection := GetCollection(ASSETS_COLLECTION_NAME)
 	id := asset.Id
 	return collection.UpdateId(id,updateQuery)
 }
@@ -27,13 +23,8 @@ func UpdateAssetWith(asset *models.AssetDB , updateQuery *bson.M) error {
    this function blindly update All the asset properties
  */
 func UpdateAsset(asset *models.AssetDB) error {
-
-	session , err := Connect()
-	if err != nil {
-		return err
-	}
+	collection , session := GetCollection(ASSETS_COLLECTION_NAME)
 	defer session.Close()
-	collection := GetCollection(ASSETS_COLLECTION_NAME)
 	id := asset.Id
 	update := bson.M{"$set":bson.M{"host":asset.Host,"ipAddrs":asset.IPAddrs,"createdAt":asset.CreatedAt,
 	"reachable":asset.Reachable,"status":asset.Status,"osInfo":asset.OSInfo,"upTime":asset.UpTime,"entryId":asset.EntryId},"os":asset.OS,
@@ -44,24 +35,18 @@ func UpdateAsset(asset *models.AssetDB) error {
   This function will delete an existing asset based on the objectId
  */
 func DeleteAsset(asset *models.AssetDB) error {
-	session , err := Connect()
-	if err != nil {
-		return err
-	}
-	defer session.Clone()
-	collection := GetCollection(ASSETS_COLLECTION_NAME)
+
+	collection , session := GetCollection(ASSETS_COLLECTION_NAME)
+	defer session.Close()
 	return collection.Remove(bson.M{"_id":asset.Id})
 }
 /*
     This function will add/insert a completely new Asset
  */
 func InsertAsset(asset *models.AssetDB) error {
-	session ,err := Connect()
-	if err != nil {
-		return err
-	}
+
+	collection,session := GetCollection(ASSETS_COLLECTION_NAME)
 	defer session.Close()
-	collection := GetCollection(ASSETS_COLLECTION_NAME)
 	//Create a new ObjectId for the asset
 	if asset.Id == "" {
 		asset.Id = utils.NewObjectId()

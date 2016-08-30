@@ -7,6 +7,7 @@ import (
 	"labix.org/v2/mgo/bson"
 	"dalton/utils"
 	"labix.org/v2/mgo"
+	"fmt"
 )
 
 const (
@@ -14,23 +15,14 @@ const (
 	CVE_COLLECTION_NAME = "cves"
 )
 func UpdateCVEWith(Cve *models.CVE , updateQuery *bson.M) error {
-
-	session , err := Connect()
-	if err != nil {
-		return err
-	}
+	collection , session := GetCollection(CVE_COLLECTION_NAME)
 	defer session.Close()
-	collection := GetCollection(CVE_COLLECTION_NAME)
 	id := Cve.Id
 	return collection.UpdateId(id,updateQuery)
 }
 func UpdateCVE(cve *models.CVE) error {
-	session , err := Connect()
-	if err != nil {
-		return err
-	}
+	collection,session := GetCollection(CVE_COLLECTION_NAME)
 	defer session.Close()
-	collection := GetCollection(CVE_COLLECTION_NAME)
 	id := cve.Id
 	update := bson.M{"$set":bson.M{"cve_id":cve.CveId,"products":cve.Product,"discovered_datetime":cve.DiscoveredDate,"disclosure_datetime":cve.DisclosureDate,
 	"exploit_publish_datetime":cve.ExploitPubDate,"last_modified_datetime":cve.LastModifiedDate,"cvss":cve.CVSS,
@@ -38,26 +30,21 @@ func UpdateCVE(cve *models.CVE) error {
 	return collection.UpdateId(id,update)
 }
 func DeleteCVE(cve *models.CVE) error {
-	session,err := Connect()
-	if err != nil {
-		return err
-	}
+
+	collection , session := GetCollection(CVE_COLLECTION_NAME)
 	defer session.Close()
-	collection := GetCollection(CVE_COLLECTION_NAME)
 	return collection.Remove(bson.M{"_id":cve.Id})
 }
-func InsertCVE(cve *models.CVE) error {
-	session , err := Connect()
-	if err != nil {
-		return err
+func InsertCVE(cve *models.CVE,collection *mgo.Collection) error {
+	if cve == nil {
+		fmt.Println("nil CVE")
+		return fmt.Errorf("nil CVE")
 	}
-	defer session.Close()
-	collection := GetCollection(CVE_COLLECTION_NAME)
 	if cve.Id == "" {
 		cve.Id = utils.NewObjectId()
 	}
-
-	return collection.Insert(cve)
+	err := collection.Insert(cve)
+	return err
 }
 func SearchCVEs(q interface{},skip,limit int) (searchResults []models.CVE , err error) {
 	searchResults = []models.CVE{}
@@ -81,10 +68,15 @@ func EnsureCVEsIndices (c *mgo.Collection) error {
 
 	index := mgo.Index{
 		Key: []string{"cve_id"},
-		Unique:     true,
+		Unique:     false,
 		DropDups:   false,
 		Background: true,
 		Sparse:     true,
 	}
-	return c.EnsureIndex(index)
+	if c != nil {
+			return c.EnsureIndex(index)
+	}else{
+		fmt.Println("Error , nil Collection")
+		return fmt.Errorf("Error , nil collection")
+	}
 }
