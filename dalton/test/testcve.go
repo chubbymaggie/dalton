@@ -8,7 +8,7 @@ import (
 
 func main() {
 
-	query := bson.M{"products":bson.M{"$regex":"httpd:[0-9]+"}}
+	query := bson.M{"products":bson.M{"$regex":"jboss_bpm_suite:([0-9]+)(.?[0-9]?)?"}}
 	results , err := db.SearchCVEs(query,0,-1)
 
 	if err != nil {
@@ -19,6 +19,6 @@ func main() {
 
 	for _ , cve := range results {
 
-		fmt.Println(cve.Product)
+		fmt.Println(cve.CveId , " : " , cve.Product)
 	}
 }

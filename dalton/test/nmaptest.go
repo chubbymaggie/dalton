@@ -1,14 +1,15 @@
 package main
 
 import (
-	discovery "dalton/security"
 	"fmt"
-
+	"os"
+	"io/ioutil"
+	"github.com/lair-framework/go-nmap"
 )
 
 func main() {
 
-	ScanSettings := &discovery.ScanSettings{
+	/*ScanSettings := &discovery.ScanSettings{
 		Args:[]string{"-A","192.168.1.7"},
 		TempDir:"/media/snouto/rest/projects/tmp",
 	}
@@ -31,6 +32,28 @@ func main() {
 	}
 
 
+*/
 
+	path := "/media/snouto/rest/projects/mohamed.xml"
+	file ,err := os.Open(path)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	contents , err := ioutil.ReadAll(file)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	nmapRun , err := nmap.Parse(contents)
+
+	for _ , host := range nmapRun.Hosts {
+
+		for _ , port := range host.Ports {
+
+			fmt.Println(port.Service.CPE.Value)
+		}
+	}
 
 }
