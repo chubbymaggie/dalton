@@ -100,7 +100,7 @@ extern int nasldebug;
 typedef union YYSTYPE YYSTYPE;
 union YYSTYPE
 {
-#line 46 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1909  */
+#line 46 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1909  */
 
   int		num;
   char		*str;

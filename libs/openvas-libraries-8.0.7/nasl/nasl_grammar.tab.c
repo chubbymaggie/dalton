@@ -68,7 +68,7 @@
 
 
 /* Copy the first part of user declarations.  */
-#line 5 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:339  */
+#line 5 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:339  */
 
 /* Nessus Attack Scripting Language version 2
  *
@@ -199,7 +199,7 @@ extern int nasldebug;
 typedef union YYSTYPE YYSTYPE;
 union YYSTYPE
 {
-#line 46 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:355  */
+#line 46 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:355  */
 
   int		num;
   char		*str;
@@ -222,7 +222,7 @@ int naslparse (naslctxt * parm);
 #endif /* !YY_NASL_NASL_GRAMMAR_TAB_H_INCLUDED  */
 
 /* Copy the second part of user declarations.  */
-#line 56 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:358  */
+#line 56 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:358  */
 
 static int nasllex(YYSTYPE * lvalp, void * parm);
 
@@ -1637,7 +1637,7 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 142 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 142 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {
 	  ((naslctxt*)parm)->tree = (yyvsp[0].node);
 	}
@@ -1645,7 +1645,7 @@ yyreduce:
     break;
 
   case 3:
-#line 147 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 147 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {
 	  (yyval.node) = alloc_tree_cell(LNB, NULL);
 	  (yyval.node)->type = NODE_INSTR_L;
@@ -1655,7 +1655,7 @@ yyreduce:
     break;
 
   case 4:
-#line 153 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 153 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {
 	  (yyval.node) = alloc_tree_cell(LNB, NULL);
 	  (yyval.node)->type = NODE_INSTR_L;
@@ -1666,7 +1666,7 @@ yyreduce:
     break;
 
   case 7:
-#line 163 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 163 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {
 	  (yyval.node) = alloc_tree_cell(LNB, (yyvsp[-4].str));
 	  (yyval.node)->type = NODE_FUN_DEF;
@@ -1677,25 +1677,25 @@ yyreduce:
     break;
 
   case 8:
-#line 170 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 170 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = NULL; }
 #line 1683 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 9:
-#line 170 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 170 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = (yyvsp[0].node); }
 #line 1689 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 10:
-#line 171 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 171 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_tree_cell(LNB, (yyvsp[0].str)); (yyval.node)->type = NODE_DECL; }
 #line 1695 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 11:
-#line 173 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 173 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {
 	  (yyval.node) = alloc_tree_cell(LNB, (yyvsp[-2].str));
 	  (yyval.node)->type = NODE_DECL;
@@ -1705,19 +1705,19 @@ yyreduce:
     break;
 
   case 12:
-#line 180 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 180 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = (yyvsp[-1].node); }
 #line 1711 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 13:
-#line 180 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 180 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = NULL; }
 #line 1717 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 15:
-#line 183 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 183 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {
 	  if ((yyvsp[-1].node) == NULL)
 	    (yyval.node) = (yyvsp[0].node);
@@ -1733,13 +1733,13 @@ yyreduce:
     break;
 
   case 16:
-#line 196 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 196 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = (yyvsp[-1].node); }
 #line 1739 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 28:
-#line 201 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 201 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {
 	  (yyval.node) = alloc_tree_cell(LNB, NULL);
 	  (yyval.node)->type =  NODE_BREAK;
@@ -1748,7 +1748,7 @@ yyreduce:
     break;
 
   case 29:
-#line 205 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 205 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {
 	  (yyval.node) = alloc_tree_cell(LNB, NULL);
 	  (yyval.node)->type =  NODE_CONTINUE;
@@ -1757,13 +1757,13 @@ yyreduce:
     break;
 
   case 30:
-#line 209 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 209 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = NULL; }
 #line 1763 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 31:
-#line 213 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 213 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {
 	  (yyval.node) = alloc_tree_cell(LNB, NULL);
 	  (yyval.node)->type =  NODE_RETURN;
@@ -1773,7 +1773,7 @@ yyreduce:
     break;
 
   case 32:
-#line 219 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 219 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {
 	  (yyval.node) = alloc_tree_cell(LNB, NULL);
 	  (yyval.node)->type =  NODE_RETURN;
@@ -1782,7 +1782,7 @@ yyreduce:
     break;
 
   case 33:
-#line 226 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 226 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {
 	  (yyval.node) = alloc_tree_cell(LNB, NULL);
 	  (yyval.node)->type = NODE_IF_ELSE;
@@ -1792,7 +1792,7 @@ yyreduce:
     break;
 
   case 34:
-#line 232 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 232 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {
 	  (yyval.node) = alloc_tree_cell(LNB, NULL);
 	  (yyval.node)->type = NODE_IF_ELSE;
@@ -1802,7 +1802,7 @@ yyreduce:
     break;
 
   case 39:
-#line 241 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 241 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {
 	  (yyval.node) = alloc_tree_cell(LNB, NULL);
 	  (yyval.node)->type = NODE_FOR;
@@ -1815,7 +1815,7 @@ yyreduce:
     break;
 
   case 40:
-#line 251 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 251 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {
 	  (yyval.node) = alloc_tree_cell(LNB, NULL);
 	  (yyval.node)->type = NODE_WHILE;
@@ -1826,7 +1826,7 @@ yyreduce:
     break;
 
   case 41:
-#line 258 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 258 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {
 	  (yyval.node) = alloc_tree_cell(LNB, NULL);
 	  (yyval.node)->type = NODE_REPEAT_UNTIL;
@@ -1837,7 +1837,7 @@ yyreduce:
     break;
 
   case 42:
-#line 266 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 266 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {
 	  (yyval.node) = alloc_tree_cell(LNB, (yyvsp[-4].str));
 	  (yyval.node)->type = NODE_FOREACH;
@@ -1848,13 +1848,13 @@ yyreduce:
     break;
 
   case 46:
-#line 274 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 274 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = NULL; }
 #line 1854 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 47:
-#line 278 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 278 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {
 	  (yyval.node) = alloc_tree_cell(LNB, NULL);
 	  (yyval.node)->type = NODE_REPEATED;
@@ -1865,13 +1865,13 @@ yyreduce:
     break;
 
   case 48:
-#line 285 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 285 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.str) = (yyvsp[0].data).val; }
 #line 1871 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 50:
-#line 289 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 289 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {
 	  naslctxt	subctx;
 	  int		x;
@@ -1905,7 +1905,7 @@ yyreduce:
     break;
 
   case 51:
-#line 321 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 321 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {
 	  (yyval.node) = alloc_tree_cell(LNB, (yyvsp[-3].str));
 	  (yyval.node)->type = NODE_FUN_CALL;
@@ -1915,13 +1915,13 @@ yyreduce:
     break;
 
   case 53:
-#line 327 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 327 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = NULL; }
 #line 1921 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 55:
-#line 329 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 329 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {
 	  (yyvsp[-2].node)->link[1] = (yyvsp[0].node);
 	  (yyval.node) = (yyvsp[-2].node);
@@ -1930,7 +1930,7 @@ yyreduce:
     break;
 
   case 56:
-#line 335 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 335 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {
 	  (yyval.node) = alloc_tree_cell(LNB, NULL);
 	  (yyval.node)->type = NODE_ARG;
@@ -1940,7 +1940,7 @@ yyreduce:
     break;
 
   case 57:
-#line 341 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 341 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {
 	  (yyval.node) = alloc_tree_cell(LNB, (yyvsp[-2].str));
 	  (yyval.node)->type = NODE_ARG;
@@ -1950,7 +1950,7 @@ yyreduce:
     break;
 
   case 58:
-#line 349 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 349 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {
 	  (yyval.node) = alloc_expr_cell(LNB, NODE_AFF, (yyvsp[-2].node), (yyvsp[0].node));
 	}
@@ -1958,67 +1958,67 @@ yyreduce:
     break;
 
   case 59:
-#line 352 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 352 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_expr_cell(LNB, NODE_PLUS_EQ, (yyvsp[-2].node), (yyvsp[0].node)); }
 #line 1964 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 60:
-#line 353 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 353 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_expr_cell(LNB, NODE_MINUS_EQ, (yyvsp[-2].node), (yyvsp[0].node)); }
 #line 1970 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 61:
-#line 354 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 354 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_expr_cell(LNB, NODE_MULT_EQ, (yyvsp[-2].node), (yyvsp[0].node)); }
 #line 1976 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 62:
-#line 355 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 355 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_expr_cell(LNB, NODE_DIV_EQ, (yyvsp[-2].node), (yyvsp[0].node)); }
 #line 1982 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 63:
-#line 356 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 356 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_expr_cell(LNB, NODE_MODULO_EQ, (yyvsp[-2].node), (yyvsp[0].node)); }
 #line 1988 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 64:
-#line 357 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 357 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_expr_cell(LNB, NODE_R_SHIFT_EQ, (yyvsp[-2].node), (yyvsp[0].node)); }
 #line 1994 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 65:
-#line 358 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 358 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_expr_cell(LNB, NODE_R_USHIFT_EQ, (yyvsp[-2].node), (yyvsp[0].node)); }
 #line 2000 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 66:
-#line 359 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 359 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_expr_cell(LNB, NODE_L_SHIFT_EQ, (yyvsp[-2].node), (yyvsp[0].node)); }
 #line 2006 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 67:
-#line 362 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 362 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_tree_cell(LNB, (yyvsp[0].str)); (yyval.node)->type = NODE_VAR; }
 #line 2012 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 70:
-#line 364 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 364 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.str) = strdup("x"); }
 #line 2018 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 71:
-#line 367 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 367 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {
 	  (yyval.node) = alloc_tree_cell(LNB, (yyvsp[-3].str));
 	  (yyval.node)->type = NODE_ARRAY_EL;
@@ -2028,211 +2028,211 @@ yyreduce:
     break;
 
   case 73:
-#line 376 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 376 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_expr_cell(LNB, EXPR_INCR, NULL, (yyvsp[0].node)); }
 #line 2034 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 74:
-#line 377 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 377 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {(yyval.node) = alloc_expr_cell(LNB, EXPR_DECR, NULL, (yyvsp[0].node)); }
 #line 2040 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 75:
-#line 378 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 378 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node)= alloc_expr_cell(LNB, EXPR_INCR, (yyvsp[-1].node), NULL); }
 #line 2046 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 76:
-#line 379 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 379 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node)= alloc_expr_cell(LNB, EXPR_DECR, (yyvsp[-1].node), NULL); }
 #line 2052 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 77:
-#line 383 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 383 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = (yyvsp[-1].node); }
 #line 2058 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 78:
-#line 384 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 384 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {  (yyval.node) = alloc_expr_cell(LNB, EXPR_AND, (yyvsp[-2].node), (yyvsp[0].node)); }
 #line 2064 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 79:
-#line 385 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 385 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {  (yyval.node) = alloc_expr_cell(LNB, EXPR_NOT, (yyvsp[0].node), NULL); }
 #line 2070 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 80:
-#line 386 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 386 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_expr_cell(LNB, EXPR_OR, (yyvsp[-2].node), (yyvsp[0].node)); }
 #line 2076 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 81:
-#line 387 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 387 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_expr_cell(LNB, EXPR_PLUS, (yyvsp[-2].node), (yyvsp[0].node)); }
 #line 2082 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 82:
-#line 388 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 388 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_expr_cell(LNB, EXPR_MINUS, (yyvsp[-2].node), (yyvsp[0].node)); }
 #line 2088 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 83:
-#line 389 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 389 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_expr_cell(LNB, EXPR_U_MINUS, (yyvsp[0].node), NULL);}
 #line 2094 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 84:
-#line 390 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 390 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_expr_cell(LNB, EXPR_BIT_NOT, (yyvsp[0].node), NULL);}
 #line 2100 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 85:
-#line 391 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 391 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_expr_cell(LNB, EXPR_MULT, (yyvsp[-2].node), (yyvsp[0].node)); }
 #line 2106 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 86:
-#line 392 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 392 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_expr_cell(LNB, EXPR_EXPO, (yyvsp[-2].node), (yyvsp[0].node)); }
 #line 2112 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 87:
-#line 393 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 393 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_expr_cell(LNB, EXPR_DIV, (yyvsp[-2].node), (yyvsp[0].node)); }
 #line 2118 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 88:
-#line 394 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 394 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_expr_cell(LNB, EXPR_MODULO, (yyvsp[-2].node), (yyvsp[0].node)); }
 #line 2124 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 89:
-#line 395 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 395 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_expr_cell(LNB, EXPR_BIT_AND, (yyvsp[-2].node), (yyvsp[0].node)); }
 #line 2130 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 90:
-#line 396 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 396 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_expr_cell(LNB, EXPR_BIT_XOR, (yyvsp[-2].node), (yyvsp[0].node)); }
 #line 2136 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 91:
-#line 397 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 397 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_expr_cell(LNB, EXPR_BIT_OR, (yyvsp[-2].node), (yyvsp[0].node)); }
 #line 2142 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 92:
-#line 398 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 398 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_expr_cell(LNB, EXPR_R_SHIFT, (yyvsp[-2].node), (yyvsp[0].node)); }
 #line 2148 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 93:
-#line 399 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 399 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_expr_cell(LNB, EXPR_R_USHIFT, (yyvsp[-2].node), (yyvsp[0].node)); }
 #line 2154 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 94:
-#line 400 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 400 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_expr_cell(LNB, EXPR_L_SHIFT, (yyvsp[-2].node), (yyvsp[0].node)); }
 #line 2160 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 96:
-#line 402 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 402 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_expr_cell(LNB, COMP_MATCH, (yyvsp[-2].node), (yyvsp[0].node)); }
 #line 2166 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 97:
-#line 403 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 403 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_expr_cell(LNB, COMP_NOMATCH, (yyvsp[-2].node), (yyvsp[0].node)); }
 #line 2172 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 98:
-#line 404 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 404 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_RE_cell(LNB, COMP_RE_MATCH, (yyvsp[-2].node), (yyvsp[0].str)); }
 #line 2178 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 99:
-#line 405 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 405 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_RE_cell(LNB, COMP_RE_NOMATCH, (yyvsp[-2].node), (yyvsp[0].str)); }
 #line 2184 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 100:
-#line 406 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 406 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_expr_cell(LNB, COMP_LT, (yyvsp[-2].node), (yyvsp[0].node)); }
 #line 2190 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 101:
-#line 407 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 407 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_expr_cell(LNB, COMP_GT, (yyvsp[-2].node), (yyvsp[0].node)); }
 #line 2196 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 102:
-#line 408 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 408 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_expr_cell(LNB, COMP_EQ, (yyvsp[-2].node), (yyvsp[0].node)); }
 #line 2202 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 103:
-#line 409 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 409 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_expr_cell(LNB, COMP_NE, (yyvsp[-2].node), (yyvsp[0].node)); }
 #line 2208 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 104:
-#line 410 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 410 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_expr_cell(LNB, COMP_GE, (yyvsp[-2].node), (yyvsp[0].node)); }
 #line 2214 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 105:
-#line 411 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 411 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_expr_cell(LNB, COMP_LE, (yyvsp[-2].node), (yyvsp[0].node)); }
 #line 2220 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 111:
-#line 415 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 415 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = make_array_from_elems((yyvsp[-1].node)); }
 #line 2226 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 112:
-#line 417 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 417 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = (yyvsp[0].node); }
 #line 2232 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 113:
-#line 418 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 418 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {
 		(yyvsp[-2].node)->link[1] = (yyvsp[0].node); (yyval.node) = (yyvsp[-2].node);
 	}
@@ -2240,7 +2240,7 @@ yyreduce:
     break;
 
   case 114:
-#line 422 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 422 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {
 	  (yyval.node) = alloc_typed_cell(ARRAY_ELEM);
 	  (yyval.node)->link[0] = (yyvsp[0].node);
@@ -2249,7 +2249,7 @@ yyreduce:
     break;
 
   case 115:
-#line 425 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 425 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {
 	  (yyval.node) = alloc_typed_cell(ARRAY_ELEM);
 	  (yyval.node)->link[0] = (yyvsp[0].node);
@@ -2259,13 +2259,13 @@ yyreduce:
     break;
 
   case 116:
-#line 431 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 431 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {  (yyval.node) = alloc_typed_cell(CONST_INT); (yyval.node)->x.i_val = (yyvsp[0].num); }
 #line 2265 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 117:
-#line 432 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 432 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {
 	  (yyval.node) = alloc_typed_cell(CONST_STR); (yyval.node)->x.str_val = (yyvsp[0].str);
 	  (yyval.node)->size = strlen((yyvsp[0].str));
@@ -2274,7 +2274,7 @@ yyreduce:
     break;
 
   case 118:
-#line 436 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 436 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {
 	  (yyval.node) = alloc_typed_cell(CONST_DATA); (yyval.node)->x.str_val = (yyvsp[0].data).val;
 	  (yyval.node)->size = (yyvsp[0].data).len;
@@ -2283,13 +2283,13 @@ yyreduce:
     break;
 
   case 120:
-#line 443 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 443 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     { (yyval.node) = alloc_tree_cell(LNB, (yyvsp[0].str)); (yyval.node)->type = NODE_VAR; }
 #line 2289 "nasl_grammar.tab.c" /* yacc.c:1646  */
     break;
 
   case 124:
-#line 449 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 449 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {
 	  char *s = g_strdup_printf ("%d.%d.%d.%d", (yyvsp[-6].num), (yyvsp[-4].num), (yyvsp[-2].num), (yyvsp[0].num));
 	  (yyval.node) = alloc_tree_cell(LNB, s);
@@ -2300,7 +2300,7 @@ yyreduce:
     break;
 
   case 125:
-#line 458 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 458 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {
 	  (yyval.node) = alloc_tree_cell(LNB, NULL);
 	  (yyval.node)->type = NODE_LOCAL;
@@ -2310,7 +2310,7 @@ yyreduce:
     break;
 
   case 126:
-#line 466 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
+#line 466 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1646  */
     {
 	  (yyval.node) = alloc_tree_cell(LNB, NULL);
 	  (yyval.node)->type = NODE_GLOBAL;
@@ -2548,7 +2548,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 472 "/media/snouto/rest/projects/openvas/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1906  */
+#line 472 "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_grammar.y" /* yacc.c:1906  */
 
 
 #include <stdio.h>

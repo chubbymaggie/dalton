@@ -152,7 +152,11 @@ extern int executeNasl(struct ExternalData* definition)
   target = definition->target;
 
   if (authenticated_mode)
+  {
     mode |= NASL_ALWAYS_SIGNED;
+  }
+
+
   openvas_SSL_init ();
   if (!target)
     target = g_strdup (default_target);
@@ -206,7 +210,7 @@ int
 main (int argc, char **argv)
 {
   struct ExternalData *definition = malloc(sizeof(struct ExternalData));
-  definition->target = "192.168.1.14";
+  definition->target = "192.168.1.8";
   definition->file = "/media/snouto/rest/projects/openvas/nvts/gb_default_smb_credentials.nasl";
   definition->authenticated = 1;
 
