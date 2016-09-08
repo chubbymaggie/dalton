@@ -27,7 +27,6 @@ var (
  */
 func main() {
 	signals = make(chan os.Signal,1) // Buffered Channel
-
 	signal.Notify(signals,syscall.SIGINT,syscall.SIGTERM)
 	//start handling the mux
 	http.Handle("/",scannerd.NewMux())
