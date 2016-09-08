@@ -40,27 +40,27 @@ include_directories (${GLIB_INCLUDE_DIRS} ${ZLIB_INCLUDE_DIRS} ${GNUTLS_INCLUDE_
 if (MINGW)
   set  (FILES array.c credentials.c openvas_hosts.c cvss.c nvti.c nvticache.c
         openvas_file.c openvas_string.c pidfile.c settings.c gpgme_util.c
-        pwpolicy.c osp.c)
+        pwpolicy.c osp.c ../nasl/dalton.h ../nasl/dalton.c)
   set (HEADERS array.h credentials.h openvas_hosts.h cvss.h nvti.h settings.h
        openvas_file.h openvas_string.h pidfile.h gpgme_util.h pwpolicy.h osp.h)
 else (MINGW)
   set (FILES array.c credentials.c openvas_hosts.c cvss.c drop_privileges.c
        nvti.c nvticache.c openvas_compress.c openvas_file.c openvas_networking.c
-       openvas_string.c pidfile.c settings.c gpgme_util.c pwpolicy.c osp.c)
+       openvas_string.c pidfile.c settings.c gpgme_util.c pwpolicy.c osp.c ../nasl/dalton.h ../nasl/dalton.c)
   set (HEADERS array.h credentials.h openvas_hosts.h cvss.h drop_privileges.h
        nvticache.h nvti.h settings.h openvas_compress.h openvas_file.h osp.h
        openvas_networking.h openvas_string.h pidfile.h gpgme_util.h pwpolicy.h)
 endif (MINGW)
 
 if (BUILD_STATIC)
-  add_library (openvas_base_static STATIC ${FILES})
+  add_library (openvas_base_static STATIC ${FILES} ../nasl/dalton.h ../nasl/dalton.c)
   set_target_properties (openvas_base_static PROPERTIES OUTPUT_NAME "openvas_base")
   set_target_properties (openvas_base_static PROPERTIES CLEAN_DIRECT_OUTPUT 1)
   set_target_properties (openvas_base_static PROPERTIES PUBLIC_HEADER "${HEADERS}")
 endif (BUILD_STATIC)
 
 if (BUILD_SHARED)
-  add_library (openvas_base_shared SHARED ${FILES})
+  add_library (openvas_base_shared SHARED ${FILES} ../nasl/dalton.h ../nasl/dalton.c)
   set_target_properties (openvas_base_shared PROPERTIES OUTPUT_NAME "openvas_base")
   set_target_properties (openvas_base_shared PROPERTIES CLEAN_DIRECT_OUTPUT 1)
   set_target_properties (openvas_base_shared PROPERTIES SOVERSION "${CPACK_PACKAGE_VERSION_MAJOR}")

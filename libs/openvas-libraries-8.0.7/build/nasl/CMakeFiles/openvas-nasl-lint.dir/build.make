@@ -72,14 +72,39 @@ nasl/CMakeFiles/openvas-nasl-lint.dir/nasl-lint.c.o.provides: nasl/CMakeFiles/op
 
 nasl/CMakeFiles/openvas-nasl-lint.dir/nasl-lint.c.o.provides.build: nasl/CMakeFiles/openvas-nasl-lint.dir/nasl-lint.c.o
 
+nasl/CMakeFiles/openvas-nasl-lint.dir/dalton.c.o: nasl/CMakeFiles/openvas-nasl-lint.dir/flags.make
+nasl/CMakeFiles/openvas-nasl-lint.dir/dalton.c.o: ../nasl/dalton.c
+	$(CMAKE_COMMAND) -E cmake_progress_report /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object nasl/CMakeFiles/openvas-nasl-lint.dir/dalton.c.o"
+	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build/nasl && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/openvas-nasl-lint.dir/dalton.c.o   -c /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/dalton.c
+
+nasl/CMakeFiles/openvas-nasl-lint.dir/dalton.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/openvas-nasl-lint.dir/dalton.c.i"
+	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build/nasl && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/dalton.c > CMakeFiles/openvas-nasl-lint.dir/dalton.c.i
+
+nasl/CMakeFiles/openvas-nasl-lint.dir/dalton.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/openvas-nasl-lint.dir/dalton.c.s"
+	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build/nasl && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/dalton.c -o CMakeFiles/openvas-nasl-lint.dir/dalton.c.s
+
+nasl/CMakeFiles/openvas-nasl-lint.dir/dalton.c.o.requires:
+.PHONY : nasl/CMakeFiles/openvas-nasl-lint.dir/dalton.c.o.requires
+
+nasl/CMakeFiles/openvas-nasl-lint.dir/dalton.c.o.provides: nasl/CMakeFiles/openvas-nasl-lint.dir/dalton.c.o.requires
+	$(MAKE) -f nasl/CMakeFiles/openvas-nasl-lint.dir/build.make nasl/CMakeFiles/openvas-nasl-lint.dir/dalton.c.o.provides.build
+.PHONY : nasl/CMakeFiles/openvas-nasl-lint.dir/dalton.c.o.provides
+
+nasl/CMakeFiles/openvas-nasl-lint.dir/dalton.c.o.provides.build: nasl/CMakeFiles/openvas-nasl-lint.dir/dalton.c.o
+
 # Object files for target openvas-nasl-lint
 openvas__nasl__lint_OBJECTS = \
-"CMakeFiles/openvas-nasl-lint.dir/nasl-lint.c.o"
+"CMakeFiles/openvas-nasl-lint.dir/nasl-lint.c.o" \
+"CMakeFiles/openvas-nasl-lint.dir/dalton.c.o"
 
 # External object files for target openvas-nasl-lint
 openvas__nasl__lint_EXTERNAL_OBJECTS =
 
 nasl/openvas-nasl-lint: nasl/CMakeFiles/openvas-nasl-lint.dir/nasl-lint.c.o
+nasl/openvas-nasl-lint: nasl/CMakeFiles/openvas-nasl-lint.dir/dalton.c.o
 nasl/openvas-nasl-lint: nasl/CMakeFiles/openvas-nasl-lint.dir/build.make
 nasl/openvas-nasl-lint: nasl/libopenvas_nasl.so.8.0.7
 nasl/openvas-nasl-lint: misc/libopenvas_misc.so.8.0.7
@@ -94,6 +119,7 @@ nasl/CMakeFiles/openvas-nasl-lint.dir/build: nasl/openvas-nasl-lint
 .PHONY : nasl/CMakeFiles/openvas-nasl-lint.dir/build
 
 nasl/CMakeFiles/openvas-nasl-lint.dir/requires: nasl/CMakeFiles/openvas-nasl-lint.dir/nasl-lint.c.o.requires
+nasl/CMakeFiles/openvas-nasl-lint.dir/requires: nasl/CMakeFiles/openvas-nasl-lint.dir/dalton.c.o.requires
 .PHONY : nasl/CMakeFiles/openvas-nasl-lint.dir/requires
 
 nasl/CMakeFiles/openvas-nasl-lint.dir/clean:

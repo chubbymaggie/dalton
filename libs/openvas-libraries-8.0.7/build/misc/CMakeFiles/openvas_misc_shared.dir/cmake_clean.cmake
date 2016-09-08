@@ -16,6 +16,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/openvas_misc_shared.dir/prefs.c.o"
   "CMakeFiles/openvas_misc_shared.dir/www_funcs.c.o"
   "CMakeFiles/openvas_misc_shared.dir/pcap.c.o"
+  "CMakeFiles/openvas_misc_shared.dir/__/nasl/dalton.c.o"
   "CMakeFiles/openvas_misc_shared.dir/ldap_connect_auth.c.o"
   "libopenvas_misc.pdb"
   "libopenvas_misc.so"

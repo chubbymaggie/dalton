@@ -99,6 +99,8 @@ cvss.h
 /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/base/cvss.h
 ../misc/openvas_logging.h
 /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/misc/openvas_logging.h
+../nasl/dalton.h
+/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/dalton.h
 
 /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/base/nvti.h
 glib.h
@@ -327,6 +329,18 @@ netinet/ip.h
 -
 
 /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/misc/openvas_uuid.h
+
+/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/dalton.c
+stdlib.h
+-
+dalton.h
+/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/dalton.h
+stdio.h
+-
+glib.h
+-
+
+/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/dalton.h
 
 /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/omp/xml.h
 glib.h

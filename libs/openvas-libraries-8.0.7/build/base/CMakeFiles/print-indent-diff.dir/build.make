@@ -61,6 +61,8 @@ base/CMakeFiles/print-indent-diff: base/.indent.settings.c
 base/CMakeFiles/print-indent-diff: base/.indent.gpgme_util.c
 base/CMakeFiles/print-indent-diff: base/.indent.pwpolicy.c
 base/CMakeFiles/print-indent-diff: base/.indent.osp.c
+base/CMakeFiles/print-indent-diff: base/.indent.../nasl/dalton.h
+base/CMakeFiles/print-indent-diff: base/.indent.../nasl/dalton.c
 
 base/.indent.array.c: ../base/array.c
 	$(CMAKE_COMMAND) -E cmake_progress_report /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build/CMakeFiles $(CMAKE_PROGRESS_1)
@@ -142,6 +144,16 @@ base/.indent.osp.c: ../base/osp.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating .indent.osp.c"
 	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build/base && indent --no-tabs --ignore-newlines -l 80 osp.c -o .indent.osp.c && ( diff osp.c .indent.osp.c && rm .indent.osp.c ) || ( echo STYLE-WARNING:\ osp.c\ does\ not\ conform\ to\ GNU\ coding\ style\ as\ interpreted\ by\ indent && rm .indent.osp.c )
 
+base/.indent.../nasl/dalton.h: ../nasl/dalton.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build/CMakeFiles $(CMAKE_PROGRESS_17)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating .indent.../nasl/dalton.h"
+	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build/base && indent --no-tabs --ignore-newlines -l 80 ../nasl/dalton.h -o .indent.../nasl/dalton.h && ( diff ../nasl/dalton.h .indent.../nasl/dalton.h && rm .indent.../nasl/dalton.h ) || ( echo STYLE-WARNING:\ ../nasl/dalton.h\ does\ not\ conform\ to\ GNU\ coding\ style\ as\ interpreted\ by\ indent && rm .indent.../nasl/dalton.h )
+
+base/.indent.../nasl/dalton.c: ../nasl/dalton.c
+	$(CMAKE_COMMAND) -E cmake_progress_report /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build/CMakeFiles $(CMAKE_PROGRESS_18)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating .indent.../nasl/dalton.c"
+	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build/base && indent --no-tabs --ignore-newlines -l 80 ../nasl/dalton.c -o .indent.../nasl/dalton.c && ( diff ../nasl/dalton.c .indent.../nasl/dalton.c && rm .indent.../nasl/dalton.c ) || ( echo STYLE-WARNING:\ ../nasl/dalton.c\ does\ not\ conform\ to\ GNU\ coding\ style\ as\ interpreted\ by\ indent && rm .indent.../nasl/dalton.c )
+
 print-indent-diff: base/CMakeFiles/print-indent-diff
 print-indent-diff: base/.indent.array.c
 print-indent-diff: base/.indent.credentials.c
@@ -159,6 +171,8 @@ print-indent-diff: base/.indent.settings.c
 print-indent-diff: base/.indent.gpgme_util.c
 print-indent-diff: base/.indent.pwpolicy.c
 print-indent-diff: base/.indent.osp.c
+print-indent-diff: base/.indent.../nasl/dalton.h
+print-indent-diff: base/.indent.../nasl/dalton.c
 print-indent-diff: base/CMakeFiles/print-indent-diff.dir/build.make
 .PHONY : print-indent-diff
 

@@ -1162,6 +1162,29 @@ nasl/CMakeFiles/openvas_nasl_shared.dir/time.c.o.provides: nasl/CMakeFiles/openv
 
 nasl/CMakeFiles/openvas_nasl_shared.dir/time.c.o.provides.build: nasl/CMakeFiles/openvas_nasl_shared.dir/time.c.o
 
+nasl/CMakeFiles/openvas_nasl_shared.dir/dalton.c.o: nasl/CMakeFiles/openvas_nasl_shared.dir/flags.make
+nasl/CMakeFiles/openvas_nasl_shared.dir/dalton.c.o: ../nasl/dalton.c
+	$(CMAKE_COMMAND) -E cmake_progress_report /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build/CMakeFiles $(CMAKE_PROGRESS_50)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object nasl/CMakeFiles/openvas_nasl_shared.dir/dalton.c.o"
+	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build/nasl && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/openvas_nasl_shared.dir/dalton.c.o   -c /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/dalton.c
+
+nasl/CMakeFiles/openvas_nasl_shared.dir/dalton.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/openvas_nasl_shared.dir/dalton.c.i"
+	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build/nasl && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/dalton.c > CMakeFiles/openvas_nasl_shared.dir/dalton.c.i
+
+nasl/CMakeFiles/openvas_nasl_shared.dir/dalton.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/openvas_nasl_shared.dir/dalton.c.s"
+	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build/nasl && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/dalton.c -o CMakeFiles/openvas_nasl_shared.dir/dalton.c.s
+
+nasl/CMakeFiles/openvas_nasl_shared.dir/dalton.c.o.requires:
+.PHONY : nasl/CMakeFiles/openvas_nasl_shared.dir/dalton.c.o.requires
+
+nasl/CMakeFiles/openvas_nasl_shared.dir/dalton.c.o.provides: nasl/CMakeFiles/openvas_nasl_shared.dir/dalton.c.o.requires
+	$(MAKE) -f nasl/CMakeFiles/openvas_nasl_shared.dir/build.make nasl/CMakeFiles/openvas_nasl_shared.dir/dalton.c.o.provides.build
+.PHONY : nasl/CMakeFiles/openvas_nasl_shared.dir/dalton.c.o.provides
+
+nasl/CMakeFiles/openvas_nasl_shared.dir/dalton.c.o.provides.build: nasl/CMakeFiles/openvas_nasl_shared.dir/dalton.c.o
+
 # Object files for target openvas_nasl_shared
 openvas_nasl_shared_OBJECTS = \
 "CMakeFiles/openvas_nasl_shared.dir/smb_interface_stub.c.o" \
@@ -1211,7 +1234,8 @@ openvas_nasl_shared_OBJECTS = \
 "CMakeFiles/openvas_nasl_shared.dir/smb_crypt.c.o" \
 "CMakeFiles/openvas_nasl_shared.dir/smb_crypt2.c.o" \
 "CMakeFiles/openvas_nasl_shared.dir/smb_signing.c.o" \
-"CMakeFiles/openvas_nasl_shared.dir/time.c.o"
+"CMakeFiles/openvas_nasl_shared.dir/time.c.o" \
+"CMakeFiles/openvas_nasl_shared.dir/dalton.c.o"
 
 # External object files for target openvas_nasl_shared
 openvas_nasl_shared_EXTERNAL_OBJECTS =
@@ -1264,6 +1288,7 @@ nasl/libopenvas_nasl.so.8.0.7: nasl/CMakeFiles/openvas_nasl_shared.dir/smb_crypt
 nasl/libopenvas_nasl.so.8.0.7: nasl/CMakeFiles/openvas_nasl_shared.dir/smb_crypt2.c.o
 nasl/libopenvas_nasl.so.8.0.7: nasl/CMakeFiles/openvas_nasl_shared.dir/smb_signing.c.o
 nasl/libopenvas_nasl.so.8.0.7: nasl/CMakeFiles/openvas_nasl_shared.dir/time.c.o
+nasl/libopenvas_nasl.so.8.0.7: nasl/CMakeFiles/openvas_nasl_shared.dir/dalton.c.o
 nasl/libopenvas_nasl.so.8.0.7: nasl/CMakeFiles/openvas_nasl_shared.dir/build.make
 nasl/libopenvas_nasl.so.8.0.7: base/libopenvas_base.so.8.0.7
 nasl/libopenvas_nasl.so.8.0.7: misc/libopenvas_misc.so.8.0.7
@@ -1330,6 +1355,7 @@ nasl/CMakeFiles/openvas_nasl_shared.dir/requires: nasl/CMakeFiles/openvas_nasl_s
 nasl/CMakeFiles/openvas_nasl_shared.dir/requires: nasl/CMakeFiles/openvas_nasl_shared.dir/smb_crypt2.c.o.requires
 nasl/CMakeFiles/openvas_nasl_shared.dir/requires: nasl/CMakeFiles/openvas_nasl_shared.dir/smb_signing.c.o.requires
 nasl/CMakeFiles/openvas_nasl_shared.dir/requires: nasl/CMakeFiles/openvas_nasl_shared.dir/time.c.o.requires
+nasl/CMakeFiles/openvas_nasl_shared.dir/requires: nasl/CMakeFiles/openvas_nasl_shared.dir/dalton.c.o.requires
 .PHONY : nasl/CMakeFiles/openvas_nasl_shared.dir/requires
 
 nasl/CMakeFiles/openvas_nasl_shared.dir/clean:

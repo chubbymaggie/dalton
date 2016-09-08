@@ -33,6 +33,7 @@
 #include <glib.h>
 
 #include "../misc/arglists.h"           /* for struct arglist */
+#include "dalton.h"
 
 struct ExternalData {
 
@@ -41,7 +42,9 @@ struct ExternalData {
     int authenticated; // whether to run the script as always signed and authenticated
 };
 
-extern int executeNasl(struct ExternalData* definition);
+extern int executeNasl(struct ExternalData* definition,DaltonScriptInfo *daltonScriptInfo);
+extern int clearDaltonInfo();
+extern int clearDaltonContainer(DaltonScriptInfo *container);
 /* Signature information extraction and verification (not nasl- specific
   anymore, thus likely to be moved to openvas-libraries): */
 int nasl_verify_signature (const char *filename);

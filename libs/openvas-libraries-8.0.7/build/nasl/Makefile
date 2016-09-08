@@ -283,6 +283,36 @@ charcnv.c.s:
 	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build && $(MAKE) -f nasl/CMakeFiles/openvas_nasl_shared.dir/build.make nasl/CMakeFiles/openvas_nasl_shared.dir/charcnv.c.s
 .PHONY : charcnv.c.s
 
+dalton.o: dalton.c.o
+.PHONY : dalton.o
+
+# target to build an object file
+dalton.c.o:
+	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build && $(MAKE) -f nasl/CMakeFiles/openvas-nasl.dir/build.make nasl/CMakeFiles/openvas-nasl.dir/dalton.c.o
+	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build && $(MAKE) -f nasl/CMakeFiles/openvas-nasl-lint.dir/build.make nasl/CMakeFiles/openvas-nasl-lint.dir/dalton.c.o
+	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build && $(MAKE) -f nasl/CMakeFiles/openvas_nasl_shared.dir/build.make nasl/CMakeFiles/openvas_nasl_shared.dir/dalton.c.o
+.PHONY : dalton.c.o
+
+dalton.i: dalton.c.i
+.PHONY : dalton.i
+
+# target to preprocess a source file
+dalton.c.i:
+	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build && $(MAKE) -f nasl/CMakeFiles/openvas-nasl.dir/build.make nasl/CMakeFiles/openvas-nasl.dir/dalton.c.i
+	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build && $(MAKE) -f nasl/CMakeFiles/openvas-nasl-lint.dir/build.make nasl/CMakeFiles/openvas-nasl-lint.dir/dalton.c.i
+	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build && $(MAKE) -f nasl/CMakeFiles/openvas_nasl_shared.dir/build.make nasl/CMakeFiles/openvas_nasl_shared.dir/dalton.c.i
+.PHONY : dalton.c.i
+
+dalton.s: dalton.c.s
+.PHONY : dalton.s
+
+# target to generate assembly for a file
+dalton.c.s:
+	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build && $(MAKE) -f nasl/CMakeFiles/openvas-nasl.dir/build.make nasl/CMakeFiles/openvas-nasl.dir/dalton.c.s
+	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build && $(MAKE) -f nasl/CMakeFiles/openvas-nasl-lint.dir/build.make nasl/CMakeFiles/openvas-nasl-lint.dir/dalton.c.s
+	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build && $(MAKE) -f nasl/CMakeFiles/openvas_nasl_shared.dir/build.make nasl/CMakeFiles/openvas_nasl_shared.dir/dalton.c.s
+.PHONY : dalton.c.s
+
 exec.o: exec.c.o
 .PHONY : exec.o
 
@@ -1417,6 +1447,9 @@ help:
 	@echo "... charcnv.o"
 	@echo "... charcnv.i"
 	@echo "... charcnv.s"
+	@echo "... dalton.o"
+	@echo "... dalton.i"
+	@echo "... dalton.s"
 	@echo "... exec.o"
 	@echo "... exec.i"
 	@echo "... exec.s"

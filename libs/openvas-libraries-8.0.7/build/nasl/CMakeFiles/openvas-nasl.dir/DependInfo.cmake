@@ -4,6 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_C
+  "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/dalton.c" "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl.dir/dalton.c.o"
   "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl.c" "/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl.dir/nasl.c.o"
   )
 SET(CMAKE_C_COMPILER_ID "GNU")

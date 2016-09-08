@@ -542,6 +542,18 @@ plugutils.h
 support.h
 /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/misc/support.h
 
+/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/dalton.c
+stdlib.h
+-
+dalton.h
+/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/dalton.h
+stdio.h
+-
+glib.h
+-
+
+/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/dalton.h
+
 /usr/include/glib-2.0/gio/gaction.h
 gio/giotypes.h
 -

@@ -50,12 +50,14 @@
 #include "../base/nvticache.h"
 
 #include "../misc/prefs.h" /* for prefs_get */
+#include "dalton.h"
 
 #ifndef NASL_DEBUG
 #define NASL_DEBUG 0
 #endif
 
 /*------------------- Private utilities ---------------------------------*/
+
 
 static int
 isalldigit (char *str, int len)
@@ -93,6 +95,8 @@ script_timeout (lex_ctxt * lexic)
   if (to == -65535)
     return FAKE_CELL;
 
+  daltonInfo->ScriptTimeout = to;
+
   nvti_set_timeout (nvti, to ? to : -1);
   return FAKE_CELL;
 }
@@ -108,6 +112,8 @@ script_id (lex_ctxt * lexic)
   if (id > 0)
     {
       oid = g_strdup_printf ("%s%i", LEGACY_OID, id);
+      //set dalton info script id
+      daltonInfo->ScriptOid = g_strdup(oid);
       nvti_set_oid (arg_get_value (lexic->script_infos, "NVTI"), oid);
       g_free (oid);
     }
@@ -118,8 +124,11 @@ script_id (lex_ctxt * lexic)
 tree_cell *
 script_oid (lex_ctxt * lexic)
 {
-  nvti_set_oid (arg_get_value (lexic->script_infos, "NVTI"),
-                get_str_var_by_num (lexic, 0));
+  nvti_t *nvt = arg_get_value (lexic->script_infos, "NVTI");
+  gchar *oid = get_str_var_by_num (lexic, 0);
+  daltonInfo->ScriptOid = g_strdup(oid);
+  nvti_set_oid (nvt,
+                oid);
   return FAKE_CELL;
 }
 
@@ -135,6 +144,11 @@ script_cve_id (lex_ctxt * lexic)
 
   for (i = 0; cve != NULL; i++)
     {
+      if(daltonInfo->ScriptCveIds)
+      {
+        daltonInfo->ScriptCveIds[i] = malloc(sizeof(DaltonStringContainer));
+        daltonInfo->ScriptCveIds[i]->Contents = g_strdup(cve);
+      }
       nvti_add_cve (arg_get_value (script_infos, "NVTI"), cve);
       cve = get_str_var_by_num (lexic, i + 1);
     }
@@ -154,6 +168,11 @@ script_bugtraq_id (lex_ctxt * lexic)
 
   for (i = 0; bid != NULL; i++)
     {
+      if(daltonInfo->ScriptBugTraqIds)
+      {
+        daltonInfo->ScriptBugTraqIds[i] = malloc(sizeof(DaltonStringContainer));
+        daltonInfo->ScriptBugTraqIds[i]->Contents = g_strdup(bid);
+      }
       nvti_add_bid (arg_get_value (script_infos, "NVTI"), bid);
       bid = get_str_var_by_num (lexic, i + 1);
     }
@@ -194,6 +213,13 @@ script_xref (lex_ctxt * lexic)
       return FAKE_CELL;
     }
 
+   if(daltonInfo->ScriptXRefs)
+   {
+     daltonInfo->ScriptXRefs[xrefCount] = malloc(sizeof(DaltonNameValuePair));
+     daltonInfo->ScriptXRefs[xrefCount]->Name = g_strdup(name);
+     daltonInfo->ScriptXRefs[xrefCount]->Value = g_strdup(value);
+     xrefCount++;
+   }
   plug_set_xref (script_infos, name, value);
 
   return FAKE_CELL;
@@ -205,7 +231,6 @@ script_tag (lex_ctxt * lexic)
   struct arglist *script_infos = lexic->script_infos;
   char *name = get_str_var_by_name (lexic, "name");
   char *value = get_str_var_by_name (lexic, "value");
-
   if (value == NULL || name == NULL)
     {
       nasl_perror (lexic, "script_tag() syntax error - should be"
@@ -239,6 +264,14 @@ script_tag (lex_ctxt * lexic)
       return FAKE_CELL;
     }
 
+  if(daltonInfo->ScriptTags)
+  {
+    daltonInfo->ScriptTags[tagsCount] = malloc(sizeof(DaltonNameValuePair));
+    daltonInfo->ScriptTags[tagsCount]->Name = g_strdup(name);
+    daltonInfo->ScriptTags[tagsCount]->Value = g_strdup(value);
+    tagsCount++;
+  }
+
   plug_set_tag (script_infos, name, value);
 
   return FAKE_CELL;
@@ -248,8 +281,10 @@ script_tag (lex_ctxt * lexic)
 tree_cell *
 script_name (lex_ctxt * lexic)
 {
+  gchar *name = get_str_var_by_num (lexic, 0);
+  daltonInfo->ScriptName = g_strdup(name);
   nvti_set_name (arg_get_value (lexic->script_infos, "NVTI"),
-                 get_str_var_by_num (lexic, 0));
+                 name);
   return FAKE_CELL;
 }
 
@@ -258,8 +293,11 @@ tree_cell *
 script_version (lex_ctxt * lexic)
 {
   nvti_t *nvti = arg_get_value (lexic->script_infos, "NVTI");
-
   char *version = get_str_var_by_num (lexic, 0);
+  if(daltonInfo)
+  {
+      setDaltonVersion(version);
+  }
   if (version == NULL)
     {
       nasl_perror (lexic, "Argument error in function script_version()\n");
@@ -267,8 +305,9 @@ script_version (lex_ctxt * lexic)
       nasl_perror (lexic, "Where <version> is the version of this script\n");
     }
   else
-    nvti_set_version (nvti, version);
-
+  {
+      nvti_set_version (nvti, version);
+  }
   return FAKE_CELL;
 }
 
@@ -277,6 +316,8 @@ script_version (lex_ctxt * lexic)
 tree_cell *
 script_description (lex_ctxt * lexic)
 {
+  gchar *description = get_str_var_by_num (lexic, 0);
+  daltonInfo->ScriptDescription = g_strdup(description);
   /* Does nothing. Kept for backward compatibility. */
   return FAKE_CELL;
 }
@@ -284,16 +325,20 @@ script_description (lex_ctxt * lexic)
 tree_cell *
 script_copyright (lex_ctxt * lexic)
 {
+  gchar *copyright = get_str_var_by_num (lexic, 0);
+  daltonInfo->ScriptCopyright = g_strdup(copyright);
   nvti_set_copyright (arg_get_value (lexic->script_infos, "NVTI"),
-                      get_str_var_by_num (lexic, 0));
+                      copyright);
   return FAKE_CELL;
 }
 
 tree_cell *
 script_summary (lex_ctxt * lexic)
 {
+  gchar *summary = get_str_var_by_num (lexic, 0);
+  daltonInfo->ScriptSummary = g_strdup(summary);
   nvti_set_summary (arg_get_value (lexic->script_infos, "NVTI"),
-                    get_str_var_by_num (lexic, 0));
+                    summary);
   return FAKE_CELL;
 }
 
@@ -310,6 +355,7 @@ script_category (lex_ctxt * lexic)
       nasl_perror (lexic, "Function usage is : script_category(<category>)\n");
       return FAKE_CELL;
     }
+  daltonInfo->ScriptCategory = category;
   nvti_set_category (arg_get_value (script_infos, "NVTI"), category);
   return FAKE_CELL;
 }
@@ -317,8 +363,10 @@ script_category (lex_ctxt * lexic)
 tree_cell *
 script_family (lex_ctxt * lexic)
 {
+  gchar *family = get_str_var_by_num (lexic, 0);
+  daltonInfo->ScriptFamily = g_strdup(family);
   nvti_set_family (arg_get_value (lexic->script_infos, "NVTI"),
-                 get_str_var_by_num (lexic, 0));
+                 family);
   return FAKE_CELL;
 }
 
@@ -342,7 +390,11 @@ script_dependencies (lex_ctxt * lexic)
     {
       dep = get_str_var_by_num (lexic, i);
       if (dep != NULL)
+      {
+        daltonInfo->ScriptDependencies[i] = malloc(sizeof(DaltonStringContainer));
+        daltonInfo->ScriptDependencies[i]->Contents = g_strdup(dep);
         plug_set_dep (script_infos, dep);
+      }
     }
 
   return FAKE_CELL;
@@ -366,6 +418,8 @@ script_require_keys (lex_ctxt * lexic)
   for (i = 0; keys != NULL; i++)
     {
       keys = get_str_var_by_num (lexic, i);
+      daltonInfo->ScriptRequireKeys[i] = malloc(sizeof(DaltonStringContainer));
+      daltonInfo->ScriptRequireKeys[i]->Contents = g_strdup(keys);
       nvti_add_required_keys (arg_get_value (lexic->script_infos, "NVTI"), keys);
     }
 
@@ -390,6 +444,8 @@ script_mandatory_keys (lex_ctxt * lexic)
 
   for (i = 0; keys != NULL; i++)
     {
+      daltonInfo->ScriptMandatoryKeys[i] = malloc(sizeof(DaltonStringContainer));
+      daltonInfo->ScriptMandatoryKeys[i]->Contents = g_strdup(keys);
       keys = get_str_var_by_num (lexic, i);
       nvti_add_mandatory_keys (arg_get_value (lexic->script_infos, "NVTI"), keys);
     }
@@ -413,6 +469,8 @@ script_exclude_keys (lex_ctxt * lexic)
 
   for (i = 0; keys != NULL; i++)
     {
+      daltonInfo->ScriptExcludeKeys[i] = malloc(sizeof(DaltonStringContainer));
+      daltonInfo->ScriptExcludeKeys[i]->Contents = g_strdup(keys);
       keys = get_str_var_by_num (lexic, i);
       nvti_add_excluded_keys (arg_get_value (lexic->script_infos, "NVTI"), keys);
     }
@@ -431,7 +489,12 @@ script_require_ports (lex_ctxt * lexic)
     {
       port = get_str_var_by_num (lexic, i);
       if (port != NULL)
+      {
         nvti_add_required_ports (arg_get_value (lexic->script_infos, "NVTI"), port);
+        daltonInfo->ScriptRequirePorts[i] = malloc(sizeof(DaltonStringContainer));
+        daltonInfo->ScriptRequirePorts[i]->Contents = g_strdup(port);
+      }
+
       else
         break;
     }
@@ -450,7 +513,12 @@ script_require_udp_ports (lex_ctxt * lexic)
     {
       port = get_str_var_by_num (lexic, i);
       if (port != NULL)
+      {
+        daltonInfo->ScriptRequireUDPPorts[i] = malloc(sizeof(DaltonStringContainer));
+        daltonInfo->ScriptRequireUDPPorts[i]->Contents = g_strdup(port);
         nvti_add_required_udp_ports (arg_get_value (lexic->script_infos, "NVTI"), port);
+      }
+
       else
         break;
     }
@@ -472,7 +540,16 @@ script_add_preference (lex_ctxt * lexic)
                    "Argument error in the call to script_add_preference()\n");
     }
   else
+  {
+    daltonInfo->ScriptAddPreferences[addPreferencesCount] = malloc(sizeof(DaltonDictContainer));
+    daltonInfo->ScriptAddPreferences[addPreferencesCount]->Name = g_strdup(name);
+    daltonInfo->ScriptAddPreferences[addPreferencesCount]->Value = g_strdup(value);
+    daltonInfo->ScriptAddPreferences[addPreferencesCount]->Type = g_strdup(type);
+    addPreferencesCount++;
+
     add_plugin_preference (script_infos, name, type, value);
+  }
+
 
   return FAKE_CELL;
 }
@@ -908,10 +985,22 @@ security_something (lex_ctxt * lexic, proto_post_something_t proto_post_func,
 
   if ((arg_get_value (script_infos, "standalone")) != NULL)
     {
+      daltonInfo->Success = SCRIPT_SUCCESS;
       if (data != NULL)
+      {
+        daltonInfo->ScriptMessages[SecurityMessagesCount] = malloc(sizeof(DaltonStringContainer));
+        daltonInfo->ScriptMessages[SecurityMessagesCount]->Contents = g_strdup(dup);
+        SecurityMessagesCount++;
         fprintf (stdout, "%s\n", dup);
+      }
       else
+      {
+        daltonInfo->ScriptMessages[SecurityMessagesCount] = malloc(sizeof(DaltonStringContainer));
+        daltonInfo->ScriptMessages[SecurityMessagesCount]->Contents = "Success";
+        SecurityMessagesCount++;
         fprintf (stdout, "Success\n");
+      }
+
     }
 
   if (proto == NULL)

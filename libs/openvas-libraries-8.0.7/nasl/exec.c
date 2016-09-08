@@ -39,7 +39,8 @@
 #include "nasl_var.h"
 #include "nasl_lex_ctxt.h"
 #include "exec.h"
-
+#include "nvti.h"
+#include "arglists.h"
 #include "nasl_debug.h"
 #include "nasl_init.h"
 
@@ -1744,16 +1745,13 @@ exec_nasl_script (struct arglist *script_infos, const char *name,
   lexic = init_empty_lex_ctxt ();
   lexic->script_infos = script_infos;
   lexic->oid = oid;
-
   str = prefs_get ("checks_read_timeout");
   if (str != NULL)
     to = atoi (str);
   else
     to = 5;
-
   if (to <= 0)
     to = 5;
-
   lexic->recv_timeout = to;
 
  /** @todo Initialization of the library seems intuitively be necessary only
@@ -1761,7 +1759,6 @@ exec_nasl_script (struct arglist *script_infos, const char *name,
   *        Consider a "prototype" context that has to be created only once and
   *        of which copies are made when needed. */
   init_nasl_library (lexic);
-
   process_id = getpid ();
   if (mode & NASL_LINT)
     {
@@ -1822,14 +1819,12 @@ exec_nasl_script (struct arglist *script_infos, const char *name,
 #if NASL_DEBUG > 3
   nasl_dump_tree (ctx.tree);
 #endif
-
   if (g_chdir (old_dir) != 0)
     {
       g_free (old_dir);
       return -1;
     }
   g_free (old_dir);
-
   nasl_clean_ctx (&ctx);
   free_lex_ctxt (lexic);
   if (process_id != getpid ())

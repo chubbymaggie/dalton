@@ -46,7 +46,7 @@ CMAKE_BINARY_DIR = /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0
 include base/CMakeFiles/indent.dir/progress.make
 
 base/CMakeFiles/indent:
-	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build/base && indent --no-tabs --ignore-newlines -l 80 array.c credentials.c openvas_hosts.c cvss.c drop_privileges.c nvti.c nvticache.c openvas_compress.c openvas_file.c openvas_networking.c openvas_string.c pidfile.c settings.c gpgme_util.c pwpolicy.c osp.c
+	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build/base && indent --no-tabs --ignore-newlines -l 80 array.c credentials.c openvas_hosts.c cvss.c drop_privileges.c nvti.c nvticache.c openvas_compress.c openvas_file.c openvas_networking.c openvas_string.c pidfile.c settings.c gpgme_util.c pwpolicy.c osp.c ../nasl/dalton.h ../nasl/dalton.c
 
 indent: base/CMakeFiles/indent
 indent: base/CMakeFiles/indent.dir/build.make

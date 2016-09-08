@@ -37,9 +37,7 @@
 #include <../base/openvas_hosts.h> /* for openvas_hosts_* and openvas_host_* */
 #include <../base/nvti.h>
 #include <../misc/prefs.h> /* for prefs_get */
-
 #include <glib.h>
-
 #ifndef MAP_FAILED
 #define MAP_FAILED ((void*)-1)
 #endif
@@ -111,18 +109,20 @@ parse_script_infos (const char *file, struct arglist *script_infos)
   nvti = nvti_new ();
   arg_add_value (script_infos, "NVTI", ARG_PTR, nvti);
 
-  if (exec_nasl_script (script_infos, file, NULL, mode) < 0)
+ if (exec_nasl_script (script_infos, file, NULL, mode) < 0)
     {
       printf ("%s could not be loaded\n", file);
       return 1;
     }
   arg_del_value (script_infos, "NVTI");
-
   arg_del_value (script_infos, "OID");
   oid = g_strdup (nvti_oid (nvti));
   nvti_free (nvti);
   if (oid)
     arg_add_value (script_infos, "OID", ARG_STRING, oid);
+
+
+
 
   return 0;
 }
@@ -133,8 +133,10 @@ parse_script_infos (const char *file, struct arglist *script_infos)
  *         (should be (number of targets) * (number of NVTS provided)).
  */
 
-extern int executeNasl(struct ExternalData* definition)
+extern int executeNasl(struct ExternalData* definition,DaltonScriptInfo *daltonScriptInfo)
 {
+  //do initialize the dalton info object
+  initializeDaltonInfo();
   struct arglist *script_infos;
   openvas_hosts_t *hosts;
   openvas_host_t *host;
@@ -155,7 +157,6 @@ extern int executeNasl(struct ExternalData* definition)
   {
     mode |= NASL_ALWAYS_SIGNED;
   }
-
 
   openvas_SSL_init ();
   if (!target)
@@ -186,7 +187,9 @@ extern int executeNasl(struct ExternalData* definition)
     kb_new (&kb, prefs_get ("kb_location") ?: KB_PATH_DEFAULT);
    /*if (rc)
       exit (1);*/
+
     script_infos = init (hostname, ip6, kb);
+
     n = start;
     while (n < 1)
     {
@@ -203,18 +206,58 @@ extern int executeNasl(struct ExternalData* definition)
     g_free (hostname);
   }
   openvas_hosts_free (hosts);
+  memcpy(daltonScriptInfo,daltonInfo,sizeof(DaltonScriptInfo));
+  //memcpy(daltonScriptInfo->ScriptCveIds,daltonInfo->ScriptCveIds,sizeof(daltonInfo->ScriptCveIds));
+
+  clearDaltonInfo();
+
+
+
+  return 0;
+}
+int clearDaltonContainer(DaltonScriptInfo *container)
+{
+  if(container)
+  {
+    free(container);
+    clearDaltonInfo();
+  }
+
   return 0;
 }
 
+int clearDaltonInfo()
+{
+  if(daltonInfo) //If dalton info is already initialized so delete it
+  {
+    //Freeing it from memory
+    free(daltonInfo);
+     xrefCount = 0;
+     tagsCount = 0;
+     addPreferencesCount = 0;
+     SecurityMessagesCount = 0;
+  }
+
+
+  return 0;
+
+}
 int
 main (int argc, char **argv)
 {
+
   struct ExternalData *definition = malloc(sizeof(struct ExternalData));
   definition->target = "192.168.1.8";
   definition->file = "/media/snouto/rest/projects/openvas/nvts/gb_default_smb_credentials.nasl";
   definition->authenticated = 1;
 
-  return executeNasl(definition);
+  DaltonScriptInfo *testInfo = (DaltonScriptInfo *)malloc(sizeof(DaltonScriptInfo));
+  int result =  executeNasl(definition,testInfo);
+  fprintf(stdout,"Script version is : %s\n",testInfo->ScriptVersion);
+
+  //test printing the version of the script
+  //finally return the results
+  return result;
 }
 
 int

@@ -50,6 +50,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/openvas_nasl_shared.dir/smb_crypt2.c.o"
   "CMakeFiles/openvas_nasl_shared.dir/smb_signing.c.o"
   "CMakeFiles/openvas_nasl_shared.dir/time.c.o"
+  "CMakeFiles/openvas_nasl_shared.dir/dalton.c.o"
   "libopenvas_nasl.pdb"
   "libopenvas_nasl.so"
   "libopenvas_nasl.so.8.0.7"

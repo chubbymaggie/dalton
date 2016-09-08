@@ -1,5 +1,6 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/openvas-nasl-lint.dir/nasl-lint.c.o"
+  "CMakeFiles/openvas-nasl-lint.dir/dalton.c.o"
   "openvas-nasl-lint.pdb"
   "openvas-nasl-lint"
 )

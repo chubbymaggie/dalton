@@ -41,7 +41,7 @@ endif (SNMP)
 # The "-D_FILE_OFFSET_BITS=64 -DLARGEFILE_SOURCE=1" is necessary for GPGME!
 # The "-fno-strict-aliasing" silences warnings caused by macros defined in byteorder.h.
 # Once the warnings have been addressed this flag should be removed.
-set (CMAKE_C_FLAGS              "${CMAKE_C_FLAGS} ${HARDENING_FLAGS} -Wall -D_FILE_OFFSET_BITS=64 -DLARGEFILE_SOURCE=1 -fno-strict-aliasing")
+set (CMAKE_C_FLAGS              "${CMAKE_C_FLAGS} ${HARDENING_FLAGS} -Wall -D_FILE_OFFSET_BITS=64 -DLARGEFILE_SOURCE=1 -fno-strict-aliasing -gdwarf-2")
 
 ## Compile the parser - note that there are (better) CMake macros to achieve
 ## that
@@ -71,16 +71,16 @@ set (FILES arc4.c capture_packet.c charcnv.c exec.c genrand.c hmacmd5.c
      nasl_socket.c nasl_text_utils.c nasl_tree.c nasl_var.c nasl_wmi.c
      nasl_isotime.c
      ntlmssp.c strutils.c smb_crypt.c smb_crypt2.c
-     smb_signing.c time.c)
+     smb_signing.c time.c dalton.h dalton.c)
 
 set (HEADERS nasl.h)
 
 if (NOT OPENVAS_WMICLIENT_FOUND)
-  set (FILES smb_interface_stub.c wmi_interface_stub.c ${FILES})
+  set (FILES smb_interface_stub.c wmi_interface_stub.c ${FILES} dalton.h dalton.c)
 endif (NOT OPENVAS_WMICLIENT_FOUND)
 
 if (NOT OPENVAS_WINCMD_FOUND)
-  set (FILES smb_interface_stub.c ${FILES})
+  set (FILES smb_interface_stub.c ${FILES} dalton.h dalton.c)
 endif (NOT OPENVAS_WINCMD_FOUND)
 
 if (KSBA)
@@ -102,7 +102,7 @@ include_directories (${GLIB_INCLUDE_DIRS} ${GPGME_INCLUDE_DIRS} ${LIBSSH_INCLUDE
 link_directories (${LIBDIR} ../base ../misc)
 
 if (BUILD_STATIC)
-   add_library (openvas_nasl_static STATIC ${FILES})
+   add_library (openvas_nasl_static STATIC ${FILES} dalton.h dalton.c)
 
    set_target_properties (openvas_nasl_static PROPERTIES OUTPUT_NAME "openvas_nasl")
    set_target_properties (openvas_nasl_static PROPERTIES CLEAN_DIRECT_OUTPUT 1)
@@ -117,7 +117,7 @@ if (BUILD_STATIC)
 endif (BUILD_STATIC)
 
 if (BUILD_SHARED)
-  add_library (openvas_nasl_shared SHARED ${FILES})
+  add_library (openvas_nasl_shared SHARED ${FILES} dalton.h dalton.c)
   set_target_properties (openvas_nasl_shared PROPERTIES OUTPUT_NAME "openvas_nasl")
   set_target_properties (openvas_nasl_shared PROPERTIES CLEAN_DIRECT_OUTPUT 1)
   set_target_properties (openvas_nasl_shared PROPERTIES SOVERSION "${CPACK_PACKAGE_VERSION_MAJOR}")
@@ -131,7 +131,7 @@ if (BUILD_SHARED)
 endif (BUILD_SHARED)
 
 # Link the openvas-nasl executable
-add_executable (openvas-nasl nasl.c)
+add_executable (openvas-nasl nasl.c dalton.h dalton.c)
 if (BUILD_STATIC)
   target_link_libraries (openvas-nasl openvas_nasl_static)
 endif (BUILD_STATIC)
@@ -140,7 +140,7 @@ if (BUILD_SHARED)
 endif (BUILD_SHARED)
 
 # Link the openvas-nasl-lint executable
-add_executable (openvas-nasl-lint nasl-lint.c)
+add_executable (openvas-nasl-lint nasl-lint.c dalton.h dalton.c)
 if (BUILD_STATIC)
   target_link_libraries (openvas-nasl-lint openvas_nasl_static)
 endif (BUILD_STATIC)

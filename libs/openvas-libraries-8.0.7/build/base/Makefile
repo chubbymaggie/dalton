@@ -225,6 +225,30 @@ test-hosts/fast:
 	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build && $(MAKE) -f base/CMakeFiles/test-hosts.dir/build.make base/CMakeFiles/test-hosts.dir/build
 .PHONY : test-hosts/fast
 
+__/nasl/dalton.o: __/nasl/dalton.c.o
+.PHONY : __/nasl/dalton.o
+
+# target to build an object file
+__/nasl/dalton.c.o:
+	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build && $(MAKE) -f base/CMakeFiles/openvas_base_shared.dir/build.make base/CMakeFiles/openvas_base_shared.dir/__/nasl/dalton.c.o
+.PHONY : __/nasl/dalton.c.o
+
+__/nasl/dalton.i: __/nasl/dalton.c.i
+.PHONY : __/nasl/dalton.i
+
+# target to preprocess a source file
+__/nasl/dalton.c.i:
+	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build && $(MAKE) -f base/CMakeFiles/openvas_base_shared.dir/build.make base/CMakeFiles/openvas_base_shared.dir/__/nasl/dalton.c.i
+.PHONY : __/nasl/dalton.c.i
+
+__/nasl/dalton.s: __/nasl/dalton.c.s
+.PHONY : __/nasl/dalton.s
+
+# target to generate assembly for a file
+__/nasl/dalton.c.s:
+	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build && $(MAKE) -f base/CMakeFiles/openvas_base_shared.dir/build.make base/CMakeFiles/openvas_base_shared.dir/__/nasl/dalton.c.s
+.PHONY : __/nasl/dalton.c.s
+
 array.o: array.c.o
 .PHONY : array.o
 
@@ -652,6 +676,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... test-hosts"
+	@echo "... __/nasl/dalton.o"
+	@echo "... __/nasl/dalton.i"
+	@echo "... __/nasl/dalton.s"
 	@echo "... array.o"
 	@echo "... array.i"
 	@echo "... array.s"

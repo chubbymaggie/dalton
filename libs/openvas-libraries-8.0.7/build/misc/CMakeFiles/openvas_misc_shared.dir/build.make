@@ -440,9 +440,32 @@ misc/CMakeFiles/openvas_misc_shared.dir/pcap.c.o.provides: misc/CMakeFiles/openv
 
 misc/CMakeFiles/openvas_misc_shared.dir/pcap.c.o.provides.build: misc/CMakeFiles/openvas_misc_shared.dir/pcap.c.o
 
+misc/CMakeFiles/openvas_misc_shared.dir/__/nasl/dalton.c.o: misc/CMakeFiles/openvas_misc_shared.dir/flags.make
+misc/CMakeFiles/openvas_misc_shared.dir/__/nasl/dalton.c.o: ../nasl/dalton.c
+	$(CMAKE_COMMAND) -E cmake_progress_report /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build/CMakeFiles $(CMAKE_PROGRESS_18)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object misc/CMakeFiles/openvas_misc_shared.dir/__/nasl/dalton.c.o"
+	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build/misc && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/openvas_misc_shared.dir/__/nasl/dalton.c.o   -c /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/dalton.c
+
+misc/CMakeFiles/openvas_misc_shared.dir/__/nasl/dalton.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/openvas_misc_shared.dir/__/nasl/dalton.c.i"
+	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build/misc && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/dalton.c > CMakeFiles/openvas_misc_shared.dir/__/nasl/dalton.c.i
+
+misc/CMakeFiles/openvas_misc_shared.dir/__/nasl/dalton.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/openvas_misc_shared.dir/__/nasl/dalton.c.s"
+	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build/misc && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/dalton.c -o CMakeFiles/openvas_misc_shared.dir/__/nasl/dalton.c.s
+
+misc/CMakeFiles/openvas_misc_shared.dir/__/nasl/dalton.c.o.requires:
+.PHONY : misc/CMakeFiles/openvas_misc_shared.dir/__/nasl/dalton.c.o.requires
+
+misc/CMakeFiles/openvas_misc_shared.dir/__/nasl/dalton.c.o.provides: misc/CMakeFiles/openvas_misc_shared.dir/__/nasl/dalton.c.o.requires
+	$(MAKE) -f misc/CMakeFiles/openvas_misc_shared.dir/build.make misc/CMakeFiles/openvas_misc_shared.dir/__/nasl/dalton.c.o.provides.build
+.PHONY : misc/CMakeFiles/openvas_misc_shared.dir/__/nasl/dalton.c.o.provides
+
+misc/CMakeFiles/openvas_misc_shared.dir/__/nasl/dalton.c.o.provides.build: misc/CMakeFiles/openvas_misc_shared.dir/__/nasl/dalton.c.o
+
 misc/CMakeFiles/openvas_misc_shared.dir/ldap_connect_auth.c.o: misc/CMakeFiles/openvas_misc_shared.dir/flags.make
 misc/CMakeFiles/openvas_misc_shared.dir/ldap_connect_auth.c.o: ../misc/ldap_connect_auth.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build/CMakeFiles $(CMAKE_PROGRESS_18)
+	$(CMAKE_COMMAND) -E cmake_progress_report /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build/CMakeFiles $(CMAKE_PROGRESS_19)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object misc/CMakeFiles/openvas_misc_shared.dir/ldap_connect_auth.c.o"
 	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build/misc && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/openvas_misc_shared.dir/ldap_connect_auth.c.o   -c /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/misc/ldap_connect_auth.c
 
@@ -482,6 +505,7 @@ openvas_misc_shared_OBJECTS = \
 "CMakeFiles/openvas_misc_shared.dir/prefs.c.o" \
 "CMakeFiles/openvas_misc_shared.dir/www_funcs.c.o" \
 "CMakeFiles/openvas_misc_shared.dir/pcap.c.o" \
+"CMakeFiles/openvas_misc_shared.dir/__/nasl/dalton.c.o" \
 "CMakeFiles/openvas_misc_shared.dir/ldap_connect_auth.c.o"
 
 # External object files for target openvas_misc_shared
@@ -504,6 +528,7 @@ misc/libopenvas_misc.so.8.0.7: misc/CMakeFiles/openvas_misc_shared.dir/openvas_p
 misc/libopenvas_misc.so.8.0.7: misc/CMakeFiles/openvas_misc_shared.dir/prefs.c.o
 misc/libopenvas_misc.so.8.0.7: misc/CMakeFiles/openvas_misc_shared.dir/www_funcs.c.o
 misc/libopenvas_misc.so.8.0.7: misc/CMakeFiles/openvas_misc_shared.dir/pcap.c.o
+misc/libopenvas_misc.so.8.0.7: misc/CMakeFiles/openvas_misc_shared.dir/__/nasl/dalton.c.o
 misc/libopenvas_misc.so.8.0.7: misc/CMakeFiles/openvas_misc_shared.dir/ldap_connect_auth.c.o
 misc/libopenvas_misc.so.8.0.7: misc/CMakeFiles/openvas_misc_shared.dir/build.make
 misc/libopenvas_misc.so.8.0.7: base/libopenvas_base.so.8.0.7
@@ -538,6 +563,7 @@ misc/CMakeFiles/openvas_misc_shared.dir/requires: misc/CMakeFiles/openvas_misc_s
 misc/CMakeFiles/openvas_misc_shared.dir/requires: misc/CMakeFiles/openvas_misc_shared.dir/prefs.c.o.requires
 misc/CMakeFiles/openvas_misc_shared.dir/requires: misc/CMakeFiles/openvas_misc_shared.dir/www_funcs.c.o.requires
 misc/CMakeFiles/openvas_misc_shared.dir/requires: misc/CMakeFiles/openvas_misc_shared.dir/pcap.c.o.requires
+misc/CMakeFiles/openvas_misc_shared.dir/requires: misc/CMakeFiles/openvas_misc_shared.dir/__/nasl/dalton.c.o.requires
 misc/CMakeFiles/openvas_misc_shared.dir/requires: misc/CMakeFiles/openvas_misc_shared.dir/ldap_connect_auth.c.o.requires
 .PHONY : misc/CMakeFiles/openvas_misc_shared.dir/requires
 

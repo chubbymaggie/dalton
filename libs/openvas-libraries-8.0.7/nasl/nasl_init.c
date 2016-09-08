@@ -22,6 +22,7 @@
 
 #include <string.h>         /* for memset */
 #include <stdlib.h>         /* for getenv.  */
+#include <nvti.h>
 
 #include "nvt_categories.h" /* for ACT_INIT */
 #include "network.h"      /* for OPENVAS_ENCAPS_* */
@@ -645,7 +646,6 @@ init_nasl_library (lex_ctxt * lexic)
   nasl_func *pf;
   tree_cell tc;
   const char **p, *q;
-
   memset (&tc, 0, sizeof (tc));
   for (i = 0, c = 0; i < sizeof (libfuncs) / sizeof (libfuncs[0]) - 1; i++)
     {
@@ -706,7 +706,6 @@ init_nasl_library (lex_ctxt * lexic)
   // Add the "NULL" variable
   if (add_named_var_to_ctxt (lexic, "NULL", NULL) == NULL)
     nasl_perror (lexic, "init_nasl_library: could not define var 'NULL'\n");
-
   return c;
 }
 

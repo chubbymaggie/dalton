@@ -47,6 +47,7 @@
 #include "nvti.h"
 #include "cvss.h"  /* for get_cvss_score_from_base_metrics */
 #include "../misc/openvas_logging.h"
+#include "../nasl/dalton.h"
 
 /**
  * @brief Create a new nvtpref structure filled with the given values.
@@ -543,6 +544,7 @@ nvti_set_version (nvti_t * n, const gchar * version)
   if (n->version)
     g_free (n->version);
   n->version = g_strdup (version);
+
   return (0);
 }
 
@@ -606,6 +608,7 @@ nvti_set_copyright (nvti_t * n, const gchar * copyright)
   if (n->copyright)
     g_free (n->copyright);
   n->copyright = g_strdup (copyright);
+  fprintf(stdout,"%s",n->copyright);
   return (0);
 }
 

@@ -1,5 +1,6 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/openvas-nasl.dir/nasl.c.o"
+  "CMakeFiles/openvas-nasl.dir/dalton.c.o"
   "openvas-nasl.pdb"
   "openvas-nasl"
 )

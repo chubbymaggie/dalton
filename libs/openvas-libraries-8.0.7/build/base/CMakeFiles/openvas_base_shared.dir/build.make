@@ -417,6 +417,29 @@ base/CMakeFiles/openvas_base_shared.dir/osp.c.o.provides: base/CMakeFiles/openva
 
 base/CMakeFiles/openvas_base_shared.dir/osp.c.o.provides.build: base/CMakeFiles/openvas_base_shared.dir/osp.c.o
 
+base/CMakeFiles/openvas_base_shared.dir/__/nasl/dalton.c.o: base/CMakeFiles/openvas_base_shared.dir/flags.make
+base/CMakeFiles/openvas_base_shared.dir/__/nasl/dalton.c.o: ../nasl/dalton.c
+	$(CMAKE_COMMAND) -E cmake_progress_report /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build/CMakeFiles $(CMAKE_PROGRESS_17)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object base/CMakeFiles/openvas_base_shared.dir/__/nasl/dalton.c.o"
+	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build/base && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/openvas_base_shared.dir/__/nasl/dalton.c.o   -c /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/dalton.c
+
+base/CMakeFiles/openvas_base_shared.dir/__/nasl/dalton.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/openvas_base_shared.dir/__/nasl/dalton.c.i"
+	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build/base && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/dalton.c > CMakeFiles/openvas_base_shared.dir/__/nasl/dalton.c.i
+
+base/CMakeFiles/openvas_base_shared.dir/__/nasl/dalton.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/openvas_base_shared.dir/__/nasl/dalton.c.s"
+	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build/base && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/dalton.c -o CMakeFiles/openvas_base_shared.dir/__/nasl/dalton.c.s
+
+base/CMakeFiles/openvas_base_shared.dir/__/nasl/dalton.c.o.requires:
+.PHONY : base/CMakeFiles/openvas_base_shared.dir/__/nasl/dalton.c.o.requires
+
+base/CMakeFiles/openvas_base_shared.dir/__/nasl/dalton.c.o.provides: base/CMakeFiles/openvas_base_shared.dir/__/nasl/dalton.c.o.requires
+	$(MAKE) -f base/CMakeFiles/openvas_base_shared.dir/build.make base/CMakeFiles/openvas_base_shared.dir/__/nasl/dalton.c.o.provides.build
+.PHONY : base/CMakeFiles/openvas_base_shared.dir/__/nasl/dalton.c.o.provides
+
+base/CMakeFiles/openvas_base_shared.dir/__/nasl/dalton.c.o.provides.build: base/CMakeFiles/openvas_base_shared.dir/__/nasl/dalton.c.o
+
 # Object files for target openvas_base_shared
 openvas_base_shared_OBJECTS = \
 "CMakeFiles/openvas_base_shared.dir/array.c.o" \
@@ -434,7 +457,8 @@ openvas_base_shared_OBJECTS = \
 "CMakeFiles/openvas_base_shared.dir/settings.c.o" \
 "CMakeFiles/openvas_base_shared.dir/gpgme_util.c.o" \
 "CMakeFiles/openvas_base_shared.dir/pwpolicy.c.o" \
-"CMakeFiles/openvas_base_shared.dir/osp.c.o"
+"CMakeFiles/openvas_base_shared.dir/osp.c.o" \
+"CMakeFiles/openvas_base_shared.dir/__/nasl/dalton.c.o"
 
 # External object files for target openvas_base_shared
 openvas_base_shared_EXTERNAL_OBJECTS =
@@ -455,6 +479,7 @@ base/libopenvas_base.so.8.0.7: base/CMakeFiles/openvas_base_shared.dir/settings.
 base/libopenvas_base.so.8.0.7: base/CMakeFiles/openvas_base_shared.dir/gpgme_util.c.o
 base/libopenvas_base.so.8.0.7: base/CMakeFiles/openvas_base_shared.dir/pwpolicy.c.o
 base/libopenvas_base.so.8.0.7: base/CMakeFiles/openvas_base_shared.dir/osp.c.o
+base/libopenvas_base.so.8.0.7: base/CMakeFiles/openvas_base_shared.dir/__/nasl/dalton.c.o
 base/libopenvas_base.so.8.0.7: base/CMakeFiles/openvas_base_shared.dir/build.make
 base/libopenvas_base.so.8.0.7: omp/libopenvas_omp.so.8.0.7
 base/libopenvas_base.so.8.0.7: base/CMakeFiles/openvas_base_shared.dir/link.txt
@@ -486,6 +511,7 @@ base/CMakeFiles/openvas_base_shared.dir/requires: base/CMakeFiles/openvas_base_s
 base/CMakeFiles/openvas_base_shared.dir/requires: base/CMakeFiles/openvas_base_shared.dir/gpgme_util.c.o.requires
 base/CMakeFiles/openvas_base_shared.dir/requires: base/CMakeFiles/openvas_base_shared.dir/pwpolicy.c.o.requires
 base/CMakeFiles/openvas_base_shared.dir/requires: base/CMakeFiles/openvas_base_shared.dir/osp.c.o.requires
+base/CMakeFiles/openvas_base_shared.dir/requires: base/CMakeFiles/openvas_base_shared.dir/__/nasl/dalton.c.o.requires
 .PHONY : base/CMakeFiles/openvas_base_shared.dir/requires
 
 base/CMakeFiles/openvas_base_shared.dir/clean:

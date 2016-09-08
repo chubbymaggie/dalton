@@ -92,6 +92,18 @@ gpgme.h
 
 /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/misc/arglists.h
 
+/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/dalton.c
+stdlib.h
+-
+dalton.h
+/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/dalton.h
+stdio.h
+-
+glib.h
+-
+
+/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/dalton.h
+
 /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/exec.h
 
 /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl.c
@@ -131,6 +143,8 @@ glib.h
 -
 ../misc/arglists.h
 /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/misc/arglists.h
+dalton.h
+/media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/dalton.h
 
 /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/nasl/nasl_func.h
 

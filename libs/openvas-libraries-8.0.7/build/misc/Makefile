@@ -183,6 +183,30 @@ openvas_misc_shared/fast:
 	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build && $(MAKE) -f misc/CMakeFiles/openvas_misc_shared.dir/build.make misc/CMakeFiles/openvas_misc_shared.dir/build
 .PHONY : openvas_misc_shared/fast
 
+__/nasl/dalton.o: __/nasl/dalton.c.o
+.PHONY : __/nasl/dalton.o
+
+# target to build an object file
+__/nasl/dalton.c.o:
+	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build && $(MAKE) -f misc/CMakeFiles/openvas_misc_shared.dir/build.make misc/CMakeFiles/openvas_misc_shared.dir/__/nasl/dalton.c.o
+.PHONY : __/nasl/dalton.c.o
+
+__/nasl/dalton.i: __/nasl/dalton.c.i
+.PHONY : __/nasl/dalton.i
+
+# target to preprocess a source file
+__/nasl/dalton.c.i:
+	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build && $(MAKE) -f misc/CMakeFiles/openvas_misc_shared.dir/build.make misc/CMakeFiles/openvas_misc_shared.dir/__/nasl/dalton.c.i
+.PHONY : __/nasl/dalton.c.i
+
+__/nasl/dalton.s: __/nasl/dalton.c.s
+.PHONY : __/nasl/dalton.s
+
+# target to generate assembly for a file
+__/nasl/dalton.c.s:
+	cd /media/snouto/rest/projects/dalton/libs/openvas-libraries-8.0.7/build && $(MAKE) -f misc/CMakeFiles/openvas_misc_shared.dir/build.make misc/CMakeFiles/openvas_misc_shared.dir/__/nasl/dalton.c.s
+.PHONY : __/nasl/dalton.c.s
+
 arglists.o: arglists.c.o
 .PHONY : arglists.o
 
@@ -631,6 +655,9 @@ help:
 	@echo "... package_source"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... __/nasl/dalton.o"
+	@echo "... __/nasl/dalton.i"
+	@echo "... __/nasl/dalton.s"
 	@echo "... arglists.o"
 	@echo "... arglists.i"
 	@echo "... arglists.s"

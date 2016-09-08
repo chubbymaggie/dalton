@@ -16,6 +16,8 @@ FILE(REMOVE_RECURSE
   ".indent.gpgme_util.c"
   ".indent.pwpolicy.c"
   ".indent.osp.c"
+  ".indent.../nasl/dalton.h"
+  ".indent.../nasl/dalton.c"
 )
 
 # Per-language clean rules from dependency scanning.

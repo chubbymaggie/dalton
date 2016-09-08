@@ -15,6 +15,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/openvas_base_shared.dir/gpgme_util.c.o"
   "CMakeFiles/openvas_base_shared.dir/pwpolicy.c.o"
   "CMakeFiles/openvas_base_shared.dir/osp.c.o"
+  "CMakeFiles/openvas_base_shared.dir/__/nasl/dalton.c.o"
   "libopenvas_base.pdb"
   "libopenvas_base.so"
   "libopenvas_base.so.8.0.7"

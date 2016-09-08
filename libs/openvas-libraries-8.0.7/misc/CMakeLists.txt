@@ -88,12 +88,12 @@ if (NOT MINGW)
 endif (NOT MINGW)
 
 if (MINGW)
-  set (FILES openvas_auth.c openvas_server.c openvas_proctitle.c)
+  set (FILES openvas_auth.c openvas_server.c openvas_proctitle.c ../nasl/dalton.h ../nasl/dalton.c)
   set (HEADERS openvas_proctitle.h openvas_auth.h openvas_server.h)
 else (MINGW)
   set (FILES arglists.c bpf_share.c ftp_funcs.c ids_send.c kb_redis.c network.c
              openvas_auth.c openvas_logging.c openvas_server.c openvas_uuid.c
-             plugutils.c popen.c radius.c openvas_proctitle.c prefs.c www_funcs.c pcap.c)
+             plugutils.c popen.c radius.c openvas_proctitle.c prefs.c www_funcs.c pcap.c ../nasl/dalton.h ../nasl/dalton.c)
 
   set (HEADERS arglists.h bpf_share.h ftp_funcs.h kb.h network.h pcap_openvas.h
                plugutils.h popen.h openvas_proctitle.h openvas_auth.h
@@ -113,7 +113,7 @@ link_directories (${CMAKE_CURRENT_BINARY_DIR}/../base)
 #add_custom_indent_targets (${FILES})
 
 if (BUILD_STATIC)
-  add_library (openvas_misc_static STATIC ${FILES})
+  add_library (openvas_misc_static STATIC ${FILES} ../nasl/dalton.h ../nasl/dalton.c)
 
   set_target_properties (openvas_misc_static PROPERTIES OUTPUT_NAME "openvas_misc")
   set_target_properties (openvas_misc_static PROPERTIES CLEAN_DIRECT_OUTPUT 1)
@@ -122,7 +122,7 @@ if (BUILD_STATIC)
 endif (BUILD_STATIC)
 
 if (BUILD_SHARED)
-  add_library (openvas_misc_shared SHARED ${FILES})
+  add_library (openvas_misc_shared SHARED ${FILES} ../nasl/dalton.h ../nasl/dalton.c)
 
   set_target_properties (openvas_misc_shared PROPERTIES OUTPUT_NAME "openvas_misc")
   set_target_properties (openvas_misc_shared PROPERTIES CLEAN_DIRECT_OUTPUT 1)
