@@ -2,136 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec88b3bf-92c3-4620-8168-8e2661ed69c3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/.idea/codeStyleSettings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/nasl/dalton.c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/nasl/dalton.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/testC" afterPath="$PROJECT_DIR$/bin/testC" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/lair-framework/go-nmap" afterPath="$PROJECT_DIR$/src/github.com/lair-framework/go-nmap" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/base/CMakeFiles/openvas_base_shared.dir/nvti.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/base/CMakeFiles/openvas_base_shared.dir/nvti.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/base/libopenvas_base.so.8.0.7" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/base/libopenvas_base.so.8.0.7" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/misc/libopenvas_misc.so.8.0.7" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/misc/libopenvas_misc.so.8.0.7" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl-lint.dir/nasl-lint.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl-lint.dir/nasl-lint.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl.dir/nasl.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl.dir/nasl.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/arc4.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/arc4.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/capture_packet.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/capture_packet.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/charcnv.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/charcnv.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/exec.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/exec.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/genrand.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/genrand.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/hmacmd5.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/hmacmd5.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/iconv.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/iconv.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/lint.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/lint.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/md4.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/md4.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/md5.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/md5.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_builtin_find_service.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_builtin_find_service.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_builtin_nmap.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_builtin_nmap.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_builtin_openvas_tcp_scanner.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_builtin_openvas_tcp_scanner.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_builtin_synscan.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_builtin_synscan.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_cert.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_cert.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_cmd_exec.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_cmd_exec.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_crypto.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_crypto.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_crypto2.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_crypto2.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_debug.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_debug.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_func.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_func.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_grammar.tab.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_grammar.tab.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_host.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_host.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_http.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_http.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_init.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_init.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_isotime.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_isotime.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_lex_ctxt.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_lex_ctxt.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_misc_funcs.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_misc_funcs.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_packet_forgery.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_packet_forgery.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_packet_forgery_v6.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_packet_forgery_v6.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_scanner_glue.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_scanner_glue.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_signature.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_signature.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_smb.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_smb.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_snmp.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_snmp.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_socket.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_socket.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_ssh.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_ssh.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_text_utils.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_text_utils.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_tree.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_tree.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_var.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_var.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_wmi.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_wmi.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/ntlmssp.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/ntlmssp.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/smb_crypt.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/smb_crypt.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/smb_crypt2.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/smb_crypt2.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/smb_interface_stub.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/smb_interface_stub.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/smb_signing.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/smb_signing.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/strutils.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/strutils.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/time.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/time.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/wmi_interface_stub.c.o" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/wmi_interface_stub.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/libopenvas_nasl.so.8.0.7" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/libopenvas_nasl.so.8.0.7" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/openvas-nasl" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/openvas-nasl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/openvas-nasl-lint" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/openvas-nasl-lint" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/.idea/openvas-libraries-8.0.7.iml" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/.idea/openvas-libraries-8.0.7.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scannerd/scannerd.go" afterPath="$PROJECT_DIR$/scannerd/scannerd.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/scannerd/scanning.go" afterPath="$PROJECT_DIR$/src/dalton/scannerd/scanning.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/base/CMakeLists.txt" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/base/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/base/nvti.c" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/base/nvti.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/CMakeFiles/CMakeOutput.log" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/CMakeFiles/CMakeOutput.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/CMakeFiles/CMakeRuleHashes.txt" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/CMakeFiles/CMakeRuleHashes.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/CMakeFiles/Makefile.cmake" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/CMakeFiles/Makefile.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/CMakeFiles/Makefile2" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/CMakeFiles/Makefile2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/CMakeFiles/progress.marks" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/CMakeFiles/progress.marks" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/base/CMakeFiles/indent.dir/build.make" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/base/CMakeFiles/indent.dir/build.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/base/CMakeFiles/openvas_base_shared.dir/C.includecache" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/base/CMakeFiles/openvas_base_shared.dir/C.includecache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/base/CMakeFiles/openvas_base_shared.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/base/CMakeFiles/openvas_base_shared.dir/DependInfo.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/base/CMakeFiles/openvas_base_shared.dir/build.make" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/base/CMakeFiles/openvas_base_shared.dir/build.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/base/CMakeFiles/openvas_base_shared.dir/cmake_clean.cmake" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/base/CMakeFiles/openvas_base_shared.dir/cmake_clean.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/base/CMakeFiles/openvas_base_shared.dir/depend.internal" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/base/CMakeFiles/openvas_base_shared.dir/depend.internal" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/base/CMakeFiles/openvas_base_shared.dir/depend.make" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/base/CMakeFiles/openvas_base_shared.dir/depend.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/base/CMakeFiles/openvas_base_shared.dir/link.txt" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/base/CMakeFiles/openvas_base_shared.dir/link.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/base/CMakeFiles/openvas_base_shared.dir/progress.make" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/base/CMakeFiles/openvas_base_shared.dir/progress.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/base/CMakeFiles/print-indent-diff.dir/build.make" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/base/CMakeFiles/print-indent-diff.dir/build.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/base/CMakeFiles/print-indent-diff.dir/cmake_clean.cmake" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/base/CMakeFiles/print-indent-diff.dir/cmake_clean.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/base/CMakeFiles/print-indent-diff.dir/progress.make" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/base/CMakeFiles/print-indent-diff.dir/progress.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/base/Makefile" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/base/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/misc/CMakeFiles/openvas_misc_shared.dir/C.includecache" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/misc/CMakeFiles/openvas_misc_shared.dir/C.includecache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/misc/CMakeFiles/openvas_misc_shared.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/misc/CMakeFiles/openvas_misc_shared.dir/DependInfo.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/misc/CMakeFiles/openvas_misc_shared.dir/build.make" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/misc/CMakeFiles/openvas_misc_shared.dir/build.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/misc/CMakeFiles/openvas_misc_shared.dir/cmake_clean.cmake" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/misc/CMakeFiles/openvas_misc_shared.dir/cmake_clean.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/misc/CMakeFiles/openvas_misc_shared.dir/depend.internal" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/misc/CMakeFiles/openvas_misc_shared.dir/depend.internal" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/misc/CMakeFiles/openvas_misc_shared.dir/depend.make" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/misc/CMakeFiles/openvas_misc_shared.dir/depend.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/misc/CMakeFiles/openvas_misc_shared.dir/link.txt" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/misc/CMakeFiles/openvas_misc_shared.dir/link.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/misc/CMakeFiles/openvas_misc_shared.dir/progress.make" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/misc/CMakeFiles/openvas_misc_shared.dir/progress.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/misc/Makefile" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/misc/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl-lint.dir/C.includecache" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl-lint.dir/C.includecache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl-lint.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl-lint.dir/DependInfo.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl-lint.dir/build.make" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl-lint.dir/build.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl-lint.dir/cmake_clean.cmake" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl-lint.dir/cmake_clean.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl-lint.dir/depend.internal" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl-lint.dir/depend.internal" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl-lint.dir/depend.make" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl-lint.dir/depend.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl-lint.dir/flags.make" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl-lint.dir/flags.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl-lint.dir/link.txt" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl-lint.dir/link.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl-lint.dir/progress.make" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl-lint.dir/progress.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl.dir/C.includecache" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl.dir/C.includecache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl.dir/DependInfo.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl.dir/build.make" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl.dir/build.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl.dir/cmake_clean.cmake" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl.dir/cmake_clean.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl.dir/depend.internal" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl.dir/depend.internal" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl.dir/depend.make" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl.dir/depend.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl.dir/flags.make" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl.dir/flags.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl.dir/link.txt" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl.dir/link.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl.dir/progress.make" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas-nasl.dir/progress.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/C.includecache" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/C.includecache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/DependInfo.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/build.make" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/build.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/cmake_clean.cmake" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/cmake_clean.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/depend.internal" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/depend.internal" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/depend.make" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/depend.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/flags.make" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/flags.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/link.txt" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/link.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/progress.make" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/openvas_nasl_shared.dir/progress.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/progress.marks" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/CMakeFiles/progress.marks" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/Makefile" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/nasl/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/omp/CMakeFiles/openvas_omp_shared.dir/progress.make" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/build/omp/CMakeFiles/openvas_omp_shared.dir/progress.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/misc/CMakeLists.txt" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/misc/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/nasl/CMakeLists.txt" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/nasl/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/nasl/exec.c" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/nasl/exec.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/nasl/nasl.c" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/nasl/nasl.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/nasl/nasl.h" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/nasl/nasl.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/nasl/nasl_init.c" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/nasl/nasl_init.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/nasl/nasl_scanner_glue.c" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/nasl/nasl_scanner_glue.c" />
     </list>
     <ignored path="dalton.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -152,7 +27,80 @@
     <favorites_list name="dalton" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="scannerd.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scannerd/scannerd.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+              <folding>
+                <element signature="e#14#110#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dalton.ini" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tmp/dalton.ini">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dalton/config/config.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="254">
+              <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scanning.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dalton/scannerd/scanning.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="48" column="47" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dalton/db/models/models.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="479">
+              <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nmap.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/github.com/lair-framework/go-nmap/nmap.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="102" column="91" selection-start-line="102" selection-start-column="91" selection-end-line="102" selection-end-column="91" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nmaptest.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/nmaptest.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="673">
+              <caret line="50" column="43" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -206,12 +154,10 @@
         <option value="$PROJECT_DIR$/tmp/dalton.ini" />
         <option value="$PROJECT_DIR$/scannerd/requirements" />
         <option value="$PROJECT_DIR$/src/dalton/auth/auth.go" />
-        <option value="$PROJECT_DIR$/scannerd/scannerd.go" />
         <option value="$PROJECT_DIR$/src/dalton/scannerd/rest.go" />
         <option value="$PROJECT_DIR$/test/testscannerAuth.go" />
         <option value="$USER_HOME$/log/results.xml" />
         <option value="$PROJECT_DIR$/src/dalton/db/models/models.go" />
-        <option value="$PROJECT_DIR$/src/dalton/scannerd/scanning.go" />
         <option value="$PROJECT_DIR$/src/dalton/db/models/cve.go" />
         <option value="$PROJECT_DIR$/src/dalton/db/db.go" />
         <option value="$PROJECT_DIR$/src/dalton/db/assets.go" />
@@ -223,6 +169,8 @@
         <option value="$PROJECT_DIR$/test/testcve.go" />
         <option value="$PROJECT_DIR$/src/github.com/lair-framework/go-nmap/nmap.go" />
         <option value="$PROJECT_DIR$/test/nmaptest.go" />
+        <option value="$PROJECT_DIR$/src/dalton/scannerd/scanning.go" />
+        <option value="$PROJECT_DIR$/scannerd/scannerd.go" />
       </list>
     </option>
   </component>
@@ -234,9 +182,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="63" />
-    <option name="y" value="24" />
+    <option name="y" value="-4" />
     <option name="width" value="1857" />
-    <option name="height" value="1056" />
+    <option name="height" value="1084" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -282,7 +230,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -325,6 +272,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dalton" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dalton" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -344,6 +305,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="dalton" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dalton" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dalton" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dalton" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -413,6 +396,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -434,18 +418,12 @@
       <recent name="$PROJECT_DIR$/src/scannerd" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Application.Build nmaptest.go and run">
+  <component name="RunManager" selected="Go Application.Build scannerd.go and run">
     <configuration default="false" name="Build scannerd.go and run" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
       <module name="dalton" />
       <working_directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$/scannerd/scannerd.go" />
       <kind value="FILE" />
-      <method />
-    </configuration>
-    <configuration default="false" name="go run testOI.go" type="GoRunFileConfiguration" factoryName="Go Single File" temporary="true">
-      <module name="dalton" />
-      <working_directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/test/testOI.go" />
       <method />
     </configuration>
     <configuration default="false" name="go run loadingnvd.go" type="GoRunFileConfiguration" factoryName="Go Single File" temporary="true">
@@ -465,6 +443,12 @@
       <working_directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$/test/nmaptest.go" />
       <kind value="FILE" />
+      <method />
+    </configuration>
+    <configuration default="false" name="go run testsignal.go" type="GoRunFileConfiguration" factoryName="Go Single File" temporary="true">
+      <module name="dalton" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/test/testsignal.go" />
       <method />
     </configuration>
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
@@ -697,18 +681,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Go Application.Build scannerd.go and run" />
-      <item index="1" class="java.lang.String" itemvalue="Go Single File.go run testOI.go" />
-      <item index="2" class="java.lang.String" itemvalue="Go Single File.go run loadingnvd.go" />
-      <item index="3" class="java.lang.String" itemvalue="Go Single File.go run testcve.go" />
-      <item index="4" class="java.lang.String" itemvalue="Go Application.Build nmaptest.go and run" />
+      <item index="1" class="java.lang.String" itemvalue="Go Single File.go run loadingnvd.go" />
+      <item index="2" class="java.lang.String" itemvalue="Go Single File.go run testcve.go" />
+      <item index="3" class="java.lang.String" itemvalue="Go Application.Build nmaptest.go and run" />
+      <item index="4" class="java.lang.String" itemvalue="Go Single File.go run testsignal.go" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Go Application.Build nmaptest.go and run" />
-        <item index="1" class="java.lang.String" itemvalue="Go Application.Build scannerd.go and run" />
-        <item index="2" class="java.lang.String" itemvalue="Go Single File.go run testcve.go" />
-        <item index="3" class="java.lang.String" itemvalue="Go Single File.go run loadingnvd.go" />
-        <item index="4" class="java.lang.String" itemvalue="Go Single File.go run testOI.go" />
+        <item index="0" class="java.lang.String" itemvalue="Go Application.Build scannerd.go and run" />
+        <item index="1" class="java.lang.String" itemvalue="Go Single File.go run testsignal.go" />
+        <item index="2" class="java.lang.String" itemvalue="Go Application.Build nmaptest.go and run" />
+        <item index="3" class="java.lang.String" itemvalue="Go Single File.go run testcve.go" />
+        <item index="4" class="java.lang.String" itemvalue="Go Single File.go run loadingnvd.go" />
       </list>
     </recent_temporary>
   </component>
@@ -1005,28 +989,28 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="63" y="24" width="1857" height="1056" extended-state="6" />
+    <frame x="63" y="-4" width="1857" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3168044" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32413033" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32965213" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4483871" sideWeight="0.5019326" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5752688" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24958587" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44709542" sideWeight="0.49806738" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44623655" sideWeight="0.49806738" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39935413" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.57588804" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32965213" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39935413" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="UnknownFeatures">
@@ -1081,12 +1065,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/src/dalton/scannerd/scanning.go</url>
-          <line>55</line>
+          <line>58</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/src/dalton/scannerd/scanning.go</url>
-          <line>50</line>
+          <line>53</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
@@ -1152,7 +1136,6 @@
     </entry>
     <entry file="file://$USER_HOME$/bigdata/go/src/syscall/syscall_linux.go" />
     <entry file="file://$PROJECT_DIR$/test/testinggorilla.go" />
-    <entry file="file://$PROJECT_DIR$/test/testsignal.go" />
     <entry file="file://$PROJECT_DIR$/src/dalton/log/log.go" />
     <entry file="file://$PROJECT_DIR$/src/labix.org/v2/mgo/bson/bson.go">
       <provider selected="true" editor-type-id="text-editor">
@@ -1164,13 +1147,6 @@
     <entry file="file://$PROJECT_DIR$/src/dalton/utils/db.go" />
     <entry file="file://$PROJECT_DIR$/test/testUUID.go" />
     <entry file="file://$PROJECT_DIR$/test/testOI.go" />
-    <entry file="file://$PROJECT_DIR$/src/dalton/config/config.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dalton/crypt/signer.go" />
     <entry file="file://$PROJECT_DIR$/test/rsa.go" />
     <entry file="file://$PROJECT_DIR$/src/dalton/utils/encoding.go" />
@@ -1196,10 +1172,8 @@
     </entry>
     <entry file="file://$USER_HOME$/log/results.xml" />
     <entry file="file://$PROJECT_DIR$/src/dalton/rest/models.go" />
-    <entry file="file://$PROJECT_DIR$/scannerd/requirements" />
     <entry file="file://$PROJECT_DIR$/src/dalton/compress/compress.go" />
     <entry file="file://$PROJECT_DIR$/src/dalton/compress/archive.go" />
-    <entry file="file://$PROJECT_DIR$/src/dalton/db/models/models.go" />
     <entry file="file://$PROJECT_DIR$/src/dalton/db/models/cve.go" />
     <entry file="file://$PROJECT_DIR$/src/dalton/db/assets.go" />
     <entry file="file://$PROJECT_DIR$/src/dalton/db/entries.go" />
@@ -1209,13 +1183,6 @@
     <entry file="file://$PROJECT_DIR$/test/loadingnvd.go" />
     <entry file="file://$PROJECT_DIR$/src/dalton/db/cves.go" />
     <entry file="file://$PROJECT_DIR$/test/testcve.go" />
-    <entry file="file://$PROJECT_DIR$/tmp/dalton.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dalton/security/discovery.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
@@ -1224,20 +1191,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scannerd/scannerd.go" />
-    <entry file="file://$PROJECT_DIR$/src/dalton/scannerd/scanning.go">
+    <entry file="file://$PROJECT_DIR$/test/nmaptest.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="41" column="63" selection-start-line="41" selection-start-column="63" selection-end-line="41" selection-end-column="63" />
+        <state relative-caret-position="673">
+          <caret line="50" column="43" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/nmaptest.go" />
+    <entry file="file://$PROJECT_DIR$/src/dalton/db/models/models.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/github.com/lair-framework/go-nmap/nmap.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="122" column="21" selection-start-line="122" selection-start-column="21" selection-end-line="122" selection-end-column="21" />
+        <state relative-caret-position="374">
+          <caret line="102" column="91" selection-start-line="102" selection-start-column="91" selection-end-line="102" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dalton/scannerd/scanning.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="48" column="47" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dalton/config/config.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/dalton.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scannerd/requirements">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/testsignal.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scannerd/scannerd.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+          <folding>
+            <element signature="e#14#110#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

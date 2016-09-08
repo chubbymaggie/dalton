@@ -39,6 +39,9 @@ func beginScan(requestedScan *models.ScanEntry , tempDir string) {
 		db.UpdateEntry(requestedScan)
 		return
 	}()
+
+	//deferred : remove it from the in-memory map
+	defer delete(AvailableScans,requestedScan.ScanId.Hex())
 	//Access the configuration details from the config file
 	//Let us configure the current scan details
 	scanSettings := &security.ScanSettings{
@@ -76,8 +79,6 @@ func beginScan(requestedScan *models.ScanEntry , tempDir string) {
 	if err != nil {
 		log.Log(SCANNER_NAME,fmt.Sprintf("Received an error during updating the current Scan : %v , With Error Details : %v",requestedScan,err))
 	}
-	//remove it from the in-memory map
-	delete(AvailableScans,requestedScan.ScanId.Hex())
 	//Just notify that the scan is already finished
 	log.Log(SCANNER_NAME,fmt.Sprintf("Finished Scanning :%v , with Hosts : %d",requestedScan,len(foundHosts)))
 
