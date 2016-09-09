@@ -3,13 +3,70 @@ package db
 import (
 	"labix.org/v2/mgo"
 	"fmt"
+	"dalton/db/models"
+	"dalton/utils"
+	"labix.org/v2/mgo/bson"
 )
-
 const (
 
 	SCRIPTS_COLLECTION_NAME = "Scripts"
 )
 
+
+func UpdateScriptWith(script *models.Script,updateQuery *bson.M) error {
+
+	collection , session := GetCollection(SCRIPTS_COLLECTION_NAME)
+	defer session.Close()
+	id := script.Id
+	return collection.UpdateId(id,updateQuery)
+}
+
+func UpdateScript(script *models.Script) error {
+
+	collection , session := GetCollection(SCRIPTS_COLLECTION_NAME)
+	defer session.Close()
+	id := script.Id
+	return collection.UpdateId(id,script.GetUpdateQuery())
+}
+func DeleteScript(script *models.Script) error {
+	collection , session := GetCollection(SCRIPTS_COLLECTION_NAME)
+	defer session.Close()
+	return collection.Remove(bson.M{"id":script.Id})
+}
+
+func InsertScript(script *models.Script,collection *mgo.Collection) error {
+
+	if script == nil {
+		fmt.Println("nil Script")
+		return fmt.Errorf("nil Script")
+	}
+	if script.Id == ""{
+		script.Id = utils.NewObjectId()
+	}
+	err := collection.Insert(script)
+	return err
+}
+
+func SearchScripts(q interface{},skip,limit int) (searchResults []models.Script,err error) {
+
+	searchResults = []models.Script{}
+	query := func(c *mgo.Collection) error {
+		fn := c.Find(q).Skip(skip).Limit(limit).All(&searchResults)
+		if limit < 0{
+			fn = c.Find(q).Skip(skip).All(&searchResults)
+		}
+		return fn
+	}
+	search := func() error {
+		return WithCollection(SCRIPTS_COLLECTION_NAME,query)
+	}
+
+	err = search()
+	if err != nil {
+		return
+	}
+	return
+}
 
 func EnsureScriptsIndices(c *mgo.Collection) error{
 
@@ -21,7 +78,7 @@ func EnsureScriptsIndices(c *mgo.Collection) error{
 		Sparse:     true,
 	},
 		{
-			Key: []string{"cveIds","name"},
+			Key: []string{"cveIds","name","fileName"},
 		Unique:     false,
 		DropDups:   false,
 		Background: true,

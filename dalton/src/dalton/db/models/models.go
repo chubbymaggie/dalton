@@ -69,7 +69,7 @@ func (asset AssetDB) GoString() string {
 /*
    ScanEntry defines if there is any ongoing test available or not , and which tests have been previously performed.
  */
-type ScanEntry struct {
+type Reconn struct {
 
 	//The scan id to be used
 	ScanId bson.ObjectId `bson:"_id,omitempty" json:"id,omitempty"`
@@ -86,7 +86,7 @@ type ScanEntry struct {
 	Progress float64 `bson:"progress" json:"progress"`
 }
 
-func (entry ScanEntry) GoString() string{
+func (entry Reconn) GoString() string{
 	return fmt.Sprintf("_id:%v , StartTime: %v , EndTime : %v , InitiatedBy: %s , Status : %v " +
 		" , Command : %v , Progress : %v , Status Message : %s",entry.ScanId,entry.StartTime,entry.EndTime,entry.InitiatedBy,entry.Status,entry.CommandArgs,entry.Progress,
 	entry.StatusMessage)

@@ -62,7 +62,7 @@ func SearchCVEs(q interface{},skip,limit int) (searchResults []models.CVE , err 
 	if err != nil {
 		return
 	}
-	return searchResults,err
+	return
 }
 func EnsureCVEsIndices (c *mgo.Collection) error {
 

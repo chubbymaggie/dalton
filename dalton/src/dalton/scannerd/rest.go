@@ -25,14 +25,14 @@ const (
 )
 var (
 	//Define the channel that will obtain the new tests from the web interface
-	NewScans chan models.ScanEntry
-	AvailableScans map[string]models.ScanEntry
+	NewScans chan models.Reconn
+	AvailableScans map[string]models.Reconn
 )
 func init(){
 	//Initialize the scanEntry channel to be buffered Scans channel
-	NewScans = make(chan models.ScanEntry,SCANNERD_CHANNEL_BUFFER)
+	NewScans = make(chan models.Reconn,SCANNERD_CHANNEL_BUFFER)
 	//initialize an Empty Map
-	AvailableScans=make(map[string]models.ScanEntry)
+	AvailableScans=make(map[string]models.Reconn)
 	//initialize the log
 	log.InitLog(SCANNER_NAME)
 	//Check the database for stored unfinished scans
@@ -65,7 +65,7 @@ func initInteralMap() error {
 	}
 	return nil
 }
-func appendNewScan(scanEntry *models.ScanEntry,dbInsert bool) error {
+func appendNewScan(scanEntry *models.Reconn,dbInsert bool) error {
 	//add a new Scan entry
 	AvailableScans[scanEntry.ScanId.Hex()] = *scanEntry
 	//We should also add the scan into the database
@@ -145,7 +145,7 @@ func insertNewScan (w http.ResponseWriter , r *http.Request) {
 			fmt.Fprintf(w,restError.ToJson())
 		}
 		//now unmarshal the received data back into json object
-		var newScan models.ScanEntry
+		var newScan models.Reconn
 		err = json.Unmarshal(payload,&newScan)
 		if err != nil {
 			log.Log(SCANNER_NAME,fmt.Sprintf(" We Received an Error : %v",err))
@@ -212,7 +212,7 @@ func getExistingScan(w http.ResponseWriter , r *http.Request) {
 	fmt.Fprintf(w,MarshalInterface(foundScanEntry[0]))
 }
 
-func searchInMemoryScans(scanId bson.ObjectId) (*models.ScanEntry , error) {
+func searchInMemoryScans(scanId bson.ObjectId) (*models.Reconn, error) {
 	if scan , ok := AvailableScans[scanId.Hex()]; ok {
 		return &scan , nil
 	}
@@ -256,7 +256,7 @@ func getAllActiveScans(w http.ResponseWriter , r *http.Request) {
 		return
 	}
 	//getting all active scans
-	activeScans := make([]models.ScanEntry,0)
+	activeScans := make([]models.Reconn,0)
 	for key  := range AvailableScans {
 		if value , ok := AvailableScans[key]; ok {
 				activeScans = append(activeScans,value)
@@ -276,7 +276,7 @@ func MarshalInterface(v interface{}) string{
 	}
 	return string(contents)
 }
-func addScanToChannel(entry *models.ScanEntry){
+func addScanToChannel(entry *models.Reconn){
 
 	NewScans <- *entry
 }

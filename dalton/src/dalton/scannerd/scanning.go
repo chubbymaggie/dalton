@@ -19,13 +19,13 @@ func StartScanning() {
 		return
 	}
 	for {
-		var NewScan models.ScanEntry
+		var NewScan models.Reconn
 		NewScan = <- NewScans
 		log.Log(SCANNER_NAME,fmt.Sprintf("Starting the current scan , %v",NewScan))
 		go beginScan(&NewScan,tempDir)
 	}
 }
-func beginScan(requestedScan *models.ScanEntry , tempDir string) {
+func beginScan(requestedScan *models.Reconn, tempDir string) {
 	//Intercept exceptions and log them
 	defer func (){
 
@@ -84,7 +84,7 @@ func beginScan(requestedScan *models.ScanEntry , tempDir string) {
 
 }
 
-func convertHostToAsset(scan *models.ScanEntry , host *nmap.Host) (*models.AssetDB , error) {
+func convertHostToAsset(scan *models.Reconn, host *nmap.Host) (*models.AssetDB , error) {
 
 	addresses := make([]string,0)
 

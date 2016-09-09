@@ -174,6 +174,8 @@ func ensureIndices(collectionName string ,  C *mgo.Collection) error {
 		return EnsureEntriesIndices(C)
 	case CVE_COLLECTION_NAME:
 		return EnsureCVEsIndices(C)
+	case SCRIPTS_COLLECTION_NAME:
+		return EnsureScriptsIndices(C)
 	}
 	return nil
 }

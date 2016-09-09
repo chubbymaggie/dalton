@@ -58,7 +58,7 @@ func (scanStatus ScanStatus) ToJson() string {
 type RestBatch struct {
 
 	Description string `json:"description,omitempty"`
-	Payload []models.ScanEntry `json:"payload"`
+	Payload []models.Reconn `json:"payload"`
 	Size int `json:"size"`
 }
 

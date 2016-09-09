@@ -9,12 +9,12 @@ import (
 
 const (
 
-	ENTRIES_COLLECTION_NAME="scanEntries"
+	ENTRIES_COLLECTION_NAME="Reconns"
 )
 
-func GetAllScanEntries() (searchResults []models.ScanEntry , err error){
+func GetAllScanEntries() (searchResults []models.Reconn, err error){
 
-	searchResults = []models.ScanEntry{}
+	searchResults = []models.Reconn{}
 	query := func(c *mgo.Collection) error {
 
 		return c.Find(bson.M{"status":false}).All(&searchResults)
@@ -29,8 +29,8 @@ func GetAllScanEntries() (searchResults []models.ScanEntry , err error){
 	}
 	return
 }
-func SearchEntries(q interface{},skip,limit int) (searchResults []models.ScanEntry , err error){
-	searchResults = []models.ScanEntry{}
+func SearchEntries(q interface{},skip,limit int) (searchResults []models.Reconn, err error){
+	searchResults = []models.Reconn{}
 	query := func(c *mgo.Collection) error {
 
 		fn := c.Find(q).Skip(skip).Limit(limit).All(&searchResults)
@@ -49,7 +49,7 @@ func SearchEntries(q interface{},skip,limit int) (searchResults []models.ScanEnt
 	}
 	return
 }
-func InsertEntry(entry *models.ScanEntry) error {
+func InsertEntry(entry *models.Reconn) error {
 
 	collection , session := GetCollection(ENTRIES_COLLECTION_NAME)
 	defer session.Close()
@@ -60,12 +60,12 @@ func InsertEntry(entry *models.ScanEntry) error {
 
 	return collection.Insert(entry)
 }
-func DeleteEntry(entry *models.ScanEntry) error {
+func DeleteEntry(entry *models.Reconn) error {
 	collection , session := GetCollection(ENTRIES_COLLECTION_NAME)
 	defer session.Close()
 	return collection.Remove(bson.M{"_id":entry.ScanId})
 }
-func UpdateEntry(entry *models.ScanEntry) error {
+func UpdateEntry(entry *models.Reconn) error {
 	collection , session := GetCollection(ENTRIES_COLLECTION_NAME)
 	defer session.Close()
 	id := entry.ScanId
@@ -76,7 +76,7 @@ func UpdateEntry(entry *models.ScanEntry) error {
 	}}
 	return collection.UpdateId(id,update)
 }
-func UpdateEntryWith(entry *models.ScanEntry , updateQuery *bson.M) error {
+func UpdateEntryWith(entry *models.Reconn, updateQuery *bson.M) error {
 	collection,session := GetCollection(ENTRIES_COLLECTION_NAME)
 	defer session.Close()
 	id := entry.ScanId

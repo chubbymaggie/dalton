@@ -36,6 +36,37 @@ type Script struct {
 	ScriptTags []DaltonNameValuePair `bson:"tags,omitempty" json:"tags,omitempty"`
 	InsertedTime time.Time `bson:"insertedTime,omitempty" json:"insertedTime,omitempty"`
 	ModifiedTime time.Time `bson:"modifiedTime,omitempty" json:"modifiedTime,omitempty"`
+	ScriptFileName string `bson:"fileName,omitempty" json:"fileName,omitempty"`
+}
+
+func (script Script) GetUpdateQuery() bson.M {
+
+	return bson.M{"$set":bson.M{
+		"name":script.ScriptName,
+		"version":script.ScriptVersion,
+		"timeout":script.ScriptTimeout,
+		"description":script.ScriptDescription,
+		"copyright":script.ScriptCopyRight,
+		"summary":script.ScriptSummary,
+		"category":script.ScriptCategory,
+		"family":script.ScriptFamily,
+		"sid":script.ScriptId,
+		"oid":script.ScriptOid,
+		"cveIds":script.ScriptCveIds,
+		"bugTraqIds":script.ScriptBugTraqIds,
+		"deps":script.ScriptDependencies,
+		"rKeys":script.ScriptRequireKeys,
+		"mKeys":script.ScriptMandatoryKeys,
+		"rPorts":script.ScriptRequirePorts,
+		"rUDPs":script.ScriptRequireUDP,
+		"eKeys":script.ScriptExcludeKeys,
+		"prefs":script.ScriptAddPreferences,
+		"xRefs":script.ScriptXRefs,
+		"tags":script.ScriptTags,
+		"insertedTime":script.InsertedTime,
+		"modifiedTime":time.Now(),
+		"fileName":script.ScriptFileName,
+	}}
 }
 
 type DaltonNameValuePair struct {
