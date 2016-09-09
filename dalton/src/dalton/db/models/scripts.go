@@ -3,6 +3,14 @@ package models
 import (
 	"labix.org/v2/mgo/bson"
 	"time"
+	"strings"
+	"strconv"
+)
+
+const (
+
+	CVSS_BASE = "cvss_base"
+	CVSS_BASE_VECTOR ="cvss_base_vector"
 )
 
 /*
@@ -37,6 +45,42 @@ type Script struct {
 	InsertedTime time.Time `bson:"insertedTime,omitempty" json:"insertedTime,omitempty"`
 	ModifiedTime time.Time `bson:"modifiedTime,omitempty" json:"modifiedTime,omitempty"`
 	ScriptFileName string `bson:"fileName,omitempty" json:"fileName,omitempty"`
+}
+
+
+func (script Script) GetCVSS() float64{
+
+	for _ , tag := range script.ScriptTags {
+
+		tagName := strings.ToLower(tag.Name)
+		if strings.EqualFold(tagName,CVSS_BASE) {
+
+			cvss , err := strconv.ParseFloat(tag.Value,64)
+			if err != nil {
+				continue
+			}
+
+			return cvss
+
+		}
+	}
+
+	return -1
+}
+
+func (script Script) GetCVSS_Vector() string {
+
+	var vector string
+
+	for _ , tag := range script.ScriptTags{
+
+		tagName := strings.ToLower(tag.Name)
+		if strings.EqualFold(tagName,CVSS_BASE_VECTOR){
+			vector = tag.Value
+			break
+		}
+	}
+	return vector
 }
 
 func (script Script) GetUpdateQuery() bson.M {

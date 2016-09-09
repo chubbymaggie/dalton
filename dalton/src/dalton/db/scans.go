@@ -32,7 +32,7 @@ func UpdateScan(scan *models.ScanDB) error {
 	defer session.Close()
 	id := scan.Id
 	update := bson.M{"$set":bson.M{"name":scan.Name,"createdAt":scan.CreatedAt,"userId":scan.UserId,
-	"status":scan.Status,"hostId":scan.HostId,"severity":scan.Severity}}
+	"status":scan.Status,"hostId":scan.AssetId,"severity":scan.Severity}}
 	return collection.UpdateId(id,update)
 }
 

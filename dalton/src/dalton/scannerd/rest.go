@@ -151,6 +151,7 @@ func insertNewScan (w http.ResponseWriter , r *http.Request) {
 			log.Log(SCANNER_NAME,fmt.Sprintf(" We Received an Error : %v",err))
 			restError := &rest.RestError{Message:fmt.Sprintf("UnRecognized Payload sent during the request , Received this Error : %v",err),SentTime:time.Now(),ErrorCode:ERROR_CODE}
 			fmt.Fprintf(w,restError.ToJson())
+			return
 		}
 		//if everything went fine , just append that newScan into the newScans channel
 		//add a new objectId into the new Scan

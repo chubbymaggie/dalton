@@ -5,10 +5,10 @@ import (
 	"net/http"
 	"dalton/scannerd"
 	"dalton/config"
-
 	"os"
 	"syscall"
 	"os/signal"
+	"runtime"
 )
 
 const (
@@ -26,6 +26,9 @@ var (
    The main function that will run the scannerd
  */
 func main() {
+
+	cores := maxParallelism()
+	runtime.GOMAXPROCS(cores)
 	signals = make(chan os.Signal,1) // Buffered Channel
 	signal.Notify(signals,syscall.SIGINT,syscall.SIGTERM)
 	//start handling the mux
@@ -37,10 +40,19 @@ func main() {
 	host := config.ReadKey(DALTON_SCANNERD_SECTION,DALTON_SCANNERD_HOST)
 	port := config.ReadKey(DALTON_SCANNERD_SECTION,DALTON_SCANNERD_PORT)
 	listeningURI := fmt.Sprintf("%s:%s",host.String(),port.String())
-	fmt.Println(fmt.Sprintf("Starting %s on Port %s",scannerd.SCANNER_NAME,port.String()))
+	fmt.Println(fmt.Sprintf("Starting %s on Port %s With Cores : %d",scannerd.SCANNER_NAME,port.String(),cores))
 	http.ListenAndServe(listeningURI,nil)
 	fmt.Println("Awaiting any Signal from the operating System To shutdown the current program.")
 
+}
+
+func maxParallelism() int {
+    maxProcs := runtime.GOMAXPROCS(0)
+    numCPU := runtime.NumCPU()
+    if maxProcs < numCPU {
+        return maxProcs
+    }
+    return numCPU
 }
 
 func gracefulShutdown(signals chan os.Signal){

@@ -28,7 +28,7 @@ func UpdateAsset(asset *models.AssetDB) error {
 	id := asset.Id
 	update := bson.M{"$set":bson.M{"host":asset.Host,"ipAddrs":asset.IPAddrs,"createdAt":asset.CreatedAt,
 	"reachable":asset.Reachable,"status":asset.Status,"osInfo":asset.OSInfo,"upTime":asset.UpTime,"entryId":asset.EntryId},"os":asset.OS,
-	 "ports":asset.Ports}
+	 "ports":asset.Ports,"findings":asset.Findings}
 	return collection.UpdateId(id,update)
 }
 /*

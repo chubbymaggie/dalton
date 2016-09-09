@@ -3,21 +3,20 @@ package models
 import (
 	"time"
 	"labix.org/v2/mgo/bson"
+
+
 )
 
-const (
-	DISCOVERED_BY_SCANNERD = "scannerd"
-	DISCOVERED_BY_ANALYZERD = "analyzerd"
-)
-
+/*
+    This structure defines a vulnerability finding for a given scanDB
+ */
 type Vulnerability struct {
-
+	Id bson.ObjectId `bson:"id,omitempty" json:"id,omitempty"`
 	DiscoveredTime time.Time `bson:"discoveredTime,omitempty" json:"discoveredTime,omitempty"`
 	ScanId bson.ObjectId	`bson:"scanId" json:"scanId"`
 	ScriptId bson.ObjectId `bson:"scriptId,omitempty" json:"scriptId,omitempty"`
-	ScriptName string `bson:"scriptName" json:"scriptName"`
 	Success bool `bson:"success" json:"success"`
 	Messages []string `bson:"messages,omitempty" json:"messages,omitempty"`
-	DiscoveredBy string `bson:"discoveredBy,omitempty" json:"discoveredBy,omitempty"`
-
+	CVSS float64 `bson:"score,omitempty" json:"score,omitempty"`
+	CVSS_Vector string `bson:"cvss_vector,omitempty" json:"cvss_vector,omitempty"`
 }

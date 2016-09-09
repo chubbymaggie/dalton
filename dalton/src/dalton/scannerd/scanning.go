@@ -9,6 +9,7 @@ import (
 	"github.com/lair-framework/go-nmap"
 	"time"
 	"dalton/config"
+	"labix.org/v2/mgo/bson"
 )
 func StartScanning() {
 	//Get the temporary directory
@@ -62,6 +63,8 @@ func beginScan(requestedScan *models.Reconn, tempDir string) {
 			log.Log(SCANNER_NAME , fmt.Sprintf("Received an error during converting an nmap host to Dalton Asset : %v",err))
 			continue
 		}
+		//Check for any available findings
+		checkUnAttestedFindings(convertedAsset)
 		//Now save it into the database
 		err = db.InsertAsset(convertedAsset)
 		if err != nil {
@@ -82,6 +85,35 @@ func beginScan(requestedScan *models.Reconn, tempDir string) {
 	//Just notify that the scan is already finished
 	log.Log(SCANNER_NAME,fmt.Sprintf("Finished Scanning :%v , with Hosts : %d",requestedScan,len(foundHosts)))
 
+}
+
+/*
+    This function will take an asset and updates it based on any CVE matching CPEs that might exist in the found asset's ports and services
+
+ */
+func checkUnAttestedFindings(asset *models.AssetDB) {
+
+	//loop over all found ports
+	for _ , port := range asset.Ports {
+
+		foundCPE := port.Service.CPE
+
+		if (len(foundCPE.Value) > 0 ){
+			//now search for that CPE in the database
+			searchQuery := bson.M{"products":bson.M{"$in":[]string{foundCPE.Value}}}
+			CVEs , err := db.SearchCVEs(searchQuery,0,-1)
+			if err != nil {
+				continue
+			}
+
+			for _ , CVE := range CVEs{
+				asset.Findings = append(asset.Findings,CVE.CveId)
+			}
+
+		}else {
+			continue
+		}
+	}
 }
 
 func convertHostToAsset(scan *models.Reconn, host *nmap.Host) (*models.AssetDB , error) {

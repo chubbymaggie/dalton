@@ -25,24 +25,6 @@ func (user UserDB) GoString() string {
 		user.Id,user.FullName,user.Title,user.Role,user.UserName,user.Password,user.Email,user.JoinedDate)
 }
 
-type ScanDB struct {
-
-	Id bson.ObjectId `bson:"_id,omitempty" json:"_id,omitempty"`
-	Name string `bson:"name" json:"name"`
-	CreatedAt time.Time `bson:"createdAt,omitempty" json:"createdAt,omitempty"`
-	UserId bson.ObjectId `bson:"userId" json:"userId"`
-	Status int `bson:"status" json:"status"`
-	HostId bson.ObjectId `bson:"hostId" json:"hostId"`
-	Severity int `bson:"severity,omitempty" json:"severity,omitempty"`
-}
-
-
-func (scan ScanDB) GoString() string {
-
-	return fmt.Sprintf("Id:%v , Name : %s , Created At : %v , UserId : %v , Status:%d , HostId: %v , Severity: %d",
-	scan.Id,scan.Name,scan.CreatedAt,scan.UserId,scan.Status,scan.HostId,scan.Severity)
-}
-
 type AssetDB struct {
 
 	Id bson.ObjectId `bson:"_id,omitempty" json:"_id,omitempty"`
@@ -56,6 +38,7 @@ type AssetDB struct {
 	UpTime nmap.Uptime `bson:"upTime,omitempty" json:"upTime,omitempty"`
 	EntryId bson.ObjectId `bson:"entryId" json:"entryId"`
 	Ports []nmap.Port 	`bson:"ports,omitempty" json:"ports,omitempty"`
+	Findings []string `bson:"findings,omitempty" json:"findings,omitempty"`
 }
 
 
