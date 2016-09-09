@@ -26,14 +26,13 @@ func DescribeNaslFile(naslFile *NaslFile) (*models.Script,error) {
 
 func ExecuteNaslScript(nasl *NaslFile , messages *[]string , success *int) error{
 	//set the description only field to always be off , because we are actually executing the current nasl script instead
-	nasl.DescriptionOnly = 0
+	nasl.DescriptionOnly =0
 	_ , err := executeNaslFile(nasl,messages,success)
 	if err != nil {
 		return err
 	}
 	return nil
 }
-
 func executeNaslFile(settings *NaslFile,messages *[]string,success *int) (*models.Script,error) {
 
 	arguments := &C.struct_ExternalData{file:C.CString(settings.File),target:C.CString(settings.Target),
@@ -87,7 +86,7 @@ func executeNaslFile(settings *NaslFile,messages *[]string,success *int) (*model
 		return nil , err
 	}
 	//check to see if the script has been run or not
-	if(settings.DescriptionOnly <=0){
+	if(settings.DescriptionOnly <= 0){
 		results , err := fillScriptWithSecurityMessages(info)
 		if err != nil {
 			return nil,err
