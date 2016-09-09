@@ -6,7 +6,6 @@ import (
 
 
 )
-
 /*
     This structure defines a vulnerability finding for a given scanDB
  */

@@ -66,3 +66,16 @@ typedef struct DaltonScriptInfo {
     int Success;
 
 }DaltonScriptInfo;
+
+
+
+
+
+struct ExternalData {
+
+    char * file; // the nasl file to run
+    char * target; // the target to scan
+    int authenticated; // whether to run the script as always signed and authenticated
+    int descriptionOnly;
+    char *locations[1000]; // These are the locations that should be registered into the interpreter
+};

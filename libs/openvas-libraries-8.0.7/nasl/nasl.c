@@ -148,14 +148,19 @@ extern int executeNasl(struct ExternalData* definition,DaltonScriptInfo *daltonS
   static gboolean both_modes = FALSE;
   static gchar *config_file = NULL;
   static gboolean authenticated_mode = FALSE;
+  static gboolean descriptionOnly = FALSE;
   static gchar **nasl_filenames = NULL;
   nasl_filenames = &definition->file;
   authenticated_mode = definition->authenticated;
+  descriptionOnly = definition->descriptionOnly;
   target = definition->target;
-
   if (authenticated_mode)
   {
     mode |= NASL_ALWAYS_SIGNED;
+  }
+  //Check whether to run the current script in Description only mode or not
+  if(descriptionOnly > 0){
+      mode |= NASL_EXEC_DESCR;
   }
 
   openvas_SSL_init ();

@@ -40,6 +40,7 @@ struct ExternalData {
     char * file; // the nasl file to run
     char * target; // the target to scan
     int authenticated; // whether to run the script as always signed and authenticated
+    int descriptionOnly;
 };
 
 extern int executeNasl(struct ExternalData* definition,DaltonScriptInfo *daltonScriptInfo);

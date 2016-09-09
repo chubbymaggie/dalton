@@ -1,0 +1,74 @@
+package main
+//#cgo LDFLAGS: -I/usr/local/include/glib-2.0 -Lusr/local/lib -lopenvas_nasl -I/usr/local/include/glib-2.0
+//#include<stdio.h>
+//#include<stdlib.h>
+//#include<openvas/nasl/nasl.h>
+import "C"
+import (
+	"fmt"
+)
+const (
+	MAX_COUNT = 999
+)
+func main() {
+
+	defer  func(){
+
+		recover()
+	}()
+
+	var counter int = 0
+
+	for(counter <MAX_COUNT){
+
+		 arguments := &C.struct_ExternalData{file:C.CString("/media/snouto/rest/projects/openvas/nvts/gb_default_smb_credentials.nasl")
+		 ,target:C.CString("192.168.1.8"),authenticated:1}
+	 info := &C.struct_DaltonScriptInfo{}
+
+	fmt.Println("Target : ",C.GoString(arguments.target));
+	C.executeNasl(arguments,info)
+	fmt.Printf("Script Version : %s\n",C.GoString(info.ScriptVersion))
+	//printing the cve ID of the current file
+	var i int =0
+
+	for(i <MAX_COUNT){
+
+		if(info.ScriptCveIds[i] != nil && info.ScriptMessages[i] != nil ){
+			fmt.Printf("Script CVE ID : %s\n",C.GoString(info.ScriptCveIds[i].Contents));
+			fmt.Printf("Security Message : %s\n",C.GoString(info.ScriptMessages[i].Contents));
+		}else{
+			break
+		}
+
+		i++
+	}
+
+
+		counter++
+	}
+
+	fmt.Println("Done")
+
+}
+
+/*
+
+These are the script categories
+
+#define ACT_UNKNOWN             11
+#define ACT_END                 10
+#define ACT_FLOOD               9
+#define ACT_KILL_HOST           8
+#define ACT_DENIAL              7
+#define ACT_DESTRUCTIVE_ATTACK  6
+#define ACT_MIXED_ATTACK        5
+#define ACT_ATTACK              4
+#define ACT_GATHER_INFO         3
+#define ACT_SETTINGS            2
+#define ACT_SCANNER             1
+#define ACT_INIT                0
+
+ */
+
+
+
