@@ -19,3 +19,17 @@ type Vulnerability struct {
 	CVSS float64 `bson:"score,omitempty" json:"score,omitempty"`
 	CVSS_Vector string `bson:"cvss_vector,omitempty" json:"cvss_vector,omitempty"`
 }
+
+
+func (vuln Vulnerability) GetUpdateQuery() *bson.M {
+
+	return &bson.M{"$set":bson.M{
+		"discoveredTime":vuln.DiscoveredTime,
+		"scanId":vuln.ScanId,
+		"scriptId":vuln.ScriptId,
+		"success":vuln.Success,
+		"messages":vuln.Messages,
+		"score":vuln.CVSS,
+		"cvss_vector":vuln.CVSS_Vector,
+	}}
+}

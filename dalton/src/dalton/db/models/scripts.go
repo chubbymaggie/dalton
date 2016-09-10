@@ -70,7 +70,7 @@ func (script Script) GetCVSS() float64{
 
 func (script Script) GetCVSS_Vector() string {
 
-	var vector string
+	var vector string = ""
 
 	for _ , tag := range script.ScriptTags{
 

@@ -20,7 +20,7 @@ var (
 	rootDir string
 )
 
-func Iterator (path string, info os.FileInfo, err error) error{
+func collectScripts(path string, info os.FileInfo, err error) error{
 
 	if !info.IsDir() { //meaning that it is a file
 
@@ -95,7 +95,7 @@ func main() {
 	fmt.Println("Total Number of Scripts : ",totalNumber)
 	fmt.Println("Begin the walking process")
 
-	engine.WalkDirTree(root,Iterator)
+	engine.WalkDirTree(root, collectScripts)
 
 	fmt.Println("Finished")
 
