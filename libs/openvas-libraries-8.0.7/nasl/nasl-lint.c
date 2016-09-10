@@ -160,6 +160,7 @@ custom_log_handler(const gchar *log_domain,
 int
 main (int argc, char **argv)
 {
+  initializeDaltonInfo();
   int mode = 0;
   int err = 0;
   static gboolean debug = FALSE;

@@ -172,6 +172,9 @@ extern int executeNasl(struct ExternalData* definition,DaltonScriptInfo *daltonS
 
   // for absolute and relative paths
   add_nasl_inc_dir ("");
+  if(definition->rootDir){
+    add_nasl_inc_dir(definition->rootDir);
+  }
   prefs_config (config_file ?: OPENVASSD_CONF);
   while ((host = openvas_hosts_next (hosts)))
   {
@@ -248,13 +251,14 @@ int clearDaltonInfo()
 
 }
 int
-main (int argc, char **argv)
+mainc (int argc, char **argv)
 {
 
   struct ExternalData *definition = malloc(sizeof(struct ExternalData));
   definition->target = "192.168.1.8";
-  definition->file = "/media/snouto/rest/projects/openvas/nvts/gb_default_smb_credentials.nasl";
+  definition->file = argv[0];
   definition->authenticated = 1;
+  definition->descriptionOnly = 1;
 
   DaltonScriptInfo *testInfo = (DaltonScriptInfo *)malloc(sizeof(DaltonScriptInfo));
   int result =  executeNasl(definition,testInfo);
@@ -266,8 +270,9 @@ main (int argc, char **argv)
 }
 
 int
-mainc (int argc, char **argv)
+main (int argc, char **argv)
 {
+  initializeDaltonInfo();
   struct arglist *script_infos;
   openvas_hosts_t *hosts;
   openvas_host_t *host;

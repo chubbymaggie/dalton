@@ -41,6 +41,7 @@ struct ExternalData {
     char * target; // the target to scan
     int authenticated; // whether to run the script as always signed and authenticated
     int descriptionOnly;
+    char *rootDir;
 };
 
 extern int executeNasl(struct ExternalData* definition,DaltonScriptInfo *daltonScriptInfo);

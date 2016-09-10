@@ -17,6 +17,7 @@ type NaslFile struct {
 	File string
 	DescriptionOnly int
 	RegisteredPaths []string
+	RootDir string
 }
 func DescribeNaslFile(naslFile *NaslFile) (*models.Script,error) {
 	//Set the Description only field to always on , because we are getting only the description for that specific nasl file
@@ -36,7 +37,7 @@ func ExecuteNaslScript(nasl *NaslFile , messages *[]string , success *int) error
 func executeNaslFile(settings *NaslFile,messages *[]string,success *int) (*models.Script,error) {
 
 	arguments := &C.struct_ExternalData{file:C.CString(settings.File),target:C.CString(settings.Target),
-	authenticated:C.int(settings.Authenticated),descriptionOnly:C.int(settings.DescriptionOnly)}
+	authenticated:C.int(settings.Authenticated),descriptionOnly:C.int(settings.DescriptionOnly),rootDir:C.CString(settings.RootDir)}
 	info := &C.struct_DaltonScriptInfo{}
 	C.executeNasl(arguments,info)
 	//Create a dummy script object
@@ -132,7 +133,8 @@ func fillScriptWithAddPreferences(script *models.Script,info *C.struct_DaltonScr
 
 	for counter < MAX_COUNT{
 
-		if(info.ScriptAddPreferences[counter] != nil){
+		if(info.ScriptAddPreferences[counter] != nil && info.ScriptAddPreferences[counter].Name != nil &&
+		 info.ScriptAddPreferences[counter].Value != nil && info.ScriptAddPreferences[counter].Type != nil){
 
 			Pref := models.DaltonDictContainer{
 				Name:C.GoString(info.ScriptAddPreferences[counter].Name),
@@ -159,7 +161,8 @@ func fillScriptWithXRefs(script *models.Script,info *C.struct_DaltonScriptInfo) 
 	xRefs := []models.DaltonNameValuePair{}
 	for counter < MAX_COUNT{
 
-		if(info.ScriptXRefs[counter] != nil){
+		if(info.ScriptXRefs[counter] != nil && info.ScriptXRefs[counter].Name != nil &&
+		info.ScriptXRefs[counter].Value != nil){
 
 			xRef := models.DaltonNameValuePair{
 				Name:C.GoString(info.ScriptXRefs[counter].Name),
@@ -186,7 +189,8 @@ func fillScriptWithTags(script *models.Script,info *C.struct_DaltonScriptInfo) e
 	tags := []models.DaltonNameValuePair{}
 	for counter < MAX_COUNT {
 
-		if(info.ScriptTags[counter] != nil){
+		if(info.ScriptTags[counter] != nil && info.ScriptTags[counter].Name != nil &&
+		info.ScriptTags[counter].Value != nil){
 
 			tag := models.DaltonNameValuePair{
 				 Name:C.GoString(info.ScriptTags[counter].Name),
@@ -212,7 +216,7 @@ func fillScriptWithSecurityMessages(info *C.struct_DaltonScriptInfo) ([]string,e
 	var counter int  = 0
 	var SecurityMessages []string
 	for counter < MAX_COUNT {
-		if (info.ScriptMessages[counter] != nil ){
+		if (info.ScriptMessages[counter] != nil && info.ScriptMessages[counter].Contents != nil ){
 			SecurityMessages = append(SecurityMessages,C.GoString(info.ScriptMessages[counter].Contents))
 		}else{
 			break
@@ -233,7 +237,7 @@ func fillScriptWithExcludeKeys (script *models.Script , info *C.struct_DaltonScr
 	}()
 	var counter int  = 0
 	for counter < MAX_COUNT {
-		if (info.ScriptExcludeKeys[counter] != nil ){
+		if (info.ScriptExcludeKeys[counter] != nil && info.ScriptExcludeKeys[counter].Contents != nil ){
 			script.ScriptExcludeKeys = append(script.ScriptExcludeKeys,C.GoString(info.ScriptExcludeKeys[counter].Contents))
 		}else{
 			break
@@ -254,7 +258,7 @@ func fillScriptWithRequireUDPPorts(script *models.Script , info *C.struct_Dalton
 	}()
 	var counter int  = 0
 	for counter < MAX_COUNT {
-		if (info.ScriptRequireUDPPorts[counter] != nil ){
+		if (info.ScriptRequireUDPPorts[counter] != nil && info.ScriptRequireUDPPorts[counter].Contents ){
 			script.ScriptRequireUDP = append(script.ScriptRequireUDP,C.GoString(info.ScriptRequireUDPPorts[counter].Contents))
 		}else{
 			break
@@ -276,7 +280,7 @@ func fillScriptWithRequirePorts(script *models.Script,info *C.struct_DaltonScrip
 	}()
 	var counter int  = 0
 	for counter < MAX_COUNT {
-		if (info.ScriptRequirePorts[counter] != nil ){
+		if (info.ScriptRequirePorts[counter] != nil && info.ScriptRequirePorts[counter].Contents != nil){
 			script.ScriptRequirePorts = append(script.ScriptRequirePorts,C.GoString(info.ScriptRequirePorts[counter].Contents))
 		}else{
 			break
@@ -298,7 +302,7 @@ func fillScriptWithMandatoryKeys(script *models.Script,info *C.struct_DaltonScri
 	}()
 	var counter int  = 0
 	for counter < MAX_COUNT {
-		if (info.ScriptMandatoryKeys[counter] != nil ){
+		if (info.ScriptMandatoryKeys[counter] != nil && info.ScriptMandatoryKeys[counter].Contents != nil ){
 			script.ScriptMandatoryKeys = append(script.ScriptMandatoryKeys,C.GoString(info.ScriptMandatoryKeys[counter].Contents))
 		}else{
 			break
@@ -320,7 +324,7 @@ func fillScriptWithRequireKeys(script *models.Script,info *C.struct_DaltonScript
 	var counter int  = 0
 	for counter < MAX_COUNT {
 
-		if (info.ScriptRequireKeys[counter] != nil ){
+		if (info.ScriptRequireKeys[counter] != nil && info.ScriptRequireKeys[counter].Contents != nil){
 			script.ScriptRequireKeys = append(script.ScriptRequireKeys,C.GoString(info.ScriptRequireKeys[counter].Contents))
 		}else{
 			break
@@ -343,7 +347,7 @@ func fillScriptWithDependencies(script *models.Script , info *C.struct_DaltonScr
 	var counter int  = 0
 	for counter < MAX_COUNT {
 
-		if (info.ScriptDependencies[counter] != nil ){
+		if (info.ScriptDependencies[counter] != nil && info.ScriptDependencies[counter].Contents != nil ){
 			script.ScriptDependencies = append(script.ScriptDependencies,C.GoString(info.ScriptDependencies[counter].Contents))
 		}else{
 			break
@@ -365,7 +369,7 @@ func fillScriptWithBugTraqIds(script *models.Script,info *C.struct_DaltonScriptI
 	var counter int  = 0
 	for counter < MAX_COUNT {
 
-		if (info.ScriptBugTraqIds[counter] != nil ){
+		if (info.ScriptBugTraqIds[counter] != nil && info.ScriptBugTraqIds[counter].Contents != nil){
 			script.ScriptBugTraqIds = append(script.ScriptBugTraqIds,C.GoString(info.ScriptBugTraqIds[counter].Contents))
 		}else{
 			break
@@ -387,7 +391,7 @@ func fillScriptWithCves(script *models.Script,info *C.struct_DaltonScriptInfo) e
 	var counter int  = 0
 	for counter < MAX_COUNT {
 
-		if (info.ScriptCveIds[counter] != nil ){
+		if (info.ScriptCveIds[counter] != nil && info.ScriptCveIds[counter].Contents != nil ){
 			script.ScriptCveIds = append(script.ScriptCveIds,C.GoString(info.ScriptCveIds[counter].Contents))
 		}else{
 			break
