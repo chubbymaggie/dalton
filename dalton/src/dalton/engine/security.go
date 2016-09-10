@@ -49,7 +49,7 @@ func SignScript(file , privatekey string) error{
 	fileName := strings.Split(stats.Name(),".")[0]
 	//now get the directory of the current script
 	fileDir := path.Dir(file)
-	fullPath := fmt.Sprintf("%s/%s.%s",fileDir,fileName,EXT_SIG_FILE)
+	fullPath := fmt.Sprintf("%s/%s%s",fileDir,fileName,EXT_SIG_FILE)
 	//open this new file or create it
 	signFile  ,err := os.OpenFile(fullPath,os.O_CREATE|os.O_TRUNC|os.O_WRONLY,0777)
 	if err != nil {

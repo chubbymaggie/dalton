@@ -23,28 +23,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a314eada-5993-4231-b29e-3c9d95f95855" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dalton/src/github.com/lair-framework/go-nmap" afterPath="$PROJECT_DIR$/../../dalton/src/github.com/lair-framework/go-nmap" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/nasl/CMakeFiles/openvas-nasl-lint.dir/nasl-lint.c.o" afterPath="$PROJECT_DIR$/build/nasl/CMakeFiles/openvas-nasl-lint.dir/nasl-lint.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/nasl/CMakeFiles/openvas-nasl.dir/nasl.c.o" afterPath="$PROJECT_DIR$/build/nasl/CMakeFiles/openvas-nasl.dir/nasl.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl.c.o" afterPath="$PROJECT_DIR$/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_init.c.o" afterPath="$PROJECT_DIR$/build/nasl/CMakeFiles/openvas_nasl_shared.dir/nasl_init.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/nasl/libopenvas_nasl.so.8.0.7" afterPath="$PROJECT_DIR$/build/nasl/libopenvas_nasl.so.8.0.7" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/nasl/openvas-nasl" afterPath="$PROJECT_DIR$/build/nasl/openvas-nasl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/nasl/openvas-nasl-lint" afterPath="$PROJECT_DIR$/build/nasl/openvas-nasl-lint" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dalton/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../dalton/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dalton/analyzerd/analyzerd.go" afterPath="$PROJECT_DIR$/../../dalton/analyzerd/analyzerd.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dalton/src/dalton/engine/engine.go" afterPath="$PROJECT_DIR$/../../dalton/src/dalton/engine/engine.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dalton/src/dalton/engine/io.go" afterPath="$PROJECT_DIR$/../../dalton/src/dalton/engine/io.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dalton/src/dalton/engine/security.go" afterPath="$PROJECT_DIR$/../../dalton/src/dalton/engine/security.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dalton/test/filepathWalk.go" afterPath="$PROJECT_DIR$/../../dalton/test/filepathWalk.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dalton/tmp/dalton.ini" afterPath="$PROJECT_DIR$/../../dalton/tmp/dalton.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/CMakeOutput.log" afterPath="$PROJECT_DIR$/build/CMakeFiles/CMakeOutput.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/nasl/CMakeFiles/openvas-nasl-lint.dir/link.txt" afterPath="$PROJECT_DIR$/build/nasl/CMakeFiles/openvas-nasl-lint.dir/link.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/nasl/CMakeFiles/openvas-nasl.dir/link.txt" afterPath="$PROJECT_DIR$/build/nasl/CMakeFiles/openvas-nasl.dir/link.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/nasl/CMakeFiles/openvas_nasl_shared.dir/link.txt" afterPath="$PROJECT_DIR$/build/nasl/CMakeFiles/openvas_nasl_shared.dir/link.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nasl/nasl-lint.c" afterPath="$PROJECT_DIR$/nasl/nasl-lint.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nasl/nasl.c" afterPath="$PROJECT_DIR$/nasl/nasl.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nasl/nasl.h" afterPath="$PROJECT_DIR$/nasl/nasl.h" />
     </list>
     <ignored path="openvas-libraries-8.0.7.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -88,8 +67,8 @@
       <file leaf-file-name="nasl.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nasl/nasl.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="101" column="10" selection-start-line="101" selection-start-column="10" selection-end-line="101" selection-end-column="10" />
+            <state relative-caret-position="327">
+              <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -518,7 +497,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="63" y="-4" width="1857" height="1084" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24618736" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -983,8 +962,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nasl/nasl.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="101" column="10" selection-start-line="101" selection-start-column="10" selection-end-line="101" selection-end-column="10" />
+        <state relative-caret-position="327">
+          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
           <folding />
         </state>
       </provider>

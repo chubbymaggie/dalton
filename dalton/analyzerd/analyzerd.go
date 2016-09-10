@@ -36,6 +36,8 @@ func Iterator (path string, info os.FileInfo, err error) error{
 
 			//now save the script into the database
 			err = db.InsertScript(script,collection)
+			//now sign the current script
+			err = engine.SignScript(path,privateKey)
 			if err == nil {
 				fmt.Println(fmt.Sprintf("Script Inserted , Counter : %d",indicator))
 				return nil

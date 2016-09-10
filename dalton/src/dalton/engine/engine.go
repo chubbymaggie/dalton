@@ -161,8 +161,7 @@ func fillScriptWithXRefs(script *models.Script,info *C.struct_DaltonScriptInfo) 
 	xRefs := []models.DaltonNameValuePair{}
 	for counter < MAX_COUNT{
 
-		if(info.ScriptXRefs[counter] != nil && info.ScriptXRefs[counter].Name != nil &&
-		info.ScriptXRefs[counter].Value != nil){
+		if(info.ScriptXRefs[counter] != nil){
 
 			xRef := models.DaltonNameValuePair{
 				Name:C.GoString(info.ScriptXRefs[counter].Name),
@@ -237,11 +236,12 @@ func fillScriptWithExcludeKeys (script *models.Script , info *C.struct_DaltonScr
 	}()
 	var counter int  = 0
 	for counter < MAX_COUNT {
-		if (info.ScriptExcludeKeys[counter] != nil && info.ScriptExcludeKeys[counter].Contents != nil ){
-			script.ScriptExcludeKeys = append(script.ScriptExcludeKeys,C.GoString(info.ScriptExcludeKeys[counter].Contents))
-		}else{
-			break
-		}
+				if (info.ScriptExcludeKeys[counter] != nil){
+				script.ScriptExcludeKeys = append(script.ScriptExcludeKeys,C.GoString(info.ScriptExcludeKeys[counter].Contents))
+			}else{
+				break
+			}
+
 		counter++
 	}
 	return nil
@@ -258,7 +258,7 @@ func fillScriptWithRequireUDPPorts(script *models.Script , info *C.struct_Dalton
 	}()
 	var counter int  = 0
 	for counter < MAX_COUNT {
-		if (info.ScriptRequireUDPPorts[counter] != nil && info.ScriptRequireUDPPorts[counter].Contents ){
+		if (info.ScriptRequireUDPPorts[counter] != nil && info.ScriptRequireUDPPorts[counter].Contents !=  nil){
 			script.ScriptRequireUDP = append(script.ScriptRequireUDP,C.GoString(info.ScriptRequireUDPPorts[counter].Contents))
 		}else{
 			break
