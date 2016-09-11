@@ -4,12 +4,12 @@ import "labix.org/v2/mgo/bson"
 
 /*
 
-    These are the models that represent a single CVE (Common Vulnerabilities and Exposure) Models that will be used for parsing,
-    storing and manupilating CVEs in the database and the scannerd will use them for Security investigations for detecting Versions and vulnerabilities
-    that exist in enumerated and discovered hosts in the network
- */
+   These are the models that represent a single CVE (Common Vulnerabilities and Exposure) Models that will be used for parsing,
+   storing and manupilating CVEs in the database and the scannerd will use them for Security investigations for detecting Versions and vulnerabilities
+   that exist in enumerated and discovered hosts in the network
+*/
 type CVE struct {
-	Id 		   bson.ObjectId     `bson:"_id" json:"db_id"`
+	Id                 bson.ObjectId     `bson:"_id" json:"db_id"`
 	CveId              string            `bson:"cve_id" json:"cve_id"`
 	Product            []string          `bson:"products,omitempty" json:"products"`
 	DiscoveredDate     string            `bson:"discovered_datetime,omitempty" json:"discovered_datetime"`

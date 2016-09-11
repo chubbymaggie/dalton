@@ -3,30 +3,25 @@ package db
 import (
 	"dalton/config"
 	"dalton/log"
-	"labix.org/v2/mgo"
 	"fmt"
+	"labix.org/v2/mgo"
 )
 
-
 var (
-
-	host string
-	port int
+	host     string
+	port     int
 	database string
-	session *mgo.Session
+	session  *mgo.Session
 )
 
 /*
    This function will test if the database feature is already enabled or disabled
- */
-func init(){
+*/
+func init() {
 
+	defer func() {
 
-
-	defer func(){
-
-
-		if data:= recover();data != nil {
+		if data := recover(); data != nil {
 
 			log.Log(data)
 			return
@@ -34,25 +29,23 @@ func init(){
 	}()
 
 	//check to see if the database feature is enabled or not enabled
-	if (!isEnabled()){
+	if !isEnabled() {
 
 		log.Log("Database is not enabled , returning....")
 		return
 	}
 }
 
-func Connect() (*mgo.Session,error) {
+func Connect() (*mgo.Session, error) {
 
+	if !isEnabled() {
 
-	if (!isEnabled()){
-
-		return nil , fmt.Errorf("Database feature is disabled.")
+		return nil, fmt.Errorf("Database feature is disabled.")
 	}
 
-	defer func(){
+	defer func() {
 
-
-		if data := recover();data != nil {
+		if data := recover(); data != nil {
 
 			log.Log(data)
 			//return empty or nil session to the database
@@ -60,41 +53,39 @@ func Connect() (*mgo.Session,error) {
 		}
 	}()
 	loadDBInfo()
-	return session , nil
+	return session, nil
 }
 
 func WithCollection(collection string, s func(*mgo.Collection) error) error {
-    session , err := Connect()
+	session, err := Connect()
 	if err != nil {
 		return err
 	}
 
-    defer session.Close()
-    c := session.DB(database).C(collection)
-    return s(c)
+	defer session.Close()
+	c := session.DB(database).C(collection)
+	return s(c)
 }
-
 
 func loadDBInfo() {
 
 	//get the host of the database
-	db_type , _ := config.ReadConfigKey("database","type")
-	host = config.ReadKey(db_type,"host").String()
-	port , _ = config.ReadKey(db_type,"port").Int()
-	database = config.ReadKey(db_type,"db").String()
+	db_type, _ := config.ReadConfigKey("database", "type")
+	host = config.ReadKey(db_type, "host").String()
+	port, _ = config.ReadKey(db_type, "port").Int()
+	database = config.ReadKey(db_type, "db").String()
 	//make sure there is no previous ongoing connection
 	CloseConnection()
 	//connect to the database
 	var err error
-	session , err = mgo.Dial(host)
+	session, err = mgo.Dial(host)
 	if err != nil {
 		panic(err)
 		return
 	}
 }
 
-
-func CloseConnection(){
+func CloseConnection() {
 
 	if session != nil {
 
@@ -106,17 +97,17 @@ func IsConnected() bool {
 
 	if session != nil {
 		return true
-	}else{
+	} else {
 		return false
 	}
 }
 
 /*
    this function will check whether the database is enabled or not enabled
- */
-func isEnabled() bool{
+*/
+func isEnabled() bool {
 
-	enabled , err := config.ReadKey("database","enabled").Int()
+	enabled, err := config.ReadKey("database", "enabled").Int()
 
 	if err != nil {
 
@@ -126,41 +117,40 @@ func isEnabled() bool{
 
 	if enabled > 0 {
 		return true
-	}else {
+	} else {
 		return false
 	}
 }
 
-
 /*
    this function returns a handler to the underlying database or nil
- */
-func GetDatabase() (*mgo.Database,*mgo.Session) {
+*/
+func GetDatabase() (*mgo.Database, *mgo.Session) {
 
-	session , error := Connect()
+	session, error := Connect()
 	if error != nil {
 
 		log.Log(error)
-		return nil , nil
+		return nil, nil
 	}
-	return session.DB(database) , session
+	return session.DB(database), session
 }
 
-func GetCollection(collectionName string) (*mgo.Collection,*mgo.Session) {
+func GetCollection(collectionName string) (*mgo.Collection, *mgo.Session) {
 
-	Database,session := GetDatabase()
+	Database, session := GetDatabase()
 
-		if Database != nil {
-			collection := Database.C(collectionName)
-			ensureIndices(collectionName,collection)
-			return collection , session
+	if Database != nil {
+		collection := Database.C(collectionName)
+		ensureIndices(collectionName, collection)
+		return collection, session
 
-		}else {
-			return nil,nil
-		}
+	} else {
+		return nil, nil
+	}
 }
 
-func ensureIndices(collectionName string ,  C *mgo.Collection) error {
+func ensureIndices(collectionName string, C *mgo.Collection) error {
 
 	switch collectionName {
 
@@ -179,8 +169,3 @@ func ensureIndices(collectionName string ,  C *mgo.Collection) error {
 	}
 	return nil
 }
-
-
-
-
-

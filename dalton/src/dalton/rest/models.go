@@ -1,20 +1,22 @@
 package rest
 
 import (
+	"dalton/db/models"
+	"dalton/log"
 	"encoding/json"
 	"time"
-	"dalton/log"
-	"dalton/db/models"
 )
+
 /////////////////////////////////////////////////Rest Error /////////////////////////////////////////////////////////////////////////////////////////////////////////
 type RestError struct {
-	Message string `json:"message"`
-	SentTime time.Time `json:"sentTime,omitempty"`
-	ErrorCode int `json:"errorCode"`
+	Message   string    `json:"message"`
+	SentTime  time.Time `json:"sentTime,omitempty"`
+	ErrorCode int       `json:"errorCode"`
 }
+
 func (restError *RestError) ToJson() string {
 
-	contents , err := json.Marshal(restError)
+	contents, err := json.Marshal(restError)
 	if err != nil {
 		log.Log(err)
 		return ""
@@ -24,14 +26,14 @@ func (restError *RestError) ToJson() string {
 
 /////////////////////////////////////////////////Rest Success /////////////////////////////////////////////////////////////////////////////////////////////////////////
 type RestSuccess struct {
-
-	Message string `json:"message,omitempty"`
-	ScanID string `json:"scanId"`
-	StatusCode int `json:"statusCode"`
+	Message    string `json:"message,omitempty"`
+	ScanID     string `json:"scanId"`
+	StatusCode int    `json:"statusCode"`
 }
+
 func (success RestSuccess) ToJson() string {
 
-	contents , err := json.Marshal(&success)
+	contents, err := json.Marshal(&success)
 	if err != nil {
 		log.Log(err)
 		return ""
@@ -47,7 +49,7 @@ type ScanStatus struct {
 
 func (scanStatus ScanStatus) ToJson() string {
 
-	contents , err := json.Marshal(&scanStatus)
+	contents, err := json.Marshal(&scanStatus)
 	if err != nil {
 		log.Log(err)
 		return ""
@@ -56,15 +58,14 @@ func (scanStatus ScanStatus) ToJson() string {
 }
 
 type RestBatch struct {
-
-	Description string `json:"description,omitempty"`
-	Payload []models.Reconn `json:"payload"`
-	Size int `json:"size"`
+	Description string          `json:"description,omitempty"`
+	Payload     []models.Reconn `json:"payload"`
+	Size        int             `json:"size"`
 }
 
 func (batch RestBatch) ToJson() string {
 
-	contents , err := json.Marshal(batch)
+	contents, err := json.Marshal(batch)
 	if err != nil {
 		log.Log(err)
 		return ""

@@ -2,13 +2,65 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec88b3bf-92c3-4620-8168-8e2661ed69c3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dalton/db/vulns.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dalton/engine/scan.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/hashicorp/go-getter" afterPath="$PROJECT_DIR$/src/github.com/hashicorp/go-getter" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/hashicorp/hcl" afterPath="$PROJECT_DIR$/src/github.com/hashicorp/hcl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/lair-framework/go-nmap" afterPath="$PROJECT_DIR$/src/github.com/lair-framework/go-nmap" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/magiconair/properties" afterPath="$PROJECT_DIR$/src/github.com/magiconair/properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/nu7hatch/gouuid" afterPath="$PROJECT_DIR$/src/github.com/nu7hatch/gouuid" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/spf13/afero" afterPath="$PROJECT_DIR$/src/github.com/spf13/afero" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/umisama/go-cpe" afterPath="$PROJECT_DIR$/src/github.com/umisama/go-cpe" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/umisama/go-cvss" afterPath="$PROJECT_DIR$/src/github.com/umisama/go-cvss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/golang.org/x/crypto" afterPath="$PROJECT_DIR$/src/golang.org/x/crypto" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analyzerd/analyzerd.go" afterPath="$PROJECT_DIR$/analyzerd/analyzerd.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scannerd/scannerd.go" afterPath="$PROJECT_DIR$/scannerd/scannerd.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/auth/auth.go" afterPath="$PROJECT_DIR$/src/dalton/auth/auth.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/compress/archive.go" afterPath="$PROJECT_DIR$/src/dalton/compress/archive.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/compress/compress.go" afterPath="$PROJECT_DIR$/src/dalton/compress/compress.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/config/config.go" afterPath="$PROJECT_DIR$/src/dalton/config/config.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/crypt/aes.go" afterPath="$PROJECT_DIR$/src/dalton/crypt/aes.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/crypt/signer.go" afterPath="$PROJECT_DIR$/src/dalton/crypt/signer.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/db/assets.go" afterPath="$PROJECT_DIR$/src/dalton/db/assets.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/db/cves.go" afterPath="$PROJECT_DIR$/src/dalton/db/cves.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/db/db.go" afterPath="$PROJECT_DIR$/src/dalton/db/db.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/db/entries.go" afterPath="$PROJECT_DIR$/src/dalton/db/entries.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/db/models/cve.go" afterPath="$PROJECT_DIR$/src/dalton/db/models/cve.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/db/models/models.go" afterPath="$PROJECT_DIR$/src/dalton/db/models/models.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/db/models/scans.go" afterPath="$PROJECT_DIR$/src/dalton/db/models/scans.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/db/models/scripts.go" afterPath="$PROJECT_DIR$/src/dalton/db/models/scripts.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/db/models/vulns.go" afterPath="$PROJECT_DIR$/src/dalton/db/models/vulns.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/db/scans.go" afterPath="$PROJECT_DIR$/src/dalton/db/scans.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/db/scripts.go" afterPath="$PROJECT_DIR$/src/dalton/db/scripts.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/db/users.go" afterPath="$PROJECT_DIR$/src/dalton/db/users.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/db/vulns.go" afterPath="$PROJECT_DIR$/src/dalton/db/vulns.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/engine/engine.go" afterPath="$PROJECT_DIR$/src/dalton/engine/engine.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/engine/io.go" afterPath="$PROJECT_DIR$/src/dalton/engine/io.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/engine/security.go" afterPath="$PROJECT_DIR$/src/dalton/engine/security.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/log/log.go" afterPath="$PROJECT_DIR$/src/dalton/log/log.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/rest/models.go" afterPath="$PROJECT_DIR$/src/dalton/rest/models.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/scannerd/rest.go" afterPath="$PROJECT_DIR$/src/dalton/scannerd/rest.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/scannerd/scanning.go" afterPath="$PROJECT_DIR$/src/dalton/scannerd/scanning.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/security/discovery.go" afterPath="$PROJECT_DIR$/src/dalton/security/discovery.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/utils/dbutils.go" afterPath="$PROJECT_DIR$/src/dalton/utils/dbutils.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dalton/utils/encoding.go" afterPath="$PROJECT_DIR$/src/dalton/utils/encoding.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/labix.org/v2/mgo/bson/decode.go" afterPath="$PROJECT_DIR$/src/labix.org/v2/mgo/bson/decode.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/labix.org/v2/mgo/bson/encode.go" afterPath="$PROJECT_DIR$/src/labix.org/v2/mgo/bson/encode.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/labix.org/v2/mgo/server.go" afterPath="$PROJECT_DIR$/src/labix.org/v2/mgo/server.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/labix.org/v2/mgo/session_test.go" afterPath="$PROJECT_DIR$/src/labix.org/v2/mgo/session_test.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/labix.org/v2/mgo/txn/flusher.go" afterPath="$PROJECT_DIR$/src/labix.org/v2/mgo/txn/flusher.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/labix.org/v2/mgo/txn/sim_test.go" afterPath="$PROJECT_DIR$/src/labix.org/v2/mgo/txn/sim_test.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/crypto.go" afterPath="$PROJECT_DIR$/test/crypto.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/filepathWalk.go" afterPath="$PROJECT_DIR$/test/filepathWalk.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/loadingnvd.go" afterPath="$PROJECT_DIR$/test/loadingnvd.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/nmaptest.go" afterPath="$PROJECT_DIR$/test/nmaptest.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/rsa.go" afterPath="$PROJECT_DIR$/test/rsa.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/testOI.go" afterPath="$PROJECT_DIR$/test/testOI.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/testconfig.go" afterPath="$PROJECT_DIR$/test/testconfig.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/testcve.go" afterPath="$PROJECT_DIR$/test/testcve.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/testinggorilla.go" afterPath="$PROJECT_DIR$/test/testinggorilla.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/testscannerAuth.go" afterPath="$PROJECT_DIR$/test/testscannerAuth.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/testsignal.go" afterPath="$PROJECT_DIR$/test/testsignal.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../libs/openvas-libraries-8.0.7/.idea/workspace.xml" />
     </list>
     <ignored path="dalton.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,7 +88,108 @@
     <favorites_list name="dalton" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="scans.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/dalton/db/models/scans.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="analyzerd.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/analyzerd/analyzerd.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="122">
+              <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scripts.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dalton/db/models/scripts.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="482">
+              <caret line="111" column="35" selection-start-line="111" selection-start-column="35" selection-end-line="111" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="vector.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/github.com/umisama/go-cvss/vector.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dalton/config/config.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="vulns.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dalton/db/vulns.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1065">
+              <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="key.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gopkg.in/ini.v1/key.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="660">
+              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cgo" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tmp/cgo">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="660">
+              <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="io.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dalton/engine/io.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="engine.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dalton/engine/engine.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -63,7 +216,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/dalton/security/nmap.go" />
         <option value="$PROJECT_DIR$/test/testsignal.go" />
         <option value="$PROJECT_DIR$/test/testinggorilla.go" />
         <option value="$PROJECT_DIR$/src/dalton/security/discovery.go" />
@@ -107,13 +259,14 @@
         <option value="$PROJECT_DIR$/tmp/dalton.ini" />
         <option value="$PROJECT_DIR$/test/filepathWalk.go" />
         <option value="$PROJECT_DIR$/src/dalton/engine/security.go" />
-        <option value="$PROJECT_DIR$/src/dalton/engine/engine.go" />
-        <option value="$PROJECT_DIR$/analyzerd/analyzerd.go" />
         <option value="$PROJECT_DIR$/src/dalton/engine/driven.go" />
         <option value="$PROJECT_DIR$/src/dalton/engine/scan.go" />
-        <option value="$PROJECT_DIR$/src/dalton/db/models/scripts.go" />
         <option value="$PROJECT_DIR$/src/dalton/db/models/vulns.go" />
         <option value="$PROJECT_DIR$/src/dalton/db/vulns.go" />
+        <option value="$PROJECT_DIR$/src/dalton/db/models/scripts.go" />
+        <option value="$PROJECT_DIR$/src/dalton/engine/engine.go" />
+        <option value="$PROJECT_DIR$/analyzerd/analyzerd.go" />
+        <option value="$PROJECT_DIR$/src/dalton/config/config.go" />
       </list>
     </option>
   </component>
@@ -125,9 +278,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="63" />
-    <option name="y" value="24" />
+    <option name="y" value="-4" />
     <option name="width" value="1857" />
-    <option name="height" value="1056" />
+    <option name="height" value="1084" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -154,6 +307,16 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dalton" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Problems" />
@@ -174,115 +337,13 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dalton" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dalton" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dalton" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dalton" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dalton" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tmp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dalton" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dalton" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dalton" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dalton" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dalton" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dalton" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dalton" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dalton" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dalton" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dalton" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="analyzerd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider$1" />
     <property name="configurable.Global.libraries.is.expanded" value="true" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../positron/system" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="go.vendoring.notification.had.been.shown" value="true" />
@@ -869,21 +930,21 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="63" y="24" width="1857" height="1056" extended-state="6" />
-    <editor active="false" />
+    <frame x="63" y="-4" width="1857" height="1084" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34345666" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35836554" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32965213" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44623655" sideWeight="0.50414133" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32965213" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39139786" sideWeight="0.496963" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25179458" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44623655" sideWeight="0.49585864" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38817203" sideWeight="0.496963" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25136313" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4445629" sideWeight="0.49585864" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29354838" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29317698" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -927,100 +988,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/test/testconfig.go</url>
-          <line>63</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/src/dalton/scannerd/rest.go</url>
-          <line>259</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/src/dalton/scannerd/rest.go</url>
-          <line>228</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/src/dalton/scannerd/scanning.go</url>
-          <line>59</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/src/dalton/scannerd/scanning.go</url>
-          <line>54</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/src/dalton/security/discovery.go</url>
-          <line>68</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/src/dalton/security/discovery.go</url>
-          <line>65</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/src/dalton/security/discovery.go</url>
-          <line>64</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/analyzerd/analyzerd.go</url>
-          <line>120</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/src/dalton/engine/engine.go</url>
-          <line>94</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/analyzerd/analyzerd.go</url>
-          <line>115</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/analyzerd/analyzerd.go</url>
-          <line>111</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/analyzerd/analyzerd.go</url>
-          <line>26</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/analyzerd/analyzerd.go</url>
-          <line>52</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/test/filepathWalk.go</url>
-          <line>40</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/src/dalton/engine/security.go</url>
-          <line>20</line>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/src/dalton/engine/security.go</url>
-          <line>33</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="38" />
+      <option name="time" value="45" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/testOI.go" />
-    <entry file="file://$PROJECT_DIR$/test/rsa.go" />
     <entry file="file://$PROJECT_DIR$/src/dalton/auth/auth.go" />
     <entry file="file://$PROJECT_DIR$/src/dalton/utils/dbutils.go" />
     <entry file="file://$PROJECT_DIR$/test/testscannerAuth.go" />
@@ -1034,13 +1006,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="673">
           <caret line="50" column="43" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dalton/config/config.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1073,13 +1038,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dalton/db/scans.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dalton/db/assets.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-167">
@@ -1087,24 +1045,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/bigdata/go/src/strings/strings.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="716" column="5" selection-start-line="716" selection-start-column="5" selection-end-line="716" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/bigdata/go/src/strings/strings.go" />
     <entry file="file://$PROJECT_DIR$/src/github.com/lair-framework/go-nmap/nmap.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="121">
           <caret line="138" column="8" selection-start-line="138" selection-start-column="8" selection-end-line="138" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dalton/db/models/scans.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -1119,9 +1064,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="101" column="29" selection-start-line="101" selection-start-column="29" selection-end-line="101" selection-end-column="29" />
-          <folding>
-            <element signature="e#18#188#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1153,7 +1096,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1161,7 +1103,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-540">
           <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1173,31 +1114,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/bigdata/go/src/path/filepath/path.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="342" column="66" selection-start-line="342" selection-start-column="18" selection-end-line="342" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/bigdata/go/src/path/filepath/path.go" />
     <entry file="file://$PROJECT_DIR$/test/filepathWalk.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
           <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-          <folding>
-            <element signature="e#14#62#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dalton/engine/io.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="e#16#65#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1205,6 +1127,64 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dalton/engine/security.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="51" column="38" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/C-Integration-Models">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dalton/engine/driven.go" />
+    <entry file="file://$PROJECT_DIR$/src/dalton/db/db.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="868">
+          <caret line="177" column="46" selection-start-line="177" selection-start-column="46" selection-end-line="177" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dalton/db/entries.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-390">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dalton/db/scripts.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dalton/db/models/vulns.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dalton/engine/scan.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dalton/db/scans.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -1213,116 +1193,85 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dalton/engine/security.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="51" column="38" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
-          <folding>
-            <element signature="e#16#117#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tmp/C-Integration-Models">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tmp/cgo">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
+        <state relative-caret-position="660">
           <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dalton/engine/driven.go">
+    <entry file="file://$PROJECT_DIR$/src/dalton/engine/io.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="14" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
+        <state relative-caret-position="195">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/analyzerd/analyzerd.go">
+    <entry file="file://$PROJECT_DIR$/src/gopkg.in/ini.v1/key.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1800">
-          <caret line="120" column="23" selection-start-line="120" selection-start-column="23" selection-end-line="120" selection-end-column="23" />
-          <folding>
-            <element signature="e#14#152#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dalton/db/db.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="868">
-          <caret line="177" column="46" selection-start-line="177" selection-start-column="46" selection-end-line="177" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dalton/engine/scan.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dalton/engine/engine.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="239" column="24" selection-start-line="239" selection-start-column="24" selection-end-line="239" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dalton/db/models/scripts.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="72" column="30" selection-start-line="72" selection-start-column="30" selection-end-line="72" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dalton/db/entries.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-390">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dalton/db/scripts.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        <state relative-caret-position="660">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dalton/db/vulns.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="e#12#110#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1065">
+          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dalton/db/models/vulns.go">
+    <entry file="file://$PROJECT_DIR$/src/dalton/engine/engine.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dalton/config/config.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/github.com/umisama/go-cvss/vector.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dalton/db/models/scripts.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="111" column="35" selection-start-line="111" selection-start-column="35" selection-end-line="111" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyzerd/analyzerd.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dalton/db/models/scans.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
           <folding />
         </state>
       </provider>

@@ -1,27 +1,24 @@
 package main
 
 import (
-
 	"fmt"
 	"time"
 
-
-	"labix.org/v2/mgo/bson"
 	"dalton/utils"
+	"labix.org/v2/mgo/bson"
 )
 
 func main() {
 
 	memory := make(map[bson.ObjectId]string)
 	max := 100000
-	var i int  = 0
+	var i int = 0
 	var collisions int
 	for i < max {
 
-
 		currentID := utils.NewObjectId()
 
-		if(memory[currentID] != ""){
+		if memory[currentID] != "" {
 
 			collisions++
 			continue
@@ -33,5 +30,5 @@ func main() {
 		i++
 	}
 
-	fmt.Println("Number of Collisions : ",collisions)
+	fmt.Println("Number of Collisions : ", collisions)
 }

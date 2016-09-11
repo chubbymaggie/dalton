@@ -1,27 +1,26 @@
 package db
 
 import (
-	"labix.org/v2/mgo"
 	"dalton/db/models"
-	"labix.org/v2/mgo/bson"
 	"dalton/utils"
+	"labix.org/v2/mgo"
+	"labix.org/v2/mgo/bson"
 )
 
 const (
-
-	ENTRIES_COLLECTION_NAME="Reconns"
+	ENTRIES_COLLECTION_NAME = "Reconns"
 )
 
-func GetAllScanEntries() (searchResults []models.Reconn, err error){
+func GetAllScanEntries() (searchResults []models.Reconn, err error) {
 
 	searchResults = []models.Reconn{}
 	query := func(c *mgo.Collection) error {
 
-		return c.Find(bson.M{"status":false}).All(&searchResults)
+		return c.Find(bson.M{"status": false}).All(&searchResults)
 
 	}
 	search := func() error {
-		return WithCollection(ENTRIES_COLLECTION_NAME,query)
+		return WithCollection(ENTRIES_COLLECTION_NAME, query)
 	}
 	err = search()
 	if err != nil {
@@ -29,7 +28,7 @@ func GetAllScanEntries() (searchResults []models.Reconn, err error){
 	}
 	return
 }
-func SearchEntries(q interface{},skip,limit int) (searchResults []models.Reconn, err error){
+func SearchEntries(q interface{}, skip, limit int) (searchResults []models.Reconn, err error) {
 	searchResults = []models.Reconn{}
 	query := func(c *mgo.Collection) error {
 
@@ -41,7 +40,7 @@ func SearchEntries(q interface{},skip,limit int) (searchResults []models.Reconn,
 		return fn
 	}
 	search := func() error {
-		return WithCollection(ENTRIES_COLLECTION_NAME,query)
+		return WithCollection(ENTRIES_COLLECTION_NAME, query)
 	}
 	err = search()
 	if err != nil {
@@ -51,7 +50,7 @@ func SearchEntries(q interface{},skip,limit int) (searchResults []models.Reconn,
 }
 func InsertEntry(entry *models.Reconn) error {
 
-	collection , session := GetCollection(ENTRIES_COLLECTION_NAME)
+	collection, session := GetCollection(ENTRIES_COLLECTION_NAME)
 	defer session.Close()
 	//create a new object Id for the passed scan entry
 	if entry.ScanId == "" {
@@ -61,32 +60,32 @@ func InsertEntry(entry *models.Reconn) error {
 	return collection.Insert(entry)
 }
 func DeleteEntry(entry *models.Reconn) error {
-	collection , session := GetCollection(ENTRIES_COLLECTION_NAME)
+	collection, session := GetCollection(ENTRIES_COLLECTION_NAME)
 	defer session.Close()
-	return collection.Remove(bson.M{"_id":entry.ScanId})
+	return collection.Remove(bson.M{"_id": entry.ScanId})
 }
 func UpdateEntry(entry *models.Reconn) error {
-	collection , session := GetCollection(ENTRIES_COLLECTION_NAME)
+	collection, session := GetCollection(ENTRIES_COLLECTION_NAME)
 	defer session.Close()
 	id := entry.ScanId
-	update := bson.M{"$set":bson.M{"startTime":entry.StartTime,"endTime":entry.EndTime,
-		"initiatedBy":entry.InitiatedBy,"status":entry.Status,"commandArgs":entry.CommandArgs,
-		"progress":entry.Progress,
-		"statusMessage":entry.StatusMessage,
+	update := bson.M{"$set": bson.M{"startTime": entry.StartTime, "endTime": entry.EndTime,
+		"initiatedBy": entry.InitiatedBy, "status": entry.Status, "commandArgs": entry.CommandArgs,
+		"progress":      entry.Progress,
+		"statusMessage": entry.StatusMessage,
 	}}
-	return collection.UpdateId(id,update)
+	return collection.UpdateId(id, update)
 }
 func UpdateEntryWith(entry *models.Reconn, updateQuery *bson.M) error {
-	collection,session := GetCollection(ENTRIES_COLLECTION_NAME)
+	collection, session := GetCollection(ENTRIES_COLLECTION_NAME)
 	defer session.Close()
 	id := entry.ScanId
-	return collection.UpdateId(id,updateQuery)
+	return collection.UpdateId(id, updateQuery)
 }
-func EnsureEntriesIndices (c *mgo.Collection) error {
+func EnsureEntriesIndices(c *mgo.Collection) error {
 
 	index := mgo.Index{
 
-		Key:[]string{"initiatedBy","status"},
+		Key:        []string{"initiatedBy", "status"},
 		Unique:     false,
 		DropDups:   true,
 		Background: true,

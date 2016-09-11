@@ -2,27 +2,26 @@ package main
 
 import (
 	"compress/gzip"
+	"dalton/db"
+	"dalton/db/models"
+	"fmt"
+	"github.com/beevik/etree"
 	"io"
 	"io/ioutil"
+	"labix.org/v2/mgo"
 	"log"
 	"net/http"
 	"os"
+	"runtime"
 	"strconv"
 	"strings"
-	"github.com/beevik/etree"
-	"fmt"
-	"dalton/db/models"
-	"runtime"
-	"dalton/db"
 	"time"
-	"labix.org/v2/mgo"
 )
 
 var (
 	Client        = &http.Client{}
 	fakeUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 Safari/537.36"
 )
-
 
 func main() {
 
@@ -50,18 +49,18 @@ func main() {
 	for _, url := range xmlUrl {
 		localPath := strings.Replace(url, "https://static.nvd.nist.gov/feeds/xml/cve", "/home/snouto/cves", -1)
 		//Get CVE xml files
-		fmt.Println(fmt.Sprintf("Downloading : %s",localPath))
+		fmt.Println(fmt.Sprintf("Downloading : %s", localPath))
 		err := getCveXmlFiles(url, localPath)
 		if err != nil {
 			log.Println("Get CVE xml file failed.", err)
 		}
-		fmt.Println("Done Downloading : ",localPath)
+		fmt.Println("Done Downloading : ", localPath)
 		//Process xml and bulk import CVE xml files
 		fmt.Println("Beging parsing it")
 		filename := strings.TrimSuffix(localPath, ".gz")
-		collection , session := db.GetCollection(db.CVE_COLLECTION_NAME)
+		collection, session := db.GetCollection(db.CVE_COLLECTION_NAME)
 		defer session.Close()
-		err = xmlBulkImport(filename,collection)
+		err = xmlBulkImport(filename, collection)
 
 		if err != nil {
 			log.Println("CVE xml bulk import failed. error info:", err)
@@ -146,7 +145,7 @@ func ungzip(source, target string) error {
 	return err
 }
 
-func xmlBulkImport(filePath string , collection *mgo.Collection) (err error) {
+func xmlBulkImport(filePath string, collection *mgo.Collection) (err error) {
 
 	var cves []models.CVE
 	//Check if file exists
@@ -360,9 +359,9 @@ func xmlBulkImport(filePath string , collection *mgo.Collection) (err error) {
 			c.Summary = summary.Text()
 		}
 
-		err := db.InsertCVE(&c,collection)
+		err := db.InsertCVE(&c, collection)
 		if err != nil {
-			fmt.Println("There was a problem inserting A CVE : ",fmt.Sprintf("%v",err))
+			fmt.Println("There was a problem inserting A CVE : ", fmt.Sprintf("%v", err))
 		}
 
 		time.Sleep(time.Duration(100))

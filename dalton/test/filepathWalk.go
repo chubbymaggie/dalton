@@ -1,22 +1,23 @@
 package main
 
 import (
-	"path/filepath"
-	"os"
-	"fmt"
 	"flag"
+	"fmt"
+	"os"
+	"path/filepath"
 )
 
 var (
 	counter int
 )
+
 func main() {
 	flag.Parse()
 	//Get the root path
 	root := flag.Arg(0)
 	//now begin the walk process
 	//dir := filepath.Dir(root)
-	filepath.Walk(root,visit)
+	filepath.Walk(root, visit)
 
 	/*file ,err := os.Open(root)
 	if err != nil {
@@ -33,8 +34,7 @@ func main() {
 	}
 	fmt.Println("Finished Traversing the root at : ",root," With Number of Files : ",counter)*/
 }
-func visit(path string , info os.FileInfo , err error) error {
-
+func visit(path string, info os.FileInfo, err error) error {
 
 	fmt.Println(fmt.Sprintf("Path:%s , info:%s", path, info.Name()))
 

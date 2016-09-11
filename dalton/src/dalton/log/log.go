@@ -1,23 +1,18 @@
 package log
 
 import (
-	"log"
 	"dalton/config"
 	"fmt"
+	"log"
 	"os"
 	"strings"
 )
 
+func InitLog(name string) {
 
-
-
-
-func InitLog(name string){
-
-
-	log.SetFlags(log.Ldate|log.LstdFlags|log.Lshortfile)
-	log.SetPrefix(fmt.Sprintf("%s : ",name))
-	location , err := config.ReadConfigKey("logging","location")
+	log.SetFlags(log.Ldate | log.LstdFlags | log.Lshortfile)
+	log.SetPrefix(fmt.Sprintf("%s : ", name))
+	location, err := config.ReadConfigKey("logging", "location")
 	if err != nil {
 
 		log.Println(err)
@@ -31,9 +26,9 @@ func InitLog(name string){
 		return
 	}*/
 
-	location += strings.ToLower(name)+".log"
+	location += strings.ToLower(name) + ".log"
 
-	file , err := os.OpenFile(location,os.O_CREATE|os.O_APPEND|os.O_RDWR,0777)
+	file, err := os.OpenFile(location, os.O_CREATE|os.O_APPEND|os.O_RDWR, 0777)
 
 	if err != nil {
 		log.Println(err)
@@ -43,12 +38,12 @@ func InitLog(name string){
 
 }
 
-func init(){
+func init() {
 
-	log.SetFlags(log.Ldate|log.LstdFlags|log.Lshortfile)
-	name , _ := config.ReadConfigKey("product","name")
-	log.SetPrefix(fmt.Sprintf("%s : ",name))
-	location , err := config.ReadConfigKey("logging","location")
+	log.SetFlags(log.Ldate | log.LstdFlags | log.Lshortfile)
+	name, _ := config.ReadConfigKey("product", "name")
+	log.SetPrefix(fmt.Sprintf("%s : ", name))
+	location, err := config.ReadConfigKey("logging", "location")
 	if err != nil {
 
 		log.Println(err)
@@ -62,9 +57,9 @@ func init(){
 		return
 	}*/
 
-	location += strings.ToLower(name)+".log"
+	location += strings.ToLower(name) + ".log"
 
-	file , err := os.OpenFile(location,os.O_CREATE|os.O_APPEND|os.O_RDWR,0777)
+	file, err := os.OpenFile(location, os.O_CREATE|os.O_APPEND|os.O_RDWR, 0777)
 
 	if err != nil {
 		log.Println(err)
@@ -73,7 +68,7 @@ func init(){
 	log.SetOutput(file)
 }
 
-func Log(v ...interface{}){
+func Log(v ...interface{}) {
 
 	log.Print(v)
 }

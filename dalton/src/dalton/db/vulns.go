@@ -1,39 +1,37 @@
 package db
 
 import (
-	"labix.org/v2/mgo"
 	"dalton/db/models"
-	"fmt"
 	"dalton/utils"
+	"fmt"
+	"labix.org/v2/mgo"
 	"labix.org/v2/mgo/bson"
 )
 
 const (
-
 	VULNS_COLLECTION_NAME = "vulns"
 )
 
-
-func UpdateVulnWith(vuln *models.Vulnerability , updateQuery *bson.M) error{
-	collection , session := GetCollection(VULNS_COLLECTION_NAME)
+func UpdateVulnWith(vuln *models.Vulnerability, updateQuery *bson.M) error {
+	collection, session := GetCollection(VULNS_COLLECTION_NAME)
 	defer session.Close()
 	id := vuln.Id
-	return collection.UpdateId(id,updateQuery)
+	return collection.UpdateId(id, updateQuery)
 }
-func UpdateVuln(vuln *models.Vulnerability) error{
+func UpdateVuln(vuln *models.Vulnerability) error {
 
-	collection , session := GetCollection(VULNS_COLLECTION_NAME)
+	collection, session := GetCollection(VULNS_COLLECTION_NAME)
 	defer session.Close()
 	id := vuln.Id
-	return collection.UpdateId(id,vuln.GetUpdateQuery())
+	return collection.UpdateId(id, vuln.GetUpdateQuery())
 }
 func DeleteVuln(vuln *models.Vulnerability) error {
 
-	collection , session := GetCollection(VULNS_COLLECTION_NAME)
+	collection, session := GetCollection(VULNS_COLLECTION_NAME)
 	defer session.Close()
-	return collection.Remove(bson.M{"id":vuln.Id})
+	return collection.Remove(bson.M{"id": vuln.Id})
 }
-func InsertVuln(vuln *models.Vulnerability,collection *mgo.Collection) error{
+func InsertVuln(vuln *models.Vulnerability, collection *mgo.Collection) error {
 
 	if vuln == nil {
 		fmt.Println("nilled Vulnerability")
@@ -45,10 +43,10 @@ func InsertVuln(vuln *models.Vulnerability,collection *mgo.Collection) error{
 	err := collection.Insert(vuln)
 	return err
 }
-func SearchVulns(q interface{},skip,limit int) (searchResults []models.Vulnerability,err error){
+func SearchVulns(q interface{}, skip, limit int) (searchResults []models.Vulnerability, err error) {
 
 	searchResults = []models.Vulnerability{}
-	query := func(c *mgo.Collection) error{
+	query := func(c *mgo.Collection) error {
 		fn := c.Find(q).Skip(skip).Limit(limit).All(&searchResults)
 		if limit < 0 {
 			fn = c.Find(q).Skip(skip).All(&searchResults)
@@ -56,8 +54,8 @@ func SearchVulns(q interface{},skip,limit int) (searchResults []models.Vulnerabi
 		return fn
 	}
 
-	search := func() error{
-		return WithCollection(VULNS_COLLECTION_NAME,query)
+	search := func() error {
+		return WithCollection(VULNS_COLLECTION_NAME, query)
 	}
 
 	err = search()
@@ -66,11 +64,11 @@ func SearchVulns(q interface{},skip,limit int) (searchResults []models.Vulnerabi
 	}
 	return
 }
-func EnsureVulnsIndices(C *mgo.Collection) error{
+func EnsureVulnsIndices(C *mgo.Collection) error {
 
 	index := mgo.Index{
 
-		Key: []string{"scanId","scriptId"},
+		Key:        []string{"scanId", "scriptId"},
 		Unique:     false,
 		DropDups:   false,
 		Background: true,

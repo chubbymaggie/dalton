@@ -1,43 +1,40 @@
 package main
 
 import (
-
-
-	"fmt"
-	"labix.org/v2/mgo/bson"
-	"time"
-	"dalton/crypt"
 	"crypto/rand"
 	"dalton/compress"
+	"dalton/crypt"
+	"fmt"
+	"labix.org/v2/mgo/bson"
 	"os"
-
+	"time"
 )
 
 type User struct {
-	Id bson.ObjectId `bson:"_id"`
-	Name string `bson:"Name"`
-	Email string `bson:"Email"`
-	UserName string `bson:"UserName"`
-	JoinedDate time.Time `bson:"JoinedDate"`
+	Id         bson.ObjectId `bson:"_id"`
+	Name       string        `bson:"Name"`
+	Email      string        `bson:"Email"`
+	UserName   string        `bson:"UserName"`
+	JoinedDate time.Time     `bson:"JoinedDate"`
 }
 
 func main() {
 
-	writeTo , err := os.OpenFile("c:/Users/Fawzy/Desktop/test.gz.tar",os.O_RDONLY,0644)
+	writeTo, err := os.OpenFile("c:/Users/Fawzy/Desktop/test.gz.tar", os.O_RDONLY, 0644)
 	defer writeTo.Close()
 	if err != nil {
-		fmt.Println(fmt.Sprintf("Got Exception : %q",err))
+		fmt.Println(fmt.Sprintf("Got Exception : %q", err))
 		return
 	}
 
 	tarFiles, err := compress.ExtractTarFrom(writeTo)
 	if err != nil {
-		fmt.Println(fmt.Sprintf("Got Exception : %q",err))
+		fmt.Println(fmt.Sprintf("Got Exception : %q", err))
 		return
 	}
-	for index , file := range tarFiles{
+	for index, file := range tarFiles {
 
-		fmt.Println(fmt.Sprintf("%d.%s",index+1,file.Name))
+		fmt.Println(fmt.Sprintf("%d.%s", index+1, file.Name))
 	}
 
 	//now begin the writing process
@@ -123,12 +120,12 @@ func main() {
 	//now verify
 }
 
-func makeKey(crypto *crypt.CryptoManager){
+func makeKey(crypto *crypt.CryptoManager) {
 
 	IV := []byte("This is the IVIV")
 	crypto.IV = IV
 	crypto.SetKeySize(32)
-	key := make([]byte,32)
+	key := make([]byte, 32)
 	rand.Read(key)
 	crypto.SymmetricKey = key
 }

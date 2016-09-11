@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"os"
-	"io/ioutil"
 	"github.com/lair-framework/go-nmap"
+	"io/ioutil"
+	"os"
 )
 
 func main() {
@@ -32,25 +32,25 @@ func main() {
 	}
 
 
-*/
+	*/
 
 	path := "/media/snouto/rest/projects/mohamed.xml"
-	file ,err := os.Open(path)
+	file, err := os.Open(path)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 
-	contents , err := ioutil.ReadAll(file)
+	contents, err := ioutil.ReadAll(file)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
-	nmapRun , err := nmap.Parse(contents)
+	nmapRun, err := nmap.Parse(contents)
 
-	for _ , host := range nmapRun.Hosts {
+	for _, host := range nmapRun.Hosts {
 
-		for _ , port := range host.Ports {
+		for _, port := range host.Ports {
 
 			fmt.Println(port.Service.CPE.Value)
 		}
