@@ -67,6 +67,11 @@ func WithCollection(collection string, s func(*mgo.Collection) error) error {
 	return s(c)
 }
 
+func WithProvidedCollection(C *mgo.Collection , s func(*mgo.Collection) error) error {
+
+	return s(C)
+}
+
 func loadDBInfo() {
 
 	//get the host of the database

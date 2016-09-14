@@ -7,6 +7,8 @@ package engine
 import "C"
 import (
 	"dalton/db/models"
+	"fmt"
+
 )
 
 const (
@@ -38,6 +40,14 @@ func ExecuteNaslScript(nasl *NaslFile, messages *[]string, success *int) error {
 	return nil
 }
 func executeNaslFile(settings *NaslFile, messages *[]string, success *int) (*models.Script, error) {
+
+	defer func(){
+
+		if err := recover(); err != nil {
+			fmt.Println(err)
+			return
+		}
+	}()
 
 	arguments := &C.struct_ExternalData{file: C.CString(settings.File), target: C.CString(settings.Target),
 		authenticated: C.int(settings.Authenticated), descriptionOnly: C.int(settings.DescriptionOnly), rootDir: C.CString(settings.RootDir)}
@@ -114,6 +124,8 @@ func executeNaslFile(settings *NaslFile, messages *[]string, success *int) (*mod
 	if err != nil {
 		return nil, err
 	}
+	info = nil
+	//C.clearDaltonInfo()
 	return script, nil
 }
 
@@ -437,6 +449,7 @@ func fillScriptWithDetails(script *models.Script, info *C.struct_DaltonScriptInf
 			return
 		}
 	}()
+
 	//Fill the copyright
 	if info.ScriptCopyright != nil {
 		script.ScriptCopyRight = C.GoString(info.ScriptCopyright)

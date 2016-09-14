@@ -44,9 +44,20 @@ struct ExternalData {
     char *rootDir;
 };
 
+typedef enum DaltonConstants {
+
+    CVES,RPORTS,ADDPREFS,MKEYS,XREFS,RUDP,BUGTRAQ,DEPS,EKEYS,MSGS,RKEYS,TAGS
+}DaltonConstants;
+
 extern int executeNasl(struct ExternalData* definition,DaltonScriptInfo *daltonScriptInfo);
 extern int clearDaltonInfo();
+extern int anotherClear();
+extern void freeResources(void **resource);
 extern int clearDaltonContainer(DaltonScriptInfo *container);
+void copyDaltonStringContainer(DaltonScriptInfo *daltonContainer , DaltonStringContainer *stringContainer[DALTON_MAX_ARRAY_SIZE],DaltonConstants constant);
+void copyDaltonDictContainer(DaltonScriptInfo *daltonContainer , DaltonDictContainer *dictContainer[DALTON_MAX_ARRAY_SIZE],DaltonConstants constant);
+void copyDaltonNameValuePair(DaltonScriptInfo *daltonContainer,DaltonNameValuePair *nvContainer[DALTON_MAX_ARRAY_SIZE],DaltonConstants constant);
+
 /* Signature information extraction and verification (not nasl- specific
   anymore, thus likely to be moved to openvas-libraries): */
 int nasl_verify_signature (const char *filename);

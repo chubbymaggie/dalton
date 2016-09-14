@@ -1,7 +1,7 @@
 package main
 
 import (
-	"dalton/config"
+
 	"dalton/db"
 	"dalton/db/models"
 	"dalton/engine"
@@ -10,6 +10,8 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+
+
 )
 
 var (
@@ -125,7 +127,7 @@ func describeNaslFile(path, rootDir string) (*models.Script, error) {
 }
 
 func main() {
-	indicator = 0
+	/*indicator = 0
 	target = "192.168.1.8"
 	collection , session = db.GetCollection(db.SCRIPTS_COLLECTION_NAME)
 	defer session.Close()
@@ -152,7 +154,15 @@ func main() {
 			fmt.Println(fmt.Sprintf("We found this : %s", vuln))
 		}
 	}
+	fmt.Println("Finished")
+	*/
 
+
+	engine := &engine.DaltonEngine{}
+	err := engine.InitEngine()
+	if err != nil {
+		fmt.Println(err)
+	}
 	fmt.Println("Finished")
 
 	/*naslFile := &engine.NaslFile{

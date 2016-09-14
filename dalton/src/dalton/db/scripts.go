@@ -46,7 +46,12 @@ func InsertScript(script *models.Script, collection *mgo.Collection) error {
 	return err
 }
 
-func SearchScripts(q interface{}, skip, limit int) (searchResults []models.Script, err error) {
+func GetScriptsCountForQuery(q interface{},C *mgo.Collection) (int,error) {
+
+	return C.Find(q).Count()
+}
+
+func SearchScripts(q interface{}, skip, limit int , C *mgo.Collection) (searchResults []models.Script, err error) {
 
 	searchResults = []models.Script{}
 	query := func(c *mgo.Collection) error {
@@ -57,7 +62,7 @@ func SearchScripts(q interface{}, skip, limit int) (searchResults []models.Scrip
 		return fn
 	}
 	search := func() error {
-		return WithCollection(SCRIPTS_COLLECTION_NAME, query)
+		return WithProvidedCollection(C,query)
 	}
 
 	err = search()

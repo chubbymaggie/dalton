@@ -135,6 +135,7 @@ parse_script_infos (const char *file, struct arglist *script_infos)
 
 extern int executeNasl(struct ExternalData* definition,DaltonScriptInfo *daltonScriptInfo)
 {
+
   //do initialize the dalton info object
   initializeDaltonInfo();
   struct arglist *script_infos;
@@ -151,6 +152,7 @@ extern int executeNasl(struct ExternalData* definition,DaltonScriptInfo *daltonS
   static gboolean descriptionOnly = FALSE;
   static gchar **nasl_filenames = NULL;
   nasl_filenames = &definition->file;
+
   authenticated_mode = definition->authenticated;
   descriptionOnly = definition->descriptionOnly;
   target = definition->target;
@@ -215,13 +217,118 @@ extern int executeNasl(struct ExternalData* definition,DaltonScriptInfo *daltonS
   }
   openvas_hosts_free (hosts);
   memcpy(daltonScriptInfo,daltonInfo,sizeof(DaltonScriptInfo));
+  copyDaltonStringContainer(daltonScriptInfo,daltonInfo->ScriptCveIds,CVES);
+  copyDaltonStringContainer(daltonScriptInfo,daltonInfo->ScriptRequirePorts,RPORTS);
+  copyDaltonStringContainer(daltonScriptInfo,daltonInfo->ScriptMandatoryKeys,MKEYS);
+  copyDaltonStringContainer(daltonScriptInfo,daltonInfo->ScriptRequireUDPPorts,RUDP);
+  copyDaltonStringContainer(daltonScriptInfo,daltonInfo->ScriptBugTraqIds,BUGTRAQ);
+  copyDaltonStringContainer(daltonScriptInfo,daltonInfo->ScriptDependencies,DEPS);
+  copyDaltonStringContainer(daltonScriptInfo,daltonInfo->ScriptExcludeKeys,EKEYS);
+  copyDaltonStringContainer(daltonScriptInfo,daltonInfo->ScriptMessages,MSGS);
+  copyDaltonStringContainer(daltonScriptInfo,daltonInfo->ScriptRequireKeys,RKEYS);
+  copyDaltonDictContainer(daltonScriptInfo,daltonInfo->ScriptAddPreferences,ADDPREFS);
+  copyDaltonNameValuePair(daltonScriptInfo,daltonInfo->ScriptXRefs,XREFS);
+  copyDaltonNameValuePair(daltonScriptInfo,daltonInfo->ScriptTags,TAGS);
+  /*memcpy(daltonScriptInfo->ScriptCveIds,daltonInfo->ScriptCveIds,sizeof(daltonInfo->ScriptCveIds));
+  memcpy(daltonScriptInfo->ScriptRequirePorts,daltonInfo->ScriptRequirePorts,sizeof(daltonInfo->ScriptRequirePorts));
+  memcpy(daltonScriptInfo->ScriptAddPreferences,daltonInfo->ScriptAddPreferences,sizeof(daltonInfo->ScriptAddPreferences));
+  memcpy(daltonScriptInfo->ScriptMandatoryKeys,daltonInfo->ScriptMandatoryKeys,sizeof(daltonInfo->ScriptMandatoryKeys));
+  memcpy(daltonScriptInfo->ScriptXRefs,daltonInfo->ScriptXRefs,sizeof(daltonInfo->ScriptXRefs));
+  memcpy(daltonScriptInfo->ScriptRequireUDPPorts,daltonInfo->ScriptRequireUDPPorts,sizeof(daltonInfo->ScriptRequireUDPPorts));
+  memcpy(daltonScriptInfo->ScriptBugTraqIds,daltonInfo->ScriptBugTraqIds,sizeof(daltonInfo->ScriptBugTraqIds));
+  memcpy(daltonScriptInfo->ScriptDependencies,daltonInfo->ScriptDependencies,sizeof(daltonInfo->ScriptDependencies));
+  memcpy(daltonScriptInfo->ScriptExcludeKeys,daltonInfo->ScriptExcludeKeys,sizeof(daltonInfo->ScriptExcludeKeys));
+  memcpy(daltonScriptInfo->ScriptMessages,daltonInfo->ScriptMessages,sizeof(daltonInfo->ScriptMessages));
+  memcpy(daltonScriptInfo->ScriptRequireKeys,daltonInfo->ScriptRequireKeys,sizeof(daltonInfo->ScriptRequireKeys));
+  memcpy(daltonScriptInfo->ScriptTags,daltonInfo->ScriptTags,sizeof(daltonInfo->ScriptTags));*/
   //memcpy(daltonScriptInfo->ScriptCveIds,daltonInfo->ScriptCveIds,sizeof(daltonInfo->ScriptCveIds));
-
   clearDaltonInfo();
-
-
+  anotherClear();
 
   return 0;
+}
+
+void copyDaltonStringContainer(DaltonScriptInfo *daltonContainer , DaltonStringContainer *stringContainer[DALTON_MAX_ARRAY_SIZE]
+,DaltonConstants constant)
+{
+  int i = 0;
+  for (;i<DALTON_MAX_ARRAY_SIZE;i++){
+    if (stringContainer[i]){
+       //so copy it
+       switch (constant){
+         case CVES:
+           memcpy(daltonContainer->ScriptCveIds[i],stringContainer[i],sizeof(DaltonStringContainer));
+               break;
+         case RPORTS:
+           memcpy(daltonContainer->ScriptRequirePorts[i],stringContainer[i],sizeof(DaltonStringContainer));
+               break;
+         case MKEYS:
+           memcpy(daltonContainer->ScriptMandatoryKeys[i],stringContainer[i],sizeof(DaltonStringContainer));
+               break;
+         case RUDP:
+           memcpy(daltonContainer->ScriptRequireUDPPorts[i],stringContainer[i],sizeof(DaltonStringContainer));
+               break;
+         case BUGTRAQ:
+           memcpy(daltonContainer->ScriptBugTraqIds[i],stringContainer[i],sizeof(DaltonStringContainer));
+               break;
+         case DEPS:
+           memcpy(daltonContainer->ScriptDependencies[i],stringContainer[i],sizeof(DaltonStringContainer));
+               break;
+         case EKEYS:
+           memcpy(daltonContainer->ScriptExcludeKeys[i],stringContainer[i],sizeof(DaltonStringContainer));
+               break;
+         case MSGS:
+           memcpy(daltonContainer->ScriptMessages[i],stringContainer[i],sizeof(DaltonStringContainer));
+               break;
+         case RKEYS:
+           memcpy(daltonContainer->ScriptRequireKeys[i],stringContainer[i],sizeof(DaltonStringContainer));
+               break;
+         default:
+           break;
+       }
+    }else break;
+  }
+}
+void copyDaltonDictContainer(DaltonScriptInfo *daltonContainer , DaltonDictContainer *dictContainer[DALTON_MAX_ARRAY_SIZE]
+        ,DaltonConstants constant)
+{
+  int i = 0;
+  for (;i<DALTON_MAX_ARRAY_SIZE;i++){
+
+    if(dictContainer[i]){
+
+      switch (constant){
+
+        case ADDPREFS:
+          memcpy(daltonContainer->ScriptAddPreferences[i],dictContainer[i],sizeof(DaltonDictContainer));
+              break;
+        default:
+          break;
+
+      }
+    }else break;
+  }
+}
+void copyDaltonNameValuePair(DaltonScriptInfo *daltonContainer,DaltonNameValuePair *nvContainer[DALTON_MAX_ARRAY_SIZE]
+        ,DaltonConstants constant)
+{
+  int i = 0 ;
+  for (;i<DALTON_MAX_ARRAY_SIZE;i++){
+    if (nvContainer[i]){
+
+      switch(constant){
+        case XREFS:
+          memcpy(daltonContainer->ScriptXRefs[i],nvContainer[i],sizeof(DaltonNameValuePair));
+              break;
+        case TAGS:
+          memcpy(daltonContainer->ScriptTags[i],nvContainer[i],sizeof(DaltonNameValuePair));
+              break;
+        default:
+          break;
+      }
+
+    }else break;
+  }
 }
 int clearDaltonContainer(DaltonScriptInfo *container)
 {
@@ -234,21 +341,163 @@ int clearDaltonContainer(DaltonScriptInfo *container)
   return 0;
 }
 
+void freeResources(void **resource)
+{
+  if (resource){
+
+    int i = 0;
+    for (;i <DALTON_MAX_ARRAY_SIZE;i++){
+
+      if(resource[i])
+        free(resource[i]);
+    }
+  }
+}
+
 int clearDaltonInfo()
 {
   if(daltonInfo) //If dalton info is already initialized so delete it
   {
     //Freeing it from memory
-    free(daltonInfo);
-     xrefCount = 0;
-     tagsCount = 0;
-     addPreferencesCount = 0;
-     SecurityMessagesCount = 0;
+    if(daltonInfo->ScriptAddPreferences)
+    {
+      int i = 0;
+      for (;i<DALTON_MAX_ARRAY_SIZE;i++){
+          if(daltonInfo->ScriptAddPreferences[i]){
+            daltonInfo->ScriptAddPreferences[i] = NULL;
+          }else break;
+      }
+
+    }
+    if(daltonInfo->ScriptBugTraqIds)
+    {
+      int i = 0;
+      for (;i<DALTON_MAX_ARRAY_SIZE;i++){
+        if(daltonInfo->ScriptBugTraqIds[i]){
+          daltonInfo->ScriptBugTraqIds[i] = NULL;
+        }else break;
+      }
+
+    }
+    if(daltonInfo->ScriptCveIds)
+    {
+      int i = 0;
+      for (;i<DALTON_MAX_ARRAY_SIZE;i++){
+        if(daltonInfo->ScriptCveIds[i]){
+          daltonInfo->ScriptCveIds[i] = NULL;
+        }else break;
+      }
+
+    }
+    if(daltonInfo->ScriptDependencies)
+    {
+      int i = 0;
+      for (;i<DALTON_MAX_ARRAY_SIZE;i++){
+        if(daltonInfo->ScriptDependencies[i]){
+          daltonInfo->ScriptDependencies[i] = NULL;
+        }else break;
+      }
+
+    }
+    if(daltonInfo->ScriptExcludeKeys)
+    {
+      int i = 0;
+      for (;i<DALTON_MAX_ARRAY_SIZE;i++){
+        if(daltonInfo->ScriptExcludeKeys[i]){
+          daltonInfo->ScriptExcludeKeys[i] = NULL;
+        }else break;
+      }
+
+    }
+    if(daltonInfo->ScriptMandatoryKeys)
+    {
+      int i = 0;
+      for (;i<DALTON_MAX_ARRAY_SIZE;i++){
+        if(daltonInfo->ScriptMandatoryKeys[i]){
+          daltonInfo->ScriptMandatoryKeys[i] = NULL;
+        }else break;
+      }
+
+    }
+    if(daltonInfo->ScriptMessages)
+    {
+      int i = 0;
+      for (;i<DALTON_MAX_ARRAY_SIZE;i++){
+        if(daltonInfo->ScriptMessages[i]){
+          daltonInfo->ScriptMessages[i] = NULL;
+        }else break;
+      }
+
+    }
+    if(daltonInfo->ScriptRequireKeys)
+    {
+      int i = 0;
+      for (;i<DALTON_MAX_ARRAY_SIZE;i++){
+        if(daltonInfo->ScriptRequireKeys[i]){
+          daltonInfo->ScriptRequireKeys[i] = NULL;
+        }else break;
+      }
+
+    }
+    if(daltonInfo->ScriptRequirePorts)
+    {
+      int i = 0;
+      for (;i<DALTON_MAX_ARRAY_SIZE;i++){
+        if(daltonInfo->ScriptRequirePorts[i]){
+          daltonInfo->ScriptRequirePorts[i] = NULL;
+        }else break;
+      }
+
+    }
+    if(daltonInfo->ScriptRequireUDPPorts)
+    {
+      int i = 0;
+      for (;i<DALTON_MAX_ARRAY_SIZE;i++){
+        if(daltonInfo->ScriptRequireUDPPorts[i]){
+          daltonInfo->ScriptRequireUDPPorts[i] = NULL;
+        }else break;
+      }
+
+    }
+    if(daltonInfo->ScriptTags)
+    {
+      int i = 0;
+      for (;i<DALTON_MAX_ARRAY_SIZE;i++){
+        if(daltonInfo->ScriptTags[i]){
+          daltonInfo->ScriptTags[i] = NULL;
+        }else break;
+      }
+
+    }
+    if(daltonInfo->ScriptXRefs)
+    {
+      int i = 0;
+      for (;i<DALTON_MAX_ARRAY_SIZE;i++){
+        if(daltonInfo->ScriptXRefs[i]){
+          daltonInfo->ScriptXRefs[i] = NULL;
+        }else break;
+      }
+
+    }
+
+
   }
 
 
   return 0;
 
+}
+int anotherClear()
+{
+  if(daltonInfo){
+    free(daltonInfo);
+  }
+  xrefCount = 0;
+  tagsCount = 0;
+  addPreferencesCount = 0;
+  SecurityMessagesCount = 0;
+
+  return 0;
 }
 int
 mainc (int argc, char **argv)
@@ -256,9 +505,10 @@ mainc (int argc, char **argv)
 
   struct ExternalData *definition = malloc(sizeof(struct ExternalData));
   definition->target = "192.168.1.8";
-  definition->file = argv[0];
+  definition->file = "/media/snouto/rest/projects/openvas/nvts/2008/aardvark_422_remote_file_include.nasl";
   definition->authenticated = 1;
   definition->descriptionOnly = 1;
+  definition->rootDir = "/media/snouto/rest/projects/openvas/nvts";
 
   DaltonScriptInfo *testInfo = (DaltonScriptInfo *)malloc(sizeof(DaltonScriptInfo));
   int result =  executeNasl(definition,testInfo);
@@ -266,6 +516,7 @@ mainc (int argc, char **argv)
 
   //test printing the version of the script
   //finally return the results
+  free(definition);
   return result;
 }
 
@@ -437,6 +688,7 @@ main (int argc, char **argv)
     {
       add_nasl_inc_dir (include_dir);
     }
+  add_nasl_inc_dir("/media/snouto/rest/projects/openvas/nvts");
 
   prefs_config (config_file ?: OPENVASSD_CONF);
   while ((host = openvas_hosts_next (hosts)))
@@ -479,5 +731,6 @@ main (int argc, char **argv)
     fflush (nasl_trace_fp);
 
   openvas_hosts_free (hosts);
+  anotherClear();
   return err;
 }

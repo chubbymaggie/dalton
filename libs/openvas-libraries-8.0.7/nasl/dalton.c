@@ -16,6 +16,15 @@ int SecurityMessagesCount = 0;
 void initializeDaltonInfo()
 {
     daltonInfo = (DaltonScriptInfo *)malloc(sizeof(DaltonScriptInfo));
+    daltonInfo->ScriptCopyright = "";
+    daltonInfo->ScriptDescription = "";
+    daltonInfo->ScriptFamily = "";
+    daltonInfo->ScriptId = "";
+    daltonInfo->ScriptName ="";
+    daltonInfo->ScriptOid = "";
+    daltonInfo->ScriptSummary = "";
+    daltonInfo->ScriptVersion = "";
+
 
 }
 

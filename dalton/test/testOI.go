@@ -1,16 +1,23 @@
 package main
 
 import (
-	"fmt"
-	"time"
 
-	"dalton/utils"
-	"labix.org/v2/mgo/bson"
+)
+import (
+	"os"
+	"fmt"
+
+
 )
 
 func main() {
 
-	memory := make(map[bson.ObjectId]string)
+	dir := "/media/snouto/rest/projects/openvas/nvts"
+	info  , _ := os.Lstat(dir)
+
+
+	fmt.Println(fmt.Sprintf("Dir MTime : %v",info.ModTime()))
+	/*memory := make(map[bson.ObjectId]string)
 	max := 100000
 	var i int = 0
 	var collisions int
@@ -30,5 +37,5 @@ func main() {
 		i++
 	}
 
-	fmt.Println("Number of Collisions : ", collisions)
+	fmt.Println("Number of Collisions : ", collisions)*/
 }
