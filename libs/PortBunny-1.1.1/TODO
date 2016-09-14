@@ -1,0 +1,24 @@
+* pending_commands_queue should use the queue-'class' from queue.h
+* same goes for active_scan_jobs_list and scan_jobs_hash. Also,
+* queue_get_root should be removed and replaced with routines that
+  allow easy iterations of queues.
+
+* Further reduce traffic over /dev/portbunny
+
+* Timestamps are 64bit-values which is OK. We should however try to
+  reduce unnecessary 64bit-arithmetic.
+
+* Use a "number of bits to shift" instead of a "CWND_BLOWUP_FACTOR" in
+  congestion-control.
+
+* If a trigger stops returning for a long while, it may be wise to
+  revert to other triggers even if their quality is lower.
+
+
+* Ports, which were already scanned in trigger-state don't have to be
+  scanned in flood-state again, especially because its never a good
+  idea to scan a port, which is also being used as a trigger. For that
+  reason, it must be possible for a flood-state-scan-job to be
+  initialized with already existing port-results.
+  
+* Randomize default tcp-triggers tried for closed ports.

@@ -24,6 +24,7 @@ void initializeDaltonInfo()
     daltonInfo->ScriptOid = "";
     daltonInfo->ScriptSummary = "";
     daltonInfo->ScriptVersion = "";
+    daltonInfo->Success = 0;
 
 
 }

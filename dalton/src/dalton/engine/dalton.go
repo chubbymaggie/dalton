@@ -7,6 +7,7 @@ import (
 	"dalton/log"
 	"encoding/gob"
 	"time"
+
 )
 const (
 	DALTON_ENGINE_NAME = "Dalton Engine v0.1"
@@ -27,7 +28,19 @@ type DaltonEngine struct {
 	PrivateKey string // the private key needed for verifying scripts signature
 	initStatus bool // the initialization status of the engine
 }
+func (engine *DaltonEngine) GetTotalNumberOfScripts() int {
 
+	totalNumber := 0
+
+	for _ , val := range engine.KB.KB {
+
+		totalNumber += len(val)
+	}
+
+	return totalNumber
+
+
+}
 func (dalton *DaltonEngine) InitEngine() error{
 
 
@@ -38,6 +51,7 @@ func (dalton *DaltonEngine) InitEngine() error{
 func (dalton *DaltonEngine) initEngine() error {
 	//do any house keeping operations in here privately
 	loader := &ScriptLoader{}
+	loader.InitLoader()
 	//get the root directory from the configuration
 	rootDir := config.ReadKey("general","plugins_dir").String()
 	//begin the loading process
@@ -78,7 +92,7 @@ func (dalton *DaltonEngine) StartScanning() error {
 //////////////////////////////////Dalton Knowledge base////////////////////////////
 
 type DaltonKB struct {
-	KB map[int]*DaltonQueue // The dalton knowledge base
+	KB map[int][]DaltonNode // The dalton knowledge base
 	lock *sync.Mutex
 	ready bool //Whether the Dalton KB is ready or not
 	scriptsCount int //the total number of scripts
@@ -87,7 +101,7 @@ type DaltonKB struct {
 }
 func (kb *DaltonKB) InitKnowledgeBase() error {
 	//initialize the variables needed for Dalton Knowledge base to function properly
-	kb.KB = make(map[int]*DaltonQueue)
+	kb.KB = make(map[int][]DaltonNode)
 	kb.lock = &sync.Mutex{}
 	kb.ready = false
 	return nil
@@ -95,17 +109,19 @@ func (kb *DaltonKB) InitKnowledgeBase() error {
 
 func (kb *DaltonKB) AddKnowledgeBase(category int , data *DaltonNode) error {
 
-	if val , ok := kb.KB[category]; ok {
+	if _ , ok := kb.KB[category]; ok {
 
 		//get the total number of elements in the data queue
-		val.Push(data)
+		//val.Push(data)
+		kb.KB[category] = append(kb.KB[category],*data)
 
 		return nil
 	}else {
 		//that means the category does not exist at all
 		//so add it
-		kb.KB[category] = NewQueue()
-		kb.KB[category].Push(*data)
+		kb.KB[category] = make([]DaltonNode,1)
+		//kb.KB[category].Push(*data)
+		kb.KB[category] = append(kb.KB[category],*data)
 		return nil
 	}
 }

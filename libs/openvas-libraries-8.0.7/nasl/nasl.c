@@ -216,6 +216,7 @@ extern int executeNasl(struct ExternalData* definition,DaltonScriptInfo *daltonS
     g_free (hostname);
   }
   openvas_hosts_free (hosts);
+  daltonScriptInfo->Success = daltonInfo->Success;
   memcpy(daltonScriptInfo,daltonInfo,sizeof(DaltonScriptInfo));
   copyDaltonStringContainer(daltonScriptInfo,daltonInfo->ScriptCveIds,CVES);
   copyDaltonStringContainer(daltonScriptInfo,daltonInfo->ScriptRequirePorts,RPORTS);

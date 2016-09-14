@@ -1,0 +1,55 @@
+These are requirements to be installed on the final dalton server
+for port scanners to function properly
+
+Tool:   ovaldi 5.5.23 or newer
+Effect: No NVTs of family 'OVAL definitions' will be executed.
+        This family is only visible in case your installation
+        includes OVAL files.
+
+Tool:   WMI Client (OpenVAS not furnished with WMI client functionality)
+Effect: Any NVTs that do rely on the built-in WMI functionality will
+        not be executed. If you did not provide WMI credentials
+        or do not scan host with Windows operating systems, the absence
+        will not reduce the number of executed NVTs.
+        Most likely reduced are compliance tests and OVAL NVTs.
+
+Tool:   WMI Client (OpenVAS not furnished with SMB client functionality)
+Effect: Any NVTs that do rely on the built-in SMB functionality will
+        not be executed. If you did not provide SMB credentials
+        or do not scan host with Windows operating systems, the absence
+        will not reduce the number of executed NVTs.
+        Most likely reduced are compliance tests and OVAL NVTs.
+
+Tool:   pd/phrasendrescher
+Effect: The phrasendrescher wrapper will not deliver results.
+        This NVT could otherwise attempt to find ssh accounts and passwords
+        brute force.
+
+Tool:   ncrack
+Effect: ncrack wrappers will not deliver results.
+        The ncrack wrappers could otherwise attempt to find ftp, ssh and
+        telnet accounts and passwords brute-force.
+
+Tool:   portbunny
+Effect: Port scanning based on portbunny is not available.
+
+Tool:   pnscan
+Effect: Port scanning based on pnscan is not available.
+
+Tool:   strobe
+Effect: Port scanning based on strobe is not available.
+
+Tool:   amap
+Effect: Port scanning and service detection based on amap is not available.
+
+Tool:   snmpwalk
+Effect: Port scanning based on snmpwalk is not available.
+
+Tool:   ldapsearch
+Effect: Advanced ldap directory checks are not available.
+
+Tool:   masscan
+Effect: Port scanning based on masscan is not available.
+
+Host does not have any TCP port open which is specified in port range
+Host does not have any open TCP port

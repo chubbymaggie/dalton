@@ -1,0 +1,523 @@
+
+(1) Port-hopping removed because firewalls could block connections
+from other source-ports but the current one.
+
+(2) UI changed to exit and unload the module as soon as an error is
+fired.
+
+(3) Fixed race-condition in UI-code. (Issue reported by Joern)
+
+(4) set_ports_to_scan-handler fixed to make sure no invalid
+scan-job-states can be created on error.
+
+(5) Added a check for ports bigger MAX_PORTNUM. (Issue reported by
+Joern) in conjunction with change (4)
+
+(6) Minor-syntax changes in UI for python 2.4 compatibility
+
+(7) Initialized trigger-list to an empty list for flood-jobs and
+aborted flood-jobs with empty trigger-lists.
+
+(8) Tested with interface without IP: PBunny no longer crashes,
+probably due to earlier fixes in (7). This needs some more testing!
+
+
+made tarball.
+----------------------------------------------------------------
+
+
+(9) Removed notion of "waiting n rounds till outputting"
+complete-batches because it wasn't really used and stands in the way
+of the updated packet-handling-code.
+
+(10) Removed 'complete_batches' entirely to introduce updated
+packet-handling-code.
+
+(11) Removed time_sent-fields from port-result: Old
+late-response-handling is now completely removed.
+
+(12) Added recent_batches to save the 20 most recent batches
+
+made tarball.
+----------------------------------------------------------------
+
+(13) Implemented new packet-handling based on recent-batches list.
+This now means that we have better control over which packets are
+actually valid answers.
+
+(14) Fixed memory-leak: Freed trigger-list which got extremely huge on
+hosts with mostly closed ports.
+
+made tarball.
+----------------------------------------------------------------
+
+(15) Changed queue_clear to use queue_head.
+(16) Fixed a memory-leak in batch_creator_create_batch
+
+made tarball. (18DEC)
+----------------------------------------------------------------
+
+(17) Forgot to delete nodes in clear_trigger_list: Fixed.
+(18) Missing return-statement after error-report in
+(1scanner_ui/cmd_handlers:handle_create_scan_job added.
+
+(19) Made sure scan_job_inits don't leave the module in an inconsistent
+state on failure.
+
+made tarball.
+----------------------------------------------------------------
+
+(21) Increased timeout-value for trigger-phase.
+
+(22) Fixed limited frequency problem with positive TCP_SYN-triggers by
+hopping slightly between source-ports when using TCP_SYN-triggers. :)
+
+Here's a little more on that:
+
+Problem:
+
+When using positive TCP_SYN-triggers (such which are answered by a
+SYN-ACK), the following pattern can be seen when scanning using the
+same trigger at a high frequency:
+
+
+TCP_SYN 80, seq_num = x >
+TCP_SYN 80, seq_num = y  >
+
+...
+
+TCP_SYN_ACK 80 seq_num = x + 1 <
+TCP_SYN_ACK 80 seq_num = x + 1 <
+
+
+Explanation:
+
+After the first TCP_SYN, the receiver sends the SYN_ACK and waits for
+an ACK from the sender. On arrival of the second SYN, the receiver
+reasons that the SYN_ACK must have been lost for one reason or the
+other and sends back an ACK for the original SYN without taking a look
+at the sequence-number of the seconds SYN.
+
+While I'm unsure if this is a BUG on the receiver-side or valid
+behavior (one would need to look into the RFC in detail), obviously,
+this behavior can be observed so we should try to decrease its
+impact.
+
+Solution to Problem:
+
+Vary the source-port of positive TCP_SYN-triggers slightly to make
+sure each trigger is actually requesting a separate connection. This
+way the receiver does not have the option of ignoring the second
+sequence-number.
+
+Ports are only varied slightly within the range of dynamic ports to be
+sure that we don't kill NATs on the way.
+
+(23) Decided not to use UDP-triggers by default because dest-unreach
+limits are quite common.
+
+(24) Limited the number of extra triggers added during the actual scan
+to reduce Bunny's memory-footprint.
+
+(25) The trigger-finding strategy has been improved:
+
+triggers to search before starting the scan is now 1. In detail,
+this means that first TCP-SYN-triggers will be tried all at once, if that works,
+no further triggering is done. Next ICMP_ER and ICMP_TS are tried and
+if that fails as well, we revert to using UDP-triggers, which are the
+worse triggers to use due to extremely widespread use of
+rate-limitations on dest-unreachables.
+
+made tarball. (19Dec07)
+---------------------------------------------------------------------------
+
+(26) Changed the UI to
+
+1. trigger all jobs first because triggering while scanning can't work
+reliably because the flood-job is trying to get packets to drop to do
+its timing and trigger-phase does not tolerate drops at all.
+
+2. Execute one flood-job group at a time with a default group-size of
+1 because this is actually the sanest default.
+
+This also fixed a very rarely noticeable but possible BUG: at one point
+global-timing was not reset.
+
+made tarball.
+---------------------------------------------------------------------------
+
+(27) Removed global window! This is one of the most idiotic nmap-ideas
+on the planet and with our default of 1 job at a time (which is the
+best setup for shared-bottleneck-operation and still better than the
+global window with multiple scan-jobs) it's no longer needed anyway.
+The user can still execute as many jobs in parallel as he likes, but
+he'll have to make sure that the lowest traffic of all jobs in sum
+does not hit the shared bottleneck because that will kill performance.
+
+(28) Added a very basic but nice progress report to the UI.
+
+made tarball.
+---------------------------------------------------------------------------
+
+(29) optimized UI to use blocking semaphores instead of busy-waiting and sleeps.
+
+(30) Caught negative return-values of sock_sendmsg which occur if the
+host one is scanning from has firewall-rules which block sending in
+one way or the other.
+
+(31) Moved UserEventHandling-code of UI to separate file and updated
+it to work with the sleeping (instead of busy-waiting) UI-code.
+
+made tarball.
+---------------------------------------------------------------------------
+
+(32) Restructured UI: There are now no more busy-waiting loops and
+still user-input as well as SIGINTs are handled immediately and cause
+a clean exit.
+
+made tarball.
+---------------------------------------------------------------------------
+
+(33) Added initialized_sem to UI to make sure the user-event-handler
+cannot be used before the ui-logic has been fully initialized.
+
+(34) Added locking for interface.py's scanner-object as well as the
+options_parser to allow interactive UI.
+
+(35) Fixed locking problem.
+
+made tarball.
+----------------------------------------------------------------------
+
+(36) Included <linux/rwsem.h> in pending_commands_queue.c to allow
+compilation on x86-64bit systems.
+
+(37) unregister_chrdev no longer returns int but void in 2.6.23 so we
+no longer check its return-value to allow compilation on x86-64bit
+systems.
+
+(38) Updated README to tell people that they should not load the
+module manually.
+
+(39) Changed absolute paths in interface.py to relativ paths.
+
+----------------------------------------------------------------------
+PUBLIC RELEASE 1.0
+----------------------------------------------------------------------
+
+(1) Changed all locations which store ports from int to u16 for
+increased cross-platform-compatibility. It also saves us some memory
+on most architectures in use.
+
+This included making all 'rounds' s32s as well as all 'batch_ids'
+u16s.
+
+(2) Removed references to old send/delay code in udp-trigger.
+
+(3) Changed handling of -p flag in UI to handle comma-separated lists
+of port-expressions: -p 80,55,90,1-10,700-800 will now work.
+
+(4) We are now using a dynamic major-number like we should be. Changes
+were made in scanner_ui.c as well as in the interface.py to accomplish
+this.
+
+(5) Added a -w flag to wait longer in trigger-phase for targets with
+high rtt.
+
+(6) Fixed set_method_timeout_handler.
+
+(7) Filtered requests to use TCP_SYN 0 and UDP 0 triggers.
+
+(8) UI now only reads 50 chars at once => This actually doubled
+performance on gigabit-ethernet and localhost.
+
+Release of dev-version (09012008)
+========================================================================
+
+(1) Fixed handling of -t flag to be similar to the -p flag:
+    Example: -t ICMP_ER-0,ICMP_TS-0
+
+(2) Added a TCP_ACK-trigger which sends an TCP_SYN_ACK and receives a
+TCP_RST.
+
+(3) Accuracy: Decreased initial-ccthresh to 50 despite the fact that this is not
+as suggested in the RFC simply to increase accuracy.
+
+(4) Removed minimal timeout. It had been added because the UI-problem
+fixed in (8) of the last dev-version had not been recognized.
+
+(6) Accuracy: On drop, cwnd is reduced to 2 like in NMAP and not to
+nactive_packets/2 as suggested in the RFC.
+
+(7) Changed batch_id to be u32.
+
+(8) Fixed TCP_ACK-trigger's extract_batch_id-func.
+
+=========================================================================
+
+(1) Removed global congestion window entirely.
+
+(2) nactive_packets and port_array_size are now u32s instead of an unsigned ints.
+
+(3) trigger-list is now a normal queue everywhere. This forced quite a
+few changes. Seems to work alright.
+
+(4) trigger-instance now has a round-attribute. 
+
+(5) Added get_default_quality function to trigger-interface and all
+triggers.
+
+(6) Added queue_remove_all function which removes all nodes which
+match a given criterion.
+
+(7) When PortBunny finds new triggers, it will now discard any old
+triggers which don't have the quality of the new trigger.
+
+
+release of 230108-dev
+========================================================================
+
+(1) Applied (a slightly modified version of) a patch by Jeroen
+"VeXocide" Habraken which fixes CIDR-handling.
+
+(2) Countered burst-size limitations while staying responsive by
+calling send_new_packet_batches right after a batch has been released.
+
+(3) Introduced millisecond-sleep in scan_job_manager to counter
+burst-size limitations.
+
+release of 300108-dev
+========================================================================
+
+(1) Performed a huge trigger-state-cleanup + performance-improvements:
+    In the past, all triggers of a specific type had to be sent at
+    once, then we'd wait and then try triggers of the next type. This
+    meant that we'd have to wait at least an entire millisecond for
+    each host even if one of the tcp-triggers did respond.
+    
+    Now, triggers of the same type don't have to be sent at once
+    anymore. Instead every trigger is independent of all other
+    triggers and the user only specifies the number of triggers to
+    send at once.
+
+    Got rid of all the set_tcp_ports, set_udp_ports ..., no longer
+    necessary.
+
+(2) (Started a TCP-vegas implementation)
+
+========================================================================
+
+(1) Fixed a compilation-problem with older kernels.
+
+(2) Many current cmd-handlers did not issue a response on successful
+completion. While this is fine with the current UI, it's obvious we
+should have positive responses so that a UI knows if a command has
+actually already been executed successfully before it issues another
+command which may be dependent on the success of the previous command.
+
+(3) The UI used to crash when no arguments were handed to -p. This has
+now been fixed.
+
+(4) Fixed UI hostname-handling. "host.localdomain" used to be valid
+while simply "host" was not. Now they both work.
+
+(5) First steps in implementing the network-info-keeper:
+nactive-packets and sent-counter have been successfully exported.
+
+(6) Fixed bug for kernels >= 2.6.22: CURRENT_TIME returned a
+cached-time. It has now been replaced by getnstimeofday() which does
+not cache.
+
+(7) Removed msleep again which leaves us with the problem of 100%
+CPU-load. But the vista-problem was actually related to the
+timestamps!
+
+120308-dev
+
+========================================================================
+
+(1) Replaced -g option which created a graph with a -l option which
+creates a log-file of all events.
+
+(2) Event-system now reports a bunch of events which the module hands
+to the UI. Tools have been provided to analyze the data.
+
+120308-2-dev
+========================================================================
+
+(1) Added IP-PROT-trigger. Note that this trigger generates
+ICMP-dest-unreach-responses which are very frequently
+rate-limited. Trigger-quality has been set to 3 which is the value the
+udp-trigger has as well.
+
+(2) Removed ":" after hostname in output because that's easier to grep.
+
+(3) Adjusted timing-interface: The rtt-sample which causes the
+timeout-update is now not only handed to the net-info-keeper but also
+to the timing-algorithm so that it can keep its own rtt-samples.
+
+(4) Cleanup: tcp_reno_state does not need to keep rtt-average and
+deviation since the netinfo-keeper already has it.
+
+(5) Removed MINIMUM_BATCH_TIMEOUT now that rtt-sampling is fine again.
+
+(6) Modified timing-interface to allow timing-algorithm to access scan-job.
+
+(7) Added ack_counter.
+
+(8) Added initial TCP-Vegas implementation. Works nicely but isn't
+always faster. Maybe it's still buggy and we just don't know it yet ;)
+
+=========================================================================
+
+(1) Fixed Compilation-errors with 2.6.16-x kernels. Thank you Nils.
+
+(2) Successfully compiled patched version against the following kernels:
+    
+    - 2.6.13.2
+    - 2.6.14.1
+    - 2.6.15-28
+    - 2.6.16.1
+    - 2.6.16.20
+    - 2.6.16.27    
+    - 2.6.17.1
+    - 2.6.20-16
+    - 2.6.22-14
+
+(3) Per-probe rtts were too expensive CPU-wise and did not yield a
+lot of extra info. They have thus been removed.
+
+(4) active_batches is now ordered by timeout-time and
+'has_timed_out'-checks are only necessary until the first
+not-timeout-out batch has been found. This update has been made to
+enabled a series of updates which in the end will solve the 100%
+CPU-time problem.
+
+(5) Corrected typo in port-hopping-code for TCP-SYN-triggers: 100
+ports less are used now to not overwhelm the NAT-table in cheap
+routing-devices.
+
+(6) The 100%-CPU-problem has been solved by allowing the scan-job-manager to
+    sleep while allowing input-sources to interrupt this sleep using signals.
+
+(7) Only one getnstimeofday-call is made for each 'manage_batches'
+call. getnstimeofday just has a too high cost. Also, this is the more
+correct variant since we're not accepting new packets during a
+manage_batches-run.
+
+
+(8) Reduced redundant load on /dev/portbunny by getting rid of the
+mode-parameter passed to most command-handlers. Also replaced "RESULT"
+by 'R' and PORT_STATE by 'P' in the output since "RESULT PORT_STATE"
+is the most common string passed via /dev/portbunny.
+
+Note: Its not clear whether getnstimeofday-calls really are so
+expensive... it could have as well been the parsing by the
+python-script which slowed us down.
+
+=======================================================================
+
+(1) Simplified output-function. Results are now ordered by
+port-number.
+
+(2) packet-queues now use the queue-class. Apart from this being the
+cleaner solution, it also reduced the need for packet-locks for
+individual scan-jobs and the number of getnstimeofday-calls by a
+factor 2.
+
+(3) Reduced size of sniffed_packet_descr_t by making use of a union.
+
+=======================================================================
+The new public repo now exists.
+
+(1) Cleaned up ICMP-pkt-filtered hack and replaced it with nice code
+which does the same. Renamed process_tcp_ack_rst by
+process_probe_responses during this cleanup.
+
+(2) Fixed UI-output to print a neat table again.
+
+(3) ICMP-DEST_UNREACH-port-unreachables are now handled just like
+ICMP-DEST_UNREACH adm. prohibited probe-responses. In other words,
+they are counted as valid results for a probe but the port is marked
+FILTERED. This also took care of testing the ICMP-adm-prohibited.
+
+(4) Fixed tiny host-expression-parsing bug reported by Joern:
+"hostname." is actually the same as "hostname".
+
+(5) Fixed small bug in the newly written PORT-UNREACH code: Of course,
+we only want to treat dest-unreachables as probe-responses which were
+actually generated in response to TCP-packets.
+
+(6) Updated README to contain a list of all available triggers as well
+as a short description for each of them. Also updated README to
+reflect changes.
+
+(7) Fixed build-bug for older kernels.
+
+(9) MAX_TRIGGER_SRC_PORT for tcp-ack-method changed to relfect that of
+tcp-syn-trigger.
+
+(dev-release: 07052008)
+=======================================================================
+
+(1) Updated documentation on available triggers
+
+(2) Increased readability of flood_state/state.c, which contains the
+flood-job-logic.
+
+(3) Further reduced traffic over /dev/portbunny by fixing event-reporters.
+
+(4) Modified default-trigger-list.
+
+(5) Modified output-function: If most ports are closed but some are filtered,
+filtered ports will now only be mentioned if the number of filtered
+ports is smaller than 30. This increases readability of output. Analog
+checks are performed if the majority of ports are filtered and some
+are closed.
+
+(6) Fixed kernel-oops-bugs in packet-receiving-code. There is still a bug in the
+dest-unreachable handler. Bugs were found using "isic".
+
+(7) Added some more sanity-checks to queue.c
+
+(8) Fixed bug in trigger-receiver-code.
+
+======================================================
+RELEASE 1.1
+
+(1) Implemented TCP-scalable and made it the default.
+(2) Increased sampling-interval and corrected mistakes in the
+TCP-vegas-implementation. Vegas now performs pretty much as good as
+Reno, which certainly isn't good enough... Scalable, however, works a
+lot better than Reno.
+
+(3) Timing-algorithm is now configurable at runtime.
+
+(4) Vegas is now default. Vegas now also increases the batch-size in congestion-avoidance.
+
+(5) The batch-size is reduced for all algorithms for rescans of filtered ports.
+
+(6) Default sshthresh for vegas has been set to a very low value
+given that vegas will still increase speed almost lineary when
+gamma-value is reached.
+
+(7) Trigger-state has been slowed-down for increased accuracy.
+
+(8) Default list of ports tried in trigger-state has been modified.
+
+(9) ARP-responses are now handled. We want to at least report that the
+host is up even if we have no triggers to scan it.
+
+(10) Scalable is now default again
+
+(11) Rewrote output-format.
+
+========================================================================
+
+(1) RTT-samples and cwnd-samples are now saved for each epoch,
+    rtt-max and rtt-min are set to average at each epoch-start
+    and a queue of 'drop-scores' is kept.
+
+(2) Simplified event-reporting: No more event-masks. You can either
+enable event-reporting or not since half the information is usually
+worth nothing.

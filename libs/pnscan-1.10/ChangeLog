@@ -1,0 +1,5 @@
+2002-03-22  Peter Eriksson  <pen@lysator.liu.se>
+
+	* pnscan.c: Modified the threads startup code to dynamically only
+		    start as many threads as is needed.
+

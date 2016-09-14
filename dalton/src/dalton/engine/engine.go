@@ -41,7 +41,7 @@ func ExecuteNaslScript(nasl *NaslFile, messages *[]string, success *int) error {
 }
 func executeNaslFile(settings *NaslFile, messages *[]string, success *int) (*models.Script, error) {
 
-	defer func(){
+	go func(){
 
 		if err := recover(); err != nil {
 			fmt.Println(err)

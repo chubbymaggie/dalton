@@ -9,6 +9,9 @@ import (
 	"strings"
 	"fmt"
 
+	"crypto/md5"
+	"dalton/utils"
+
 )
 const (
 
@@ -37,8 +40,23 @@ var (
  */
 type ScriptLoader struct {
 
+	History map[string]DaltonNode
+
 }
 
+func (loader *ScriptLoader) InitLoader() error {
+
+	loader.History = make(map[string]DaltonNode)
+	return nil
+}
+func (loader *ScriptLoader) hashFile(path string) (string , error) {
+
+	md5 := md5.New()
+	bytes := []byte(path)
+	md5.Write(bytes)
+	hashed := md5.Sum(nil)
+	return utils.EncodeToString(hashed) , nil
+}
 //////////////////////////////////////////////////These are functions to load scripts from the database////////////////////////////////////////////
 
 func (loader *ScriptLoader) LoadKnowledgeBase(kb_dir,rootDir string) (*DaltonKB,error) {
@@ -79,18 +97,24 @@ func (loader *ScriptLoader) load(kb_dir,rootDir string) (*DaltonKB,error) {
 				//now Convert that script into a dalton node
 				node := &DaltonNode{executed:false,ScriptFileName:path}
 				//check to see if that script has dependencies
-				if len(script.ScriptDependencies) > 0 {
+				/*if len(script.ScriptDependencies) > 0 {
 
 					children := 0
 
 					for children < len(script.ScriptDependencies) {
 
 						depPath := fmt.Sprintf("%s/%s",rootDir,script.ScriptDependencies[children])
-						recursivelyLookForDependencies(node,depPath,rootDir)
+						if _ , err := os.Stat(depPath);err != nil && os.IsNotExist(err){
+							children++
+							continue
+
+						}else{
+							recursivelyLookForDependencies(loader,node,depPath,rootDir)
+						}
 
 						children++
 					}
-				}
+				}*/
 				kb.AddKnowledgeBase(script.ScriptCategory,node)
 				iterator++
 			}
@@ -110,38 +134,112 @@ func (loader *ScriptLoader) load(kb_dir,rootDir string) (*DaltonKB,error) {
 	return kb ,err
 }
 
+func recursivelyLookForDependencies(loader *ScriptLoader,parentNode *DaltonNode, dep,rootDir string) error {
 
-func recursivelyLookForDependencies(parentNode *DaltonNode, dep,rootDir string) error {
 
-	executingScript, err := describeNaslFile(dep,rootDir)
-	if err != nil {
-		log.Log(KB_NAME,err)
-	}
-	//create a child node from that script
-	child := &DaltonNode{ScriptFileName:dep,executed:false}
-	if len(executingScript.ScriptDependencies) > 0 { // that means it has other dependencies
 
-		//so recursively append its children
-		childrenCount := 0
-		for childrenCount < len(executingScript.ScriptDependencies) {
+	hashed,_ := loader.hashFile(dep)
 
-			//get the current dependency location
-			loc := fmt.Sprintf("%s/%s",rootDir, executingScript.ScriptDependencies[childrenCount])
+	if val , ok := loader.History[hashed];!ok {
 
-			if(strings.EqualFold(filepath.Ext(loc),EXT_NASL_SCRIPT)){
-				recursivelyLookForDependencies(child,loc,rootDir)
-			}else{
-				continue
+			fmt.Println("Recursively Executing : ",dep," , Parent node : ",parentNode.ScriptFileName)
+			executingScript, err := describeNaslFile(dep,rootDir)
+			if err != nil {
+				log.Log(KB_NAME,err)
+			}
+			//create a child node from that script
+			child := &DaltonNode{ScriptFileName:dep,executed:false}
+		        loader.History[hashed] = *child
+			if len(executingScript.ScriptDependencies) > 0 { // that means it has other dependencies
+
+				//so recursively append its children
+				childrenCount := 0
+				for childrenCount < len(executingScript.ScriptDependencies) {
+
+					//get the current dependency location
+					loc := fmt.Sprintf("%s/%s",rootDir, executingScript.ScriptDependencies[childrenCount])
+
+					if(strings.EqualFold(filepath.Ext(loc),EXT_NASL_SCRIPT)){
+
+						if _ , err := os.Stat(loc); err != nil && os.IsNotExist(err) {
+							childrenCount++
+							continue
+						}else {
+							recursivelyLookForDependencies(loader,child,loc,rootDir)
+						}
+
+					}else{
+						continue
+					}
+
+					childrenCount++
+				}
 			}
 
-			childrenCount++
-		}
+	}else {
+		fmt.Println("Appending from Internal Map")
+		//append the child to the parent
+		val.ScriptFileName = dep
+		parentNode.Children = append(parentNode.Children,val)
 	}
 
-	//append the child to the parent
-	parentNode.Children = append(parentNode.Children,*child)
+
 	return nil
 }
+
+
+/*func recursivelyLookForDependencies(loader *ScriptLoader,parentNode *DaltonNode, dep,rootDir string) error {
+
+
+
+	hashed,_ := loader.hashFile(dep)
+
+	if val , ok := loader.History[hashed];!ok {
+
+			fmt.Println("Recursively Executing : ",dep," , Parent node : ",parentNode.ScriptFileName)
+			executingScript, err := describeNaslFile(dep,rootDir)
+			if err != nil {
+				log.Log(KB_NAME,err)
+			}
+			//create a child node from that script
+			child := &DaltonNode{ScriptFileName:dep,executed:false}
+		        loader.History[hashed] = *child
+			if len(executingScript.ScriptDependencies) > 0 { // that means it has other dependencies
+
+				//so recursively append its children
+				childrenCount := 0
+				for childrenCount < len(executingScript.ScriptDependencies) {
+
+					//get the current dependency location
+					loc := fmt.Sprintf("%s/%s",rootDir, executingScript.ScriptDependencies[childrenCount])
+
+					if(strings.EqualFold(filepath.Ext(loc),EXT_NASL_SCRIPT)){
+
+						if _ , err := os.Stat(loc); err != nil && os.IsNotExist(err) {
+							childrenCount++
+							continue
+						}else {
+							recursivelyLookForDependencies(loader,child,loc,rootDir)
+						}
+
+					}else{
+						continue
+					}
+
+					childrenCount++
+				}
+			}
+
+	}else {
+		fmt.Println("Appending from Internal Map")
+		//append the child to the parent
+		val.ScriptFileName = dep
+		parentNode.Children = append(parentNode.Children,val)
+	}
+
+
+	return nil
+}*/
 
 
 func describeNaslFile(path, rootDir string) (*models.Script, error) {

@@ -22,6 +22,7 @@ var (
 	rootDir         string
 	target          string
 	Vulnerabilities []string
+	totalNumber int
 )
 
 func attackTarget(path string, info os.FileInfo, err error) error {
@@ -147,15 +148,14 @@ func main() {
 
 	engine.WalkDirTree(root, collectScripts)
 
-	if len(Vulnerabilities) > 0 {
+	*//*if len(Vulnerabilities) > 0 {
 
 		for _, vuln := range Vulnerabilities {
 
 			fmt.Println(fmt.Sprintf("We found this : %s", vuln))
 		}
-	}
-	fmt.Println("Finished")
-	*/
+	}*//*
+	fmt.Println("Finished")*/
 
 
 	engine := &engine.DaltonEngine{}
@@ -163,7 +163,30 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Println("Finished")
+	fmt.Println("Finished, Total Number of Scripts : ",engine.GetTotalNumberOfScripts())
+
+	i := 0
+	indicator = 0
+	totalNumber = engine.GetTotalNumberOfScripts()
+
+
+	for i < 12 {
+
+		if val , ok := engine.KB.KB[i]; ok {
+
+			for _ , node := range val{
+
+				executeNode(node)
+
+			}
+		}
+
+		i++
+	}
+
+	for _ , vuln := range Vulnerabilities{
+		fmt.Println("Found : ",vuln)
+	}
 
 	/*naslFile := &engine.NaslFile{
 		DescriptionOnly:1,
@@ -199,4 +222,45 @@ func main() {
 		}
 		fmt.Printf("Successfully saved the details of the current Nasl Script into the database\n")*/
 
+}
+
+func executeNode(node engine.DaltonNode) {
+
+	//fmt.Println(fmt.Sprintf("%s%s",dots,node.ScriptFileName))
+	var success int
+	messages := []string{}
+	naslFile := &engine.NaslFile{
+		Authenticated:1,
+		DescriptionOnly:0,
+		File:node.ScriptFileName,
+		Target:"192.168.1.8",
+		RootDir:"/media/snouto/rest/projects/openvas/nvts",
+	}
+	script , err := engine.DescribeNaslFile(naslFile)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	err = engine.ExecuteNaslScript(naslFile,&messages,&success)
+
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	indicator++
+	fmt.Println(fmt.Sprintf("Executed : %d/%d",indicator,totalNumber))
+
+
+	if success > 0 && script.GetCVSS() > 0.0 {
+
+		Vulnerabilities = append(Vulnerabilities,script.ScriptOid)
+		success = 0
+	}
+	if len(node.Children) > 0 {
+
+		for _ , child := range node.Children {
+
+			executeNode(child)
+		}
+	}
 }

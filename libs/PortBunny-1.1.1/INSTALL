@@ -1,0 +1,2 @@
+As root, type 'make; make install'.
+You can now type "portbunny $HOSTNAME" to scan a host.
